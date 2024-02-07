@@ -1,17 +1,21 @@
-# Title
+# Dev-Init
 
-### Check the site [Here](https://fedehide.github.io/endpoint " alt")
+### Building
 
-------------
+```bash
+cd dev-init && ./dev-init.sh <output>
+```
 
-<!-- [![palindome-checker-ss.png](https://i.postimg.cc/XqZKFdMW/palindome-checker-ss.png)](https://postimg.cc/jnbJYWd3) -->
+If you encounter issues running this script, try granting it execution permissions:
 
-## Features
+```bash
+chmod +x dev-init.sh
+```
 
-- 🔢 Features
+### Features
+
+- ✅ automates the setup process for my personal development projects
 
 ## License
 
 MIT License © 2024-Present [Fede Hide](https://github.com/FedeHide)
-
-> This is a [freecodecamp](https://www.freecodecamp.org/ "freecodecamp") assignment. All the projects and contact details given are **not real**.
