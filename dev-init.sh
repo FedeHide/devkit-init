@@ -1,24 +1,21 @@
 #!/bin/bash
 
-# Verifica que se haya proporcionado un directorio de salida como argumento
+outputDirectory="$1" 
+
+# Checks that a output directory has been provided as an argument
 if [ -z "$1" ]; then
-    echo "Error: Se requiere especificar un directorio de salida."
+    echo "Error: You need to specify an output directory"
     exit 1
 fi
 
-outputDirectory="$1" # Asigna el primer argumento a la variable outputDirectory
-
-# Ejecutar el script para crear los archivos en el directorio de salida especificado
 node init.js "$outputDirectory"
 
-# Esperar a que se cierre Visual Studio Code para continuar
-read -p "Presiona Enter para continuar..."
+# Waiting for init.js to finish executing
+read -p "Press Enter to continue..."
 
-# Ejecutar el script de inicialización de la plantilla en el directorio de salida especificado
 (cd "$outputDirectory" && pnpm run template-init)
 
-# Abrir Visual Studio Code
+# open Visual Studio Code
 code "$outputDirectory"
 
-# Mostrar mensaje al final
-echo "El proceso ha finalizado 🦁"
+echo "Process completed successfully 🦁"
