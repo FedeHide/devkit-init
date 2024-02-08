@@ -1,16 +1,23 @@
 const fs = require('fs').promises;
 const path = require('path');
 
+// Reads the output directory from the command line arguments.
+const outputDirectory = process.argv[2];
+
+if (!outputDirectory) {
+    console.error('Error: It is required to specify an output directory.');
+    process.exit(1);
+}
+
 async function createFiles(outputDirectory) {
     try {
-        // Verificar si el directorio de salida existe, de lo contrario, crearlo
+        // To check if the output directory exists, oterwise, create it
         await fs.mkdir(outputDirectory, { recursive: true });
 
-        // Lee el contenido del archivo template.json
+        // Read the content of the file template.json and parse it.
         const data = await fs.readFile('template.json', 'utf8');
         const templateData = JSON.parse(data);
 
-        // Define una lista de archivos con su contenido
         const files = [
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },
@@ -26,39 +33,29 @@ async function createFiles(outputDirectory) {
             { fileName: 'index.html', content: templateData['index.html'] }
         ];
 
-        // Procesa cada archivo en paralelo
+        // Process each file in parallel
         await Promise.all(files.map(async ({ fileName, content }) => {
             try {
-                // Convertir el contenido a una cadena JSON antes de escribirlo
                 const fileContent = typeof content === 'object' ? JSON.stringify(content, null, 4) : content;
-                const filePath = path.join(outputDirectory, fileName); // Construye la ruta completa del archivo
+                const filePath = path.join(outputDirectory, fileName);
                 await fs.writeFile(filePath, fileContent, 'utf8');
-                console.log(`Se ha creado el archivo ${filePath} correctamente.`);
+                console.log(`The file ${filePath} has been created successfully..`);
             } catch (err) {
-                console.error(`Error escribiendo en el archivo ${fileName}:`, err);
+                console.error(`Error writing to ${fileName}:`, err);
             }
         }));
 
-        // Copiar el archivo update-tsconfig.mjs al directorio de salida
+        // Copy the update-tsconfig.mjs file to the output directory
         const sourceFilePath = 'update-tsconfig.mjs';
-        const destinationFilePath = path.join(outputDirectory, 'update-tsconfig.mjs');
+        const destinationFilePath = path.join(outputDirectory, sourceFilePath);
         await fs.copyFile(sourceFilePath, destinationFilePath);
-        console.log(`Se ha copiado el archivo ${sourceFilePath} al directorio de salida.`);
+        console.log(`The file ${sourceFilePath} has been copied to the output directory.`);
 
-        console.log('Todos los archivos han sido creados correctamente 🚀');
+        console.log('All files have been created successfully 🚀');
 
     } catch (err) {
-        console.error('Error creando el directorio de salida o leyendo el archivo template.json:', err);
+        console.error('Error creating the output directory or reading the template.json file.:', err);
     }
 }
 
-// Lee el directorio de salida de los argumentos de línea de comandos
-const outputDirectory = process.argv[2];
-
-if (!outputDirectory) {
-    console.error('Error: Se requiere especificar un directorio de salida.');
-    process.exit(1);
-}
-
-// Ejecutar la función para crear los archivos
 createFiles(outputDirectory);
