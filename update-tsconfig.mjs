@@ -1,6 +1,5 @@
 import { writeFile } from 'fs/promises';
 
-// Definir la configuración deseada para tsconfig.json
 const tsconfig = {
     compilerOptions: {
     target: 'es2022',
@@ -18,17 +17,15 @@ const tsconfig = {
     }
 };
 
-// Ruta al archivo tsconfig.json
 const tsconfigPath = './tsconfig.json';
 
 async function updateTSConfig() {
     try {
-    // Escribe el contenido modificado de vuelta a tsconfig.json
-        await writeFile(tsconfigPath, JSON.stringify(tsconfig, null, 2));
-
-    console.log('tsconfig.json actualizado con éxito.');
+    // Write the modified content back to tsconfig.json
+        await writeFile(tsconfigPath, JSON.stringify(tsconfig, null, 4));
+        console.log('tsconfig.json successfully updated.');
     } catch (error) {
-    console.error('Error al actualizar tsconfig.json:', error);
+        console.error('Error updating tsconfig.json:', error);
     }
 }
 
