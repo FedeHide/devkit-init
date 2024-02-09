@@ -24,6 +24,7 @@ async function createFiles(outputDirectory) {
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
+            { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
             { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
             { fileName: 'LICENSE', content: templateData['LICENSE'] },
             { fileName: '.gitignore', content: templateData['.gitignore'] },
@@ -55,17 +56,49 @@ async function createFiles(outputDirectory) {
             }
         }));
 
-        // Copy the update-tsconfig.mjs file to the output directory
-        const sourceFilePath = 'update-tsconfig.mjs';
-        const destinationFilePath = path.join(outputDirectory, sourceFilePath);
-        await fs.copyFile(sourceFilePath, destinationFilePath);
-        console.log(`The file ${sourceFilePath} has been copied to the output directory.`);
-
         console.log('All files have been created successfully 🚀');
+
+        // Copy the update-tsconfig.mjs file to the output directory
+        // const sourceFilePath = 'update-tsconfig.mjs';
+        // const destinationFilePath = path.join(outputDirectory, sourceFilePath);
+        // await fs.copyFile(sourceFilePath, destinationFilePath);
+        // console.log(`The file ${sourceFilePath} has been copied to the output directory.`);
+
+        // console.log('All files have been created successfully 🚀');
 
     } catch (err) {
         console.error('Error creating the output directory or reading the template.json file.:', err);
     }
 }
 
+const tsconfig = {
+    compilerOptions: {
+    target: 'es2022',
+    module: 'ES6',
+    rootDir: './src/ts',
+    outDir: './dist/js',
+    sourceMap: true,
+    removeComments: true,
+    noEmitOnError: false,
+    esModuleInterop: true,
+    forceConsistentCasingInFileNames: true,
+    strict: true,
+    noImplicitAny: true,
+    skipLibCheck: true
+    }
+};
+
+const tsconfigPath = 'tsconfig.json';
+
+async function updateTSConfig() {
+    try {
+    // Write the modified content back to tsconfig.json
+        await fs.writeFile(tsconfigPath, JSON.stringify(tsconfig, null, 4));
+        console.log('tsconfig.json successfully updated.');
+    } catch (error) {
+        console.error('Error updating tsconfig.json:', error);
+    }
+}
+
 createFiles(outputDirectory);
+updateTSConfig();
