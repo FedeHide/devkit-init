@@ -58,19 +58,12 @@ async function createFiles(outputDirectory) {
 
         console.log('All files have been created successfully 🚀');
 
-        // Copy the update-tsconfig.mjs file to the output directory
-        // const sourceFilePath = 'update-tsconfig.mjs';
-        // const destinationFilePath = path.join(outputDirectory, sourceFilePath);
-        // await fs.copyFile(sourceFilePath, destinationFilePath);
-        // console.log(`The file ${sourceFilePath} has been copied to the output directory.`);
-
-        // console.log('All files have been created successfully 🚀');
-
     } catch (err) {
         console.error('Error creating the output directory or reading the template.json file.:', err);
     }
 }
 
+// Create template file for tsconfig and write it
 const tsconfig = {
     compilerOptions: {
     target: 'es2022',
