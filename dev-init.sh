@@ -18,8 +18,8 @@ echo "🦁 directory tree created 🦁"
 read -p "Press Enter to continue..."
 echo "🦁 Updating files 🦁"
 cd "$outputDirectory"
+pnpm init
 tsc --init
-node init.js "$outputDirectory"
 touch NOTES.md src/ts/main.ts
 
 # Waiting for init.js to finish executing
@@ -30,6 +30,7 @@ pnpm install -D nodemon
 pnpm install -D prettier
 pnpx eslint --init
 pnpm install -D eslint-config-prettier
+node init.js "$outputDirectory"
 rm init.js
 rm template.json
 echo "🦁 Dependencies installed 🦁"
