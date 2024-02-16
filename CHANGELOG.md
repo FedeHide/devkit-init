@@ -1,5 +1,17 @@
 # Changelog
 
+## [v0.3.0](https://github.com/FedeHide/dev-init/releases/tag/v0.3.0) (2024-02-16)
+
+### Updates
+
+* **update:** sass breakpoints, mixins and reset; add index.html OG and robots meta tags ([3c76a04](https://github.com/FedeHide/dev-init/commit/3c76a046328425e8eb05714801e091157733cee9))
+
+* **update:** readme.md ([0c0f089](https://github.com/FedeHide/dev-init/commit/0c0f089ec526f0389320786d1abe7231f0134d2a#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5))
+
+### Performance Improvements
+
+* **refactor:** change init.js script exec. line, improving dependencies ([a1e814d](https://github.com/FedeHide/dev-init/commit/a1e814d15a53601c508a6e3c4114a568ef972d2a))
+
 ## [v0.2.0](https://github.com/FedeHide/dev-init/releases/tag/v0.2.0) (2024-02-09)
 
 ### Features
