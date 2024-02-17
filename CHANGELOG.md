@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.3.1](https://github.com/FedeHide/dev-init/releases/tag/v0.3.1) (2024-02-17)
+
+### Fix
+
+* **hotfix:** prevents package json to overwrite dev-dependencies, remove private package ([f537f17](https://github.com/FedeHide/dev-init/commit/f537f17496b9e8c00295fcf924cca11ead8431f8))
+
 ## [v0.3.0](https://github.com/FedeHide/dev-init/releases/tag/v0.3.0) (2024-02-16)
 
 ### Updates
