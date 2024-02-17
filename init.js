@@ -47,10 +47,23 @@ async function createFiles(outputDirectory) {
         // Process each file in parallel
         await Promise.all(files.map(async ({ fileName, content }) => {
             try {
-                const fileContent = typeof content === 'object' ? JSON.stringify(content, null, 4) : content;
                 const filePath = path.join(outputDirectory, fileName);
-                await fs.writeFile(filePath, fileContent, 'utf8');
-                console.log(`The file ${filePath} has been created successfully..`);
+                // If it's package.json, merge the content with existing content if it exists
+                if (fileName === 'package.json') {
+                    let existingContent = {};
+                    try {
+                        existingContent = JSON.parse(await fs.readFile(filePath, 'utf8'));
+                    } catch (err) {
+                        console.log(`Creating ${fileName} as it doesn't exist.`);
+                    }
+                    const mergedContent = { ...existingContent, ...content };
+                    await fs.writeFile(filePath, JSON.stringify(mergedContent, null, 4), 'utf8');
+                } else {
+                    // Otherwise, write the content to the file
+                    const fileContent = typeof content === 'object' ? JSON.stringify(content, null, 4) : content;
+                    await fs.writeFile(filePath, fileContent, 'utf8');
+                }
+                console.log(`The file ${filePath} has been created successfully.`);
             } catch (err) {
                 console.error(`Error writing to ${fileName}:`, err);
             }
