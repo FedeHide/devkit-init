@@ -3,7 +3,7 @@
 ## Building
 
 ```bash
-cd dev-init && ./dev-init.sh <output>
+npx devkit-init
 ```
 
 If you encounter issues running this script, try granting it execution permissions:

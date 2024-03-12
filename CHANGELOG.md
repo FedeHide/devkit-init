@@ -1,8 +1,10 @@
 # Changelog
 
-## [v0.4.0](https://github.com/FedeHide/dev-init/releases/tag/v0.4.0) (2024-xx-xx)
+## [v1.1.0](https://github.com/FedeHide/dev-init/releases/tag/v1.1.0) (2024-03-12)
 
 ### Features
+
+* **add:** integration with react and nextjs ([ad80bc1](https://github.com/FedeHide/devkit-init/commit/ad80bc171111eae6be34df5db42aa8ee7d6491f2))
 
 * **add:** add sass mixins, adjust readme and html template ([da9ea19](https://github.com/FedeHide/dev-init/commit/da9ea194be45ddd92fa05534b8e4788d8b50f482))
 
