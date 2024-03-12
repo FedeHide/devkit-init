@@ -1,6 +1,6 @@
 # Dev-Init
 
-### Building
+## Building
 
 ```bash
 cd dev-init && ./dev-init.sh <output>
@@ -12,9 +12,13 @@ If you encounter issues running this script, try granting it execution permissio
 chmod +x dev-init.sh
 ```
 
-### Features
+## Features
 
 - ✅ automates the setup process for my personal development projects
+
+## Contribution
+
+See [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 

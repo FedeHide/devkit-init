@@ -1,8 +1,14 @@
 const fs = require('fs').promises;
 const path = require('path');
+const { execSync } = require('child_process');
 
 // Reads the output directory from the command line arguments.
 const outputDirectory = process.argv[2];
+
+// Ejecutar el comando para encontrar la carpeta
+const command = 'find ~/.npm/_npx -type d -name "devkit-init" | grep -i "devkit-init"';
+const tempPackagePath = execSync(command, { encoding: 'utf-8' });
+const cleanedTempPackagePath = tempPackagePath.trim();
 
 if (!outputDirectory) {
     console.error('Error: It is required to specify an output directory.');
@@ -15,7 +21,7 @@ async function createFiles(outputDirectory) {
         await fs.mkdir(outputDirectory, { recursive: true });
 
         // Read the content of the file template.json and parse it.
-        const data = await fs.readFile('template.json', 'utf8');
+        const data = await fs.readFile(`${cleanedTempPackagePath}/templates/vanillaTemplate.json`, 'utf8');
         const templateData = JSON.parse(data);
 
         const files = [
@@ -30,6 +36,7 @@ async function createFiles(outputDirectory) {
             { fileName: '.gitignore', content: templateData['.gitignore'] },
             { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
             { fileName: 'README.md', content: templateData['README.md'] },
+            { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
             { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },
             { fileName: '/src/scss/base/_colors.scss', content: templateData['colors.scss'] },
@@ -47,51 +54,30 @@ async function createFiles(outputDirectory) {
         // Process each file in parallel
         await Promise.all(files.map(async ({ fileName, content }) => {
             try {
-                const fileContent = typeof content === 'object' ? JSON.stringify(content, null, 4) : content;
                 const filePath = path.join(outputDirectory, fileName);
-                await fs.writeFile(filePath, fileContent, 'utf8');
-                console.log(`The file ${filePath} has been created successfully..`);
+                // If it's package.json, merge the content with existing content if it exists
+                if (fileName === 'package.json') {
+                    let existingContent = {};
+                    try {
+                        existingContent = JSON.parse(await fs.readFile(filePath, 'utf8'));
+                    } catch (err) {
+                        console.log(`Creating ${fileName} as it doesn't exist.`);
+                    }
+                    const mergedContent = { ...existingContent, ...content };
+                    await fs.writeFile(filePath, JSON.stringify(mergedContent, null, 4), 'utf8');
+                } else {
+                    // Otherwise, write the content to the file
+                    const fileContent = typeof content === 'object' ? JSON.stringify(content, null, 4) : content;
+                    await fs.writeFile(filePath, fileContent, 'utf8');
+                }
             } catch (err) {
                 console.error(`Error writing to ${fileName}:`, err);
             }
         }));
-
-        console.log('All files have been created successfully 🚀');
 
     } catch (err) {
         console.error('Error creating the output directory or reading the template.json file.:', err);
     }
 }
 
-// Create template file for tsconfig and write it
-const tsconfig = {
-    compilerOptions: {
-    target: 'es2022',
-    module: 'ES6',
-    rootDir: './src/ts',
-    outDir: './dist/js',
-    sourceMap: true,
-    removeComments: true,
-    noEmitOnError: false,
-    esModuleInterop: true,
-    forceConsistentCasingInFileNames: true,
-    strict: true,
-    noImplicitAny: true,
-    skipLibCheck: true
-    }
-};
-
-const tsconfigPath = 'tsconfig.json';
-
-async function updateTSConfig() {
-    try {
-    // Write the modified content back to tsconfig.json
-        await fs.writeFile(tsconfigPath, JSON.stringify(tsconfig, null, 4));
-        console.log('tsconfig.json successfully updated.');
-    } catch (error) {
-        console.error('Error updating tsconfig.json:', error);
-    }
-}
-
 createFiles(outputDirectory);
-updateTSConfig();
