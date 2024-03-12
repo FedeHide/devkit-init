@@ -15,6 +15,9 @@ chmod +x dev-init.sh
 ## Features
 
 - ✅ automates the setup process for my personal development projects
+- ⚛️ setup for react and next js
+- ✏️ sass integration, with reset, mixins and function
+- ⚙️ rollup building for vanilla
 
 ## Contribution
 
