@@ -1,12 +1,25 @@
 {
-  "name": "dev-init",
-  "version": "0.3.1",
-  "description": "",
-  "main": "init.js",
+  "name": "devkit-init",
+  "version": "v0.3.1",
+  "description": "The script dev-init.sh automates the setup process for my development projects.",
+  "bin": {
+    "dev-init": "devkit-init.sh"
+  },
+  "repository": {
+    "url": "git+https://github.com/FedeHide/dev-init.git"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "keywords": [
+    "project template",
+    "react",
+    "nextjs",
+    "sass",
+    "tailwind",
+    "js",
+    "ts"
+  ],
+  "author": "fede.hide",
+  "license": "MIT"
 }

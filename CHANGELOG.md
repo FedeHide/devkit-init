@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.4.0](https://github.com/FedeHide/dev-init/releases/tag/v0.4.0) (2024-xx-xx)
+
+### Features
+
+* **add:** add sass mixins, adjust readme and html template ([da9ea19](https://github.com/FedeHide/dev-init/commit/da9ea194be45ddd92fa05534b8e4788d8b50f482))
+
 ## [v0.3.1](https://github.com/FedeHide/dev-init/releases/tag/v0.3.1) (2024-02-17)
 
 ### Fix
