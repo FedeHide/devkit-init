@@ -12,7 +12,7 @@ CLEAR_LINE="\033[1A\033[2K"
 # Obtiene la ruta al directorio actual
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-PACKAGE_DIR="$(dirname "$DIR")/devkit-init-test"
+PACKAGE_DIR="$(dirname "$DIR")/devkit-init"
 
 # handle user cancel with SIGINT (Ctrl + C)
 sigint_handler() {
@@ -172,9 +172,9 @@ done
 
 pnpm install -D prettier >/dev/null 2>&1
 if [ "$is_typescript" = true ]; then
-    pnpm install -D typescript@latest eslint-config-standard-with-typescript@latest
+    pnpm install -D typescript@latest eslint-config-standard-with-typescript@latest >/dev/null 2>&1
 else
-    pnpm install -D eslint-config-standard@latest
+    pnpm install -D eslint-config-standard@latest >/dev/null 2>&1
 fi
 pnpm install -D eslint-plugin-react@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
