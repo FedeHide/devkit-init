@@ -4,6 +4,7 @@
         "version": "0.1.0",
         "license": "MIT",
         "private": false,
+        "type": "module",
         "author": {
             "name": "@FedeHide"
         },
@@ -48,7 +49,7 @@
     ".gitignore": "# production\n/build\n#dist/\nNOTES.md\n\n# dependencies\n/node_modules\npnpm-lock.yaml\n/.pnp\n.pnp.js\n.yarn/install-state.gz\n\n# testing\n/coverage\n\n# next.js\n/.next/\n/out/\n\n# debug logs\nlogs\n*.log\nlerna-debug.log*\npnpm-debug.log*\npnpm-error.log*\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# env files\n.env\n.env*.local\n.env.production\n.env.development.local\n.env.test.local\n.env.production.local\n\n# vercel\n.vercel\n\n# prisma db\nprisma/dev.db\n\n# typescript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Editor directories and files\n.vscode/*\n!.vscode/extensions.json\n.vscode-test\n*.suo\n*.ntvs*\n*.njsproj\n*.sln\n*.sw?\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# misc\n*.pem\n\n# OS generated files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Diagnostic reports\nreport.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json\n\n# Runtime data\npids\n*.pid\n*.seed\n*.pid.lock\n\n# Compiled binary addons\nbuild/Release\n\n# eslint cache\n.eslintcache",
     "CHANGELOG.md": "# Changelog\n\n## [v0.1.0](https://github.com/FedeHide/REPO/releases/tag/v0.1.0) (yyyy-mm-dd)\n\n### Features\n\n* **example:** added media queries for responsive ([8681738](commit))",
     "README.md": "# Title\n\n### Check the site [Here](https://fedehide.github.io/endpoint \" alt\")\n\n------------\n\n<!-- [![https://raw.githubusercontent.com/FedeHide/pokemon-search/main/public/images/pokemon-search-screenshot.webp](https://raw.githubusercontent.com/FedeHide/pokemon-search/main/public/images/pokemon-search-screenshot.webp)](https://raw.githubusercontent.com/FedeHide/pokemon-search/main/public/images/pokemon-search-screenshot.webp) -->\n\n## Features\n\n- 🔢 Features\n\n## Contribution\n\nSee [Contributing Guide](CONTRIBUTING.md).\n\n## License\n\nMIT License © 2024-Present [Fede Hide](https://github.com/FedeHide)\n\n> This is a [freecodecamp](https://www.freecodecamp.org/ \"freecodecamp\") assignment. All the projects and contact details given are **not real**.",
-    "rollup.config.js": "export default {\n\tinput: 'dist/js/main.js',\n\toutput: {\n\t\tfile: 'public/bundle.js',\n\t\tformat: 'cjs',\n\t},\n};",
+    "rollup.config.js": "export default {\n\tinput: 'src/js/main.js',\n\toutput: {\n\t\tfile: 'dist/js/bundle.js',\n\t\tformat: 'cjs',\n\t},\n};",
     "main.scss": "@forward 'base/';\n@forward 'layout/';\n@forward 'components/';\n@forward 'utils/';\n",
     "breakpoints.scss": "@use 'functions' as *;\n\n$breakpoints: (\n\tphone: pxToEm(360),\n\ttablet: pxToEm(680),\n\tdesktop: pxToEm(1120),\n);",
     "colors.scss": "",
