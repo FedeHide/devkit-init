@@ -24,7 +24,11 @@ async function createFiles(outputDirectory) {
 
         const files = [
             { fileName: 'package.json', content: templateData['package.json'] },
+            { fileName: '.eslintignore', content: templateData['.eslintignore'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
+            { fileName: '.prettierignore', content: templateData['.prettierignore'] },
+            { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
+            { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
             { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
             { fileName: 'LICENSE', content: templateData['LICENSE'] },
             { fileName: '.gitignore', content: templateData['.gitignore'] },
