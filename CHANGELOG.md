@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.2.2](https://github.com/FedeHide/dev-init/releases/tag/v1.2.2) (2024-03-13)
+
+### Fix
+
+* **hotfix:** add missing file templates y remove repeated one ([df095a6](https://github.com/FedeHide/devkit-init/commit/df095a64405659d77a9d9e1e79840abd06ed194d))
+
 ## [v1.2.1](https://github.com/FedeHide/dev-init/releases/tag/v1.2.1) (2024-03-13)
 
 ### Fix
