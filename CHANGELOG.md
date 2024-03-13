@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.2.1](https://github.com/FedeHide/dev-init/releases/tag/v1.2.1) (2024-03-13)
+
+### Fix
+
+* **hotfix:** typo testing variable name and null dependency output ([06dca03](https://github.com/FedeHide/devkit-init/commit/06dca039d76e4acf2c9e32df49f9dbfbc5ba1b74))
+
 ## [v1.2.0](https://github.com/FedeHide/dev-init/releases/tag/v1.2.0) (2024-03-13)
 
 ### Features
