@@ -9,6 +9,11 @@ PINK='\033[0;35m'
 RESET_COLOR="\033[0m"
 CLEAR_LINE="\033[1A\033[2K"
 
+# Obtiene la ruta al directorio actual
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+PACKAGE_DIR="$(dirname "$DIR")/devkit-init-test"
+
 # handle user cancel with SIGINT (Ctrl + C)
 sigint_handler() {
     echo -e "$CLEAR_LINE /n"
@@ -101,6 +106,10 @@ ts_folders=(
     "src/ts"
 )
 
+js_folders=(
+    "src/js"
+)
+
 root_folders=(
     "public/favicon"
     "public/images"
@@ -143,6 +152,13 @@ if [[ "$is_typescript" = true && "$is_react" = false ]]; then
     done
 fi
 
+if [[ "$is_typescript" = false && "$is_react" = false ]]; then
+    for folder in "${js_folders[@]}"; do
+        mkdir -p "$folder"
+        touch src/js/main.js
+    done
+fi
+
 # SASS
 if [ "$is_sass" = true ]; then
     pnpm install -D sass >/dev/null 2>&1
@@ -155,31 +171,36 @@ done
 
 
 pnpm install -D prettier >/dev/null 2>&1
-pnpm install -D eslint-plugin-react@latest eslint-config-standard-with-typescript@latest @typescript-eslint/eslint-plugin@latest eslint@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest typescript@latest >/dev/null 2>&1
+if [ "$is_typescript" = true ]; then
+    pnpm install -D typescript@latest eslint-config-standard-with-typescript@latest
+else
+    pnpm install -D eslint-config-standard@latest
+fi
+pnpm install -D eslint-plugin-react@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 pnpm install -D eslint-config-prettier >/dev/null 2>&1
 touch .eslintrc.json
 
+if [ "$is_react" = true ]; then
+    pnpm install -D eslint-config-next@latest >/dev/null 2>&1
+fi
+
 cd ..
-temp_package_path=$(find ~/.npm/_npx -type d -name "devkit-init" | grep -i "devkit-init")
 
 echo "🦁 Updating files 🦁"
 # VANILLA template || REACT template
 if [ "$is_react" = false ]; then
-    node "$temp_package_path/scripts/vanillaInit.js" "$outputDirectory"
+    node "$PACKAGE_DIR/scripts/vanillaInit.js" "$outputDirectory"
 elif [[ "$is_react" = true && "$is_typescript" = true ]]; then
-    node "$temp_package_path/scripts/tsReactInit.js" "$outputDirectory"
+    node "$PACKAGE_DIR/scripts/tsReactInit.js" "$outputDirectory"
 elif [[ "$is_react" = true && "$is_typescript" = false ]]; then
-    node "$temp_package_path/scripts/reactInit.js" "$outputDirectory"
+    node "$PACKAGE_DIR/scripts/reactInit.js" "$outputDirectory"
     rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
 fi
 
 # TYPESCRIPT template
 if [[ "$is_typescript" = true && "$is_react" = false ]]; then
-    node "$temp_package_path/scripts/typescriptInit.js" "$outputDirectory"
-fi
-
-if [[ "$is_typescript" = true && "$is_react" = true ]]; then
-    rm "$outputDirectory"/src/app/page.jsx "$outputDirectory"/src/app/layout.jsx
+    node "$PACKAGE_DIR/scripts/typescriptInit.js" "$outputDirectory"
 fi
 
 # CLEANING
@@ -189,6 +210,8 @@ fi
 
 if [ "$is_sass" = false ]; then
     rm -rf "$outputDirectory"/src/scss
+    mv "$outputDirectory"/src/app/globals.scss "$outputDirectory"/src/app/globals.css
+    sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.jsx
 fi
 
 cd "$outputDirectory" || exit 1
