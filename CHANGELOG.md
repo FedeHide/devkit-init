@@ -1,5 +1,27 @@
 # Changelog
 
+## [v1.2.0](https://github.com/FedeHide/dev-init/releases/tag/v1.2.0) (2024-03-13)
+
+### Features
+
+* **hotfix:** Improved the way of obtaining the temporary directory path of the package, as it was causing errors. Add some dependencies, change logic validation for those ([be912b8](https://github.com/FedeHide/devkit-init/commit/be912b80d24847079e54f121cf4c5659ad433038))
+
+### Fix
+
+* **hotfix:** rollup config input and output on vanilla template ([5b53698](https://github.com/FedeHide/devkit-init/commit/5b53698e2dc05260db94a4a9f5342daed0b50385))
+
+* **hotfix:** eslint config and tsconfig outdir on typescript template ([8dce27f](https://github.com/FedeHide/devkit-init/commit/8dce27fae19f7e9edc99e7b7479be3972a2c587e))
+
+* **hotfix:** prettier and eslint config, rootlayout.jsx remove metadata import on react template ([759d213](https://github.com/FedeHide/devkit-init/commit/759d213bc3a84536519fb93270dea907e3565343))
+
+* **hotfix:** prettier and eslint rules on tsReact template ([dbc49e2](https://github.com/FedeHide/devkit-init/commit/dbc49e2f8cae89a46b4cdf4207b3907e1ffd3d05))
+
+* **hotfix:** .js scripts -> Improved the way of obtaining the temporary directory path of the package, as it was causing errors. ([022f0e2](https://github.com/FedeHide/devkit-init/commit/022f0e2490d3277b0601335b896e82daa85d9970))
+
+### Docs
+
+* **docs:** add npmignore and update readme ([a5ac4b0](https://github.com/FedeHide/devkit-init/commit/a5ac4b0e00395196e4ecc14b1c9f751b7bb41fcd))
+
 ## [v1.1.0](https://github.com/FedeHide/dev-init/releases/tag/v1.1.0) (2024-03-12)
 
 ### Features

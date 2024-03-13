@@ -1,12 +1,13 @@
 {
   "name": "devkit-init",
-  "version": "v1.1.0",
+  "version": "v1.2.0",
   "description": "The script dev-init.sh automates the setup process for my development projects.",
   "bin": {
-    "dev-init": "devkit-init.sh"
+    "devkit-init": "devkit-init.sh"
   },
   "repository": {
-    "url": "git+https://github.com/FedeHide/dev-init.git"
+    "type": "git",
+    "url": "git+https://github.com/FedeHide/devkit-init.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
