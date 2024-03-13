@@ -13,7 +13,7 @@
             "es2021": true,
             "node": true
         },
-        "extends": ["standard-with-typescript", "prettier", "plugin:prettier/recommended", "next/core-web-vitals"],
+        "extends": ["standard-with-typescript", "prettier", "plugin:prettier/recommended"],
         "plugins": ["prettier"],
         "parserOptions": {
             "ecmaVersion": "latest",
@@ -28,7 +28,7 @@
             "target": "es2022",
             "module": "ES6",
             "rootDir": "./src/ts",
-            "outDir": "./dist/js",
+            "outDir": "./src/js",
             "sourceMap": true,
             "removeComments": true,
             "noEmitOnError": false,
