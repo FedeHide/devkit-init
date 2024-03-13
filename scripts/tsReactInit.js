@@ -1,14 +1,12 @@
 const fs = require('fs').promises;
 const path = require('path');
-const { execSync } = require('child_process');
 
 // Reads the output directory from the command line arguments.
 const outputDirectory = process.argv[2];
 
-// Ejecutar el comando para encontrar la carpeta
-const command = 'find ~/.npm/_npx -type d -name "devkit-init" | grep -i "devkit-init"';
-const tempPackagePath = execSync(command, { encoding: 'utf-8' });
-const cleanedTempPackagePath = tempPackagePath.trim();
+// search templates directory
+const currentDirectory = __dirname;
+const packageDirectory = path.join(currentDirectory, '..', 'templates');
 
 if (!outputDirectory) {
     console.error('Error: It is required to specify an output directory.');
@@ -21,7 +19,7 @@ async function createFiles(outputDirectory) {
         await fs.mkdir(outputDirectory, { recursive: true });
 
         // Read the content of the file template.json and parse it.
-        const data = await fs.readFile(`${cleanedTempPackagePath}/templates/tsReactTemplate.json`, 'utf8');
+        const data = await fs.readFile(`${packageDirectory}/tsReactTemplate.json`, 'utf8');
         const templateData = JSON.parse(data);
 
         const files = [
