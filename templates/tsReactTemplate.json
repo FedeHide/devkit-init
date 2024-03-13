@@ -28,7 +28,12 @@
             "sourceType": "module"
         },
         "rules": {
-            "prettier/prettier": "error"
+            "prettier/prettier": [
+                "error",
+                {
+                    "semi": false
+                }
+            ]
         }
     },
     ".prettierignore": "*.md\n*LICENSE\n/node_modules\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
@@ -37,7 +42,7 @@
         "trailingComma": "all",
         "tabWidth": 4,
         "useTabs": true,
-        "semi": true,
+        "semi": false,
         "singleQuote": true,
         "bracketSpacing": true,
         "arrowParens": "always",
