@@ -43,8 +43,8 @@ progress_bar() {
 
 ## MAIN LOGIC
 # get temporal package npx directory
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PACKAGE_DIR="$(dirname "$DIR")/devkit-init"
+# DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+# PACKAGE_DIR="$(dirname "$DIR")/devkit-init"
 
 # handle user cancel with SIGINT (Ctrl + C)
 sigint_handler() {
@@ -238,17 +238,17 @@ cd ..
 progress_bar
 # VANILLA template || REACT template
 if [ "$is_react" = false ]; then
-    node "$PACKAGE_DIR/scripts/vanillaInit.js" "$outputDirectory"
+    node "../scripts/vanillaInit.js" "$outputDirectory"
 elif [[ "$is_react" = true && "$is_typescript" = true ]]; then
-    node "$PACKAGE_DIR/scripts/tsReactInit.js" "$outputDirectory"
+    node "../scripts/tsReactInit.js" "$outputDirectory"
 elif [[ "$is_react" = true && "$is_typescript" = false ]]; then
-    node "$PACKAGE_DIR/scripts/reactInit.js" "$outputDirectory"
+    node "../scripts/reactInit.js" "$outputDirectory"
     rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
 fi
 
 # TYPESCRIPT template
 if [[ "$is_typescript" = true && "$is_react" = false ]]; then
-    node "$PACKAGE_DIR/scripts/typescriptInit.js" "$outputDirectory"
+    node "../scripts/typescriptInit.js" "$outputDirectory"
 fi
 progress_bar
 
@@ -285,9 +285,9 @@ progress_bar
 
 # Initial commit
 cd "$outputDirectory" || exit 1
-git init >/dev/null 2>&1
-git add . >/dev/null 2>&1
-git commit -m 'initial commit' >/dev/null 2>&1
+# git init >/dev/null 2>&1
+# git add . >/dev/null 2>&1
+# git commit -m 'initial commit' >/dev/null 2>&1
 
 # open Visual Studio Code
 cd ..

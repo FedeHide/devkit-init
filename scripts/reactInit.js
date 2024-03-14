@@ -43,7 +43,6 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/scss/base/_mixins.scss', content: templateData['mixins.scss'] },
             { fileName: '/src/scss/base/_reset.scss', content: templateData['reset.scss'] },
             { fileName: '/src/scss/base/_typography.scss', content: templateData['typography.scss'] },
-            { fileName: '/src/scss/components/_index.scss', content: templateData['components_index.scss'] },
             { fileName: '/src/scss/layout/_index.scss', content: templateData['layout_index.scss'] },
             { fileName: '/src/scss/utils/_index.scss', content: templateData['utils_index.scss'] },
             { fileName: '/src/app/globals.scss', content: templateData['globals.scss'] },
