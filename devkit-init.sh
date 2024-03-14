@@ -255,11 +255,12 @@ if [ "$is_sass" = false ]; then
     mkdir -p "$outputDirectory"/src/css
     mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
     rm -rf "$outputDirectory"/src/scss
-    rm "$outputDirectory"/src/app/page.module.css
     mv "$outputDirectory"/src/app/globals.scss "$outputDirectory"/src/app/globals.css
     sed -i '4,5d' "$outputDirectory"/src/app/globals.css
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.jsx
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.tsx
+elif [[ "$is_sass" = false && "$is_tailwind" = false ]]; then
+    rm "$outputDirectory"/src/app/page.module.css
 fi
 progress_bar
 
