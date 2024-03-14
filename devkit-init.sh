@@ -88,7 +88,7 @@ is_tech() {
             ;;
         n|no)
             if [ "${tech}" = "${LIGHT_BLUE}React${RESET_COLOR}" ]; then
-                echo -e "${CLEAR_LINE}✔️ ${DARK_YELLOW} Javascript${RESET_COLOR}"
+                echo -e "${CLEAR_LINE}✔️ ${DARK_YELLOW}Javascript${RESET_COLOR}"
                 tech_choice=false
             else
                 echo -e "${CLEAR_LINE}❌ ${tech}"
@@ -207,9 +207,7 @@ fi
 for folder in "${sass_folders[@]}"; do
     mkdir -p "$folder"
 done
-if [[ "$is_sass" = true && "$is_react" = true ]]; then
-    rm -rf "$outputDirectory/src/scss/components"
-fi
+
 progress_bar
 
 # PRETTIER & ESLINT RULES
@@ -268,12 +266,15 @@ if [[ "$is_sass" = false && "$is_react" = true ]]; then
 fi
 
 if [[ "$is_sass" = false && "$is_tailwind" = false ]]; then
-    rm "$outputDirectory"/src/app/page.module.css "$outputDirectory"/src/app/globals.css
+    rm "$outputDirectory"/src/app/globals.css
+fi
+
+if [[ "$is_react" = true && "$is_tailwind" = false ]]; then
+    rm "$outputDirectory"/src/app/page.module.css
 fi
 
 if [[ "$is_sass" = true && "$is_tailwind" = false ]]; then
-    sed -i '1,3d' "$outputDirectory"/src/app/globals.css
-    rm "$outputDirectory"/src/app/page.module.css "$outputDirectory"/src/app/globals.css
+    sed -i '1,3d' "$outputDirectory"/src/app/globals.scss
 fi
 
 if [[ "$is_sass" = false && "$is_react" = false ]]; then
@@ -281,6 +282,11 @@ if [[ "$is_sass" = false && "$is_react" = false ]]; then
     mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
     rm -rf "$outputDirectory"/src/scss
 fi
+
+if [[ "$is_sass" = true && "$is_react" = true ]]; then
+    rm -rf "$outputDirectory/src/scss/components"
+fi
+
 progress_bar
 
 # Initial commit
