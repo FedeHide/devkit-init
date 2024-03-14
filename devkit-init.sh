@@ -70,7 +70,7 @@ get_project_dir
 
 outputDirectory=$project_dir 
 echo -e "${CLEAR_LINE}✔️ Creating project: $outputDirectory"
-echo "🦁 Select Technologies:"
+echo " Select Technologies 🦁"
 
 # select techs
 is_tech() {
@@ -252,9 +252,14 @@ if [ "$is_react" = true ]; then
 fi
 
 if [ "$is_sass" = false ]; then
+    mkdir -p "$outputDirectory"/src/css
+    mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
     rm -rf "$outputDirectory"/src/scss
+    rm "$outputDirectory"/src/app/page.module.css
     mv "$outputDirectory"/src/app/globals.scss "$outputDirectory"/src/app/globals.css
+    sed -i '4,5d' "$outputDirectory"/src/app/globals.css
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.jsx
+    sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.tsx
 fi
 progress_bar
 
@@ -264,6 +269,7 @@ git init >/dev/null 2>&1
 git add . >/dev/null 2>&1
 git commit -m 'initial commit' >/dev/null 2>&1
 progress_bar
+echo -e "$CLEAR_LINE /n"
 echo -ne "${CLEAR_LINE}🦁 Process completed successfully 🦁"
 
 # open Visual Studio Code
