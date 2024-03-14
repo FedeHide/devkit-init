@@ -25,6 +25,9 @@
     },
     "tsconfig.json": {
         "compilerOptions": {
+            "paths": {
+                "@/*": ["./src/*"]
+            },
             "target": "es2022",
             "module": "ES6",
             "rootDir": "./src/ts",

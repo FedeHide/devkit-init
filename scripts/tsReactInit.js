@@ -35,6 +35,7 @@ async function createFiles(outputDirectory) {
             { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
             { fileName: 'README.md', content: templateData['README.md'] },
             { fileName: 'next.config.js', content: templateData['next.config.js'] },
+            { fileName: 'tsconfig.json', content: templateData['tsconfig.json'] },
             { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
             { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },
             { fileName: '/src/scss/base/_colors.scss', content: templateData['colors.scss'] },
