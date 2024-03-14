@@ -1,5 +1,27 @@
 # Changelog
 
+## [v1.4.0](https://github.com/FedeHide/dev-init/releases/tag/v1.4.0) (2024-03-14)
+
+### Features
+
+* **add:** add import alias in typescript ([b9f4e6a](https://github.com/FedeHide/devkit-init/commit/b9f4e6af14b80ace89733e533c36f0ff6912f517))
+
+* **add:** progress bar implementation and refactor ([719eb7b](https://github.com/FedeHide/devkit-init/commit/719eb7bc0f51f0921d325547c5cd47fe2b68e5f5))
+
+### Testing
+
+* **add:** add testing environment ([e846d3b](https://github.com/FedeHide/devkit-init/commit/e846d3ba68027aff214bebe6fb939335a63a0f73))
+
+### Fix
+
+* **hotfix:** template errors and typos ([1d77fc8](https://github.com/FedeHide/devkit-init/commit/1d77fc89315d88f2a95f1e09767e1de389225e78))
+
+* **hotfix:** sass and vanilla folder conflict ([7c7145f](https://github.com/FedeHide/devkit-init/commit/7c7145f35e6929607b4f8febc676a41dc1401470)) ([81e25e9](https://github.com/FedeHide/devkit-init/commit/81e25e9f56180b6cc228110f426e5d131c014a9a))
+
+* **hotfix:** css reset typo and remove css module file ([b396dd8](https://github.com/FedeHide/devkit-init/commit/b396dd80414f735763fc8d92f4cd10fcf6148d23))
+
+* **hotfix:** no sass files error and end line indent ([1fa7f5c](https://github.com/FedeHide/devkit-init/commit/1fa7f5cfa9c4c8e1033738d67f2a2c1f843a4aab))
+
 ## [v1.2.2](https://github.com/FedeHide/dev-init/releases/tag/v1.2.2) (2024-03-13)
 
 ### Fix
@@ -16,7 +38,7 @@
 
 ### Features
 
-* **hotfix:** Improved the way of obtaining the temporary directory path of the package, as it was causing errors. Add some dependencies, change logic validation for those ([be912b8](https://github.com/FedeHide/devkit-init/commit/be912b80d24847079e54f121cf4c5659ad433038))
+* **feat:** Improved the way of obtaining the temporary directory path of the package, as it was causing errors. Add some dependencies, change logic validation for those ([be912b8](https://github.com/FedeHide/devkit-init/commit/be912b80d24847079e54f121cf4c5659ad433038))
 
 ### Fix
 
