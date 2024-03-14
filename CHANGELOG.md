@@ -1,5 +1,11 @@
 # Changelog
 
+## [v1.4.1](https://github.com/FedeHide/dev-init/releases/tag/v1.4.1) (2024-03-14)
+
+### Fix
+
+* **hotfix:** minor error fixes ([f6a5146](https://github.com/FedeHide/devkit-init/commit/f6a5146624656a2dacb83fd891afe94bad5ebdd0))
+
 ## [v1.4.0](https://github.com/FedeHide/dev-init/releases/tag/v1.4.0) (2024-03-14)
 
 ### Features
