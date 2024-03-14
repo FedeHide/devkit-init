@@ -71,7 +71,7 @@ get_project_dir
 
 outputDirectory=$project_dir 
 echo -e "${CLEAR_LINE}✔️ Creating project: $outputDirectory"
-echo " Select Technologies 🦁"
+echo "🦁 Select Technologies 🦁"
 
 # select techs
 is_tech() {
@@ -185,7 +185,6 @@ if [[ "$is_typescript" = true && "$is_react" = false ]]; then
     for folder in "${ts_folders[@]}"; do
         mkdir -p "$folder"
         touch src/ts/main.ts
-        progress_bar
     done
 fi
 
@@ -193,9 +192,9 @@ if [[ "$is_typescript" = false && "$is_react" = false ]]; then
     for folder in "${js_folders[@]}"; do
         mkdir -p "$folder"
         touch src/js/main.js
-        progress_bar
     done
 fi
+progress_bar
 
 # SASS
 if [ "$is_sass" = true ]; then
@@ -206,6 +205,9 @@ fi
 for folder in "${sass_folders[@]}"; do
     mkdir -p "$folder"
 done
+if [[ "$is_sass" = true && "$is_react" = true ]]; then
+    rm -rf "$outputDirectory/src/scss/components"
+fi
 progress_bar
 
 # PRETTIER & ESLINT RULES
@@ -284,8 +286,6 @@ cd "$outputDirectory" || exit 1
 git init >/dev/null 2>&1
 git add . >/dev/null 2>&1
 git commit -m 'initial commit' >/dev/null 2>&1
-progress_bar
-echo -e "$CLEAR_LINE /n"
 
 # open Visual Studio Code
 cd ..
