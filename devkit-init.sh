@@ -50,6 +50,7 @@ PACKAGE_DIR="$(dirname "$DIR")/devkit-init"
 sigint_handler() {
     echo -e "$CLEAR_LINE /n"
     echo -e "${CLEAR_LINE}❌ Operation cancelled" >&2
+    echo -e "\033[K"
     exit 1
 }
 trap 'sigint_handler' SIGINT
@@ -83,11 +84,12 @@ is_tech() {
     case $choice_lowercase in
         y|yes|"") 
             tech_choice=true
-            echo -e "${CLEAR_LINE}✔️  ${tech}"
+            echo -e "${CLEAR_LINE}✔️ ${tech}"
             ;;
         n|no)
             if [ "${tech}" = "${LIGHT_BLUE}React${RESET_COLOR}" ]; then
-                echo -e "${CLEAR_LINE}✔️  ${DARK_YELLOW}Javascript${RESET_COLOR}"
+                echo -e "${CLEAR_LINE}✔️ ${DARK_YELLOW}Javascript${RESET_COLOR}"
+                tech_choice=false
             else
                 echo -e "${CLEAR_LINE}❌ ${tech}"
                 tech_choice=false
@@ -259,8 +261,21 @@ if [[ "$is_sass" = false && "$is_react" = true ]]; then
     sed -i '4,5d' "$outputDirectory"/src/app/globals.css
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.jsx
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.tsx
-elif [[ "$is_sass" = false && "$is_tailwind" = false ]]; then
-    rm "$outputDirectory"/src/app/page.module.css
+fi
+
+if [[ "$is_sass" = false && "$is_tailwind" = false ]]; then
+    rm "$outputDirectory"/src/app/page.module.css "$outputDirectory"/src/app/globals.css
+fi
+
+if [[ "$is_sass" = true && "$is_tailwind" = false ]]; then
+    sed -i '1,3d' "$outputDirectory"/src/app/globals.css
+    rm "$outputDirectory"/src/app/page.module.css "$outputDirectory"/src/app/globals.css
+fi
+
+if [[ "$is_sass" = false && "$is_react" = false ]]; then
+    mkdir -p "$outputDirectory"/src/css
+    mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
+    rm -rf "$outputDirectory"/src/scss
 fi
 progress_bar
 
@@ -271,8 +286,8 @@ git add . >/dev/null 2>&1
 git commit -m 'initial commit' >/dev/null 2>&1
 progress_bar
 echo -e "$CLEAR_LINE /n"
-echo -ne "${CLEAR_LINE}🦁 Process completed successfully 🦁"
 
 # open Visual Studio Code
 cd ..
 code "$outputDirectory"
+echo "🦁 Process completed successfully 🦁"
