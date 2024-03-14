@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.4.1](https://github.com/FedeHide/dev-init/releases/tag/v1.4.1) (2024-03-14)
+## [v1.4.2](https://github.com/FedeHide/dev-init/releases/tag/v1.4.2) (2024-03-14)
 
 ### Fix
 
