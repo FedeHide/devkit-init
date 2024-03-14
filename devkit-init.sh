@@ -251,7 +251,7 @@ if [ "$is_react" = true ]; then
     rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico "$outputDirectory"/src/app/globals.css
 fi
 
-if [ "$is_sass" = false ]; then
+if [[ "$is_sass" = false && "$is_react" = true ]]; then
     mkdir -p "$outputDirectory"/src/css
     mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
     rm -rf "$outputDirectory"/src/scss
