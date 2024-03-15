@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.4.5](https://github.com/FedeHide/dev-init/releases/tag/v1.4.5) (2024-03-15)
+
+### Fix
+
+* **hotfix:** minor bugs ([f15a278](https://github.com/FedeHide/devkit-init/commit/f15a278f0f847fc0cd36318e8eca4dae90b3f87a))
+
+* **hotfix:** sass files and import minor fixes ([4a52d96](https://github.com/FedeHide/devkit-init/commit/4a52d9664ceceada1f01d9382807abce4042dc74))
+
 ## [v1.4.2](https://github.com/FedeHide/dev-init/releases/tag/v1.4.2) (2024-03-14)
 
 ### Fix
