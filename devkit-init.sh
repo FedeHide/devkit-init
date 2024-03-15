@@ -169,7 +169,7 @@ if [ "$is_react" = true ]; then
     cd ..
     pnpm create next-app@latest "$outputDirectory" ${next_ts_flag} ${next_tw_flag} --no-eslint --app --src-dir --import-alias default >/dev/null 2>&1
     progress_bar
-    rm "$outputDirectory/next.config.mjs"
+    rm "$outputDirectory/next.config.js"
     rm -rf "$outputDirectory/.git"
     cd "$outputDirectory" || exit 1
 else
@@ -263,6 +263,8 @@ if [[ "$is_sass" = false && "$is_react" = true ]]; then
     sed -i '4,5d' "$outputDirectory"/src/app/globals.css
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.jsx
     sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.tsx
+    sed -i '3d' "$outputDirectory"/src/app/layout.jsx
+    sed -i '4d' "$outputDirectory"/src/app/layout.tsx
 fi
 
 if [[ "$is_sass" = false && "$is_tailwind" = false ]]; then
@@ -274,7 +276,12 @@ if [[ "$is_react" = true && "$is_tailwind" = false ]]; then
 fi
 
 if [[ "$is_sass" = true && "$is_tailwind" = false ]]; then
-    sed -i '1,3d' "$outputDirectory"/src/app/globals.scss
+    rm "$outputDirectory"/src/app/globals.scss
+    if [[ "$is_react" = true && "$is_typescript" = false ]]; then
+        sed -i '2d' "$outputDirectory"/src/app/layout.jsx
+    else
+        sed -i '3d' "$outputDirectory"/src/app/layout.tsx
+    fi
 fi
 
 if [[ "$is_sass" = false && "$is_react" = false ]]; then
