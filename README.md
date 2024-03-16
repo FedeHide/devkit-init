@@ -1,5 +1,8 @@
 # Devkit-Init
 
+## Introduction
+This package automates the setup process for my development projects for react and vanilla JS
+
 ## Building
 
 ### npm
@@ -15,7 +18,7 @@ pnpx devkit-init
 If you encounter issues running this script, try granting it execution permissions:
 
 ```bash
-chmod +x dev-init.sh
+chmod +x devkit-init.sh
 ```
 
 ## Features
@@ -26,6 +29,13 @@ chmod +x dev-init.sh
 - 🍃 tailwind option, just with react for the moment
 - ⚙️ rollup building for vanilla
 - ✨ eslint & prettier configuration
+
+## Technologies Used
+<div>
+	<a href="https://skillicons.dev">
+		<img src="https://skillicons.dev/icons?i=bash,js,nodejs" />
+	</a>
+</div>
 
 ## Contribution
 
