@@ -1,6 +1,6 @@
 # Changelog
 
-## [v1.4.5](https://github.com/FedeHide/dev-init/releases/tag/v1.4.5) (2024-03-15)
+## [v1.4.5](https://github.com/FedeHide/devkit-init/releases/tag/v1.4.5) (2024-03-15)
 
 ### Fix
 
@@ -8,13 +8,13 @@
 
 * **hotfix:** sass files and import minor fixes ([4a52d96](https://github.com/FedeHide/devkit-init/commit/4a52d9664ceceada1f01d9382807abce4042dc74))
 
-## [v1.4.2](https://github.com/FedeHide/dev-init/releases/tag/v1.4.2) (2024-03-14)
+## [v1.4.2](https://github.com/FedeHide/devkit-init/releases/tag/v1.4.2) (2024-03-14)
 
 ### Fix
 
 * **hotfix:** minor error fixes ([f6a5146](https://github.com/FedeHide/devkit-init/commit/f6a5146624656a2dacb83fd891afe94bad5ebdd0))
 
-## [v1.4.0](https://github.com/FedeHide/dev-init/releases/tag/v1.4.0) (2024-03-14)
+## [v1.4.0](https://github.com/FedeHide/devkit-init/releases/tag/v1.4.0) (2024-03-14)
 
 ### Features
 
@@ -36,19 +36,19 @@
 
 * **hotfix:** no sass files error and end line indent ([1fa7f5c](https://github.com/FedeHide/devkit-init/commit/1fa7f5cfa9c4c8e1033738d67f2a2c1f843a4aab))
 
-## [v1.2.2](https://github.com/FedeHide/dev-init/releases/tag/v1.2.2) (2024-03-13)
+## [v1.2.2](https://github.com/FedeHide/devkit-init/releases/tag/v1.2.2) (2024-03-13)
 
 ### Fix
 
 * **hotfix:** add missing file templates y remove repeated one ([df095a6](https://github.com/FedeHide/devkit-init/commit/df095a64405659d77a9d9e1e79840abd06ed194d))
 
-## [v1.2.1](https://github.com/FedeHide/dev-init/releases/tag/v1.2.1) (2024-03-13)
+## [v1.2.1](https://github.com/FedeHide/devkit-init/releases/tag/v1.2.1) (2024-03-13)
 
 ### Fix
 
 * **hotfix:** typo testing variable name and null dependency output ([06dca03](https://github.com/FedeHide/devkit-init/commit/06dca039d76e4acf2c9e32df49f9dbfbc5ba1b74))
 
-## [v1.2.0](https://github.com/FedeHide/dev-init/releases/tag/v1.2.0) (2024-03-13)
+## [v1.2.0](https://github.com/FedeHide/devkit-init/releases/tag/v1.2.0) (2024-03-13)
 
 ### Features
 
@@ -70,53 +70,53 @@
 
 * **docs:** add npmignore and update readme ([a5ac4b0](https://github.com/FedeHide/devkit-init/commit/a5ac4b0e00395196e4ecc14b1c9f751b7bb41fcd))
 
-## [v1.1.0](https://github.com/FedeHide/dev-init/releases/tag/v1.1.0) (2024-03-12)
+## [v1.1.0](https://github.com/FedeHide/devkit-init/releases/tag/v1.1.0) (2024-03-12)
 
 ### Features
 
 * **add:** integration with react and nextjs ([ad80bc1](https://github.com/FedeHide/devkit-init/commit/ad80bc171111eae6be34df5db42aa8ee7d6491f2))
 
-* **add:** add sass mixins, adjust readme and html template ([da9ea19](https://github.com/FedeHide/dev-init/commit/da9ea194be45ddd92fa05534b8e4788d8b50f482))
+* **add:** add sass mixins, adjust readme and html template ([da9ea19](https://github.com/FedeHide/devkit-init/commit/da9ea194be45ddd92fa05534b8e4788d8b50f482))
 
-## [v0.3.1](https://github.com/FedeHide/dev-init/releases/tag/v0.3.1) (2024-02-17)
+## [v0.3.1](https://github.com/FedeHide/devkit-init/releases/tag/v0.3.1) (2024-02-17)
 
 ### Fix
 
-* **hotfix:** prevents package json to overwrite dev-dependencies, remove private package ([f537f17](https://github.com/FedeHide/dev-init/commit/f537f17496b9e8c00295fcf924cca11ead8431f8))
+* **hotfix:** prevents package json to overwrite dev-dependencies, remove private package ([f537f17](https://github.com/FedeHide/devkit-init/commit/f537f17496b9e8c00295fcf924cca11ead8431f8))
 
-## [v0.3.0](https://github.com/FedeHide/dev-init/releases/tag/v0.3.0) (2024-02-16)
+## [v0.3.0](https://github.com/FedeHide/devkit-init/releases/tag/v0.3.0) (2024-02-16)
 
 ### Updates
 
-* **update:** sass breakpoints, mixins and reset; add index.html OG and robots meta tags ([3c76a04](https://github.com/FedeHide/dev-init/commit/3c76a046328425e8eb05714801e091157733cee9))
+* **update:** sass breakpoints, mixins and reset; add index.html OG and robots meta tags ([3c76a04](https://github.com/FedeHide/devkit-init/commit/3c76a046328425e8eb05714801e091157733cee9))
 
-* **update:** readme.md ([0c0f089](https://github.com/FedeHide/dev-init/commit/0c0f089ec526f0389320786d1abe7231f0134d2a#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5))
-
-### Performance Improvements
-
-* **refactor:** change init.js script exec. line, improving dependencies ([a1e814d](https://github.com/FedeHide/dev-init/commit/a1e814d15a53601c508a6e3c4114a568ef972d2a))
-
-## [v0.2.0](https://github.com/FedeHide/dev-init/releases/tag/v0.2.0) (2024-02-09)
-
-### Features
-
-* **add:** CONTRIBUTING template and update gitignore ([d2fb27f](https://github.com/FedeHide/dev-init/commit/d2fb27fda9e23924e8ba54cd74f464782ddce112))
-
-* **add:** SCSS initial files and content ([9c28ba1](https://github.com/FedeHide/dev-init/commit/9c28ba15dd7e7c3a21d9629f5611b10b6f15caf8))
+* **update:** readme.md ([0c0f089](https://github.com/FedeHide/devkit-init/commit/0c0f089ec526f0389320786d1abe7231f0134d2a#diff-b335630551682c19a781afebcf4d07bf978fb1f8ac04c6bf87428ed5106870f5))
 
 ### Performance Improvements
 
-* **optimization:** merge tsconfig update into init file ([d15dfba](https://github.com/FedeHide/dev-init/commit/d15dfba858ad26c44e04a3793ceb4945cf1c6518))
+* **refactor:** change init.js script exec. line, improving dependencies ([a1e814d](https://github.com/FedeHide/devkit-init/commit/a1e814d15a53601c508a6e3c4114a568ef972d2a))
 
-* **optimization** of the package.json scripts, remove default dev-dependencies ([c240dc3](https://github.com/FedeHide/dev-init/commit/c240dc3c5a042d4776d67acb62bbbeada66d43b4))
-
-* **migrate:**  now creating directories, git initial commit and run build dependencies from shell script ([4615e37](https://github.com/FedeHide/dev-init/commit/4615e37805897ea421588cf068a456233951243a))
-
-## [v0.1.0](https://github.com/FedeHide/dev-init/releases/tag/v0.1.0) (2024-02-08)
+## [v0.2.0](https://github.com/FedeHide/devkit-init/releases/tag/v0.2.0) (2024-02-09)
 
 ### Features
 
-**commit:** ([0ad64c2](https://github.com/FedeHide/dev-init/commit/0ad64c25431c7f40c04849dfe6f1ddaf5b5cca5a))
+* **add:** CONTRIBUTING template and update gitignore ([d2fb27f](https://github.com/FedeHide/devkit-init/commit/d2fb27fda9e23924e8ba54cd74f464782ddce112))
+
+* **add:** SCSS initial files and content ([9c28ba1](https://github.com/FedeHide/devkit-init/commit/9c28ba15dd7e7c3a21d9629f5611b10b6f15caf8))
+
+### Performance Improvements
+
+* **optimization:** merge tsconfig update into init file ([d15dfba](https://github.com/FedeHide/devkit-init/commit/d15dfba858ad26c44e04a3793ceb4945cf1c6518))
+
+* **optimization** of the package.json scripts, remove default dev-dependencies ([c240dc3](https://github.com/FedeHide/devkit-init/commit/c240dc3c5a042d4776d67acb62bbbeada66d43b4))
+
+* **migrate:**  now creating directories, git initial commit and run build dependencies from shell script ([4615e37](https://github.com/FedeHide/devkit-init/commit/4615e37805897ea421588cf068a456233951243a))
+
+## [v0.1.0](https://github.com/FedeHide/devkit-init/releases/tag/v0.1.0) (2024-02-08)
+
+### Features
+
+**commit:** ([0ad64c2](https://github.com/FedeHide/devkit-init/commit/0ad64c25431c7f40c04849dfe6f1ddaf5b5cca5a))
 
 ### template.json
 
