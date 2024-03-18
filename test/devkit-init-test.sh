@@ -201,7 +201,6 @@ progress_bar
 # SASS
 if [ "$is_sass" = true ]; then
     pnpm install -D sass >/dev/null 2>&1
-    pnpm install -D node-sass >/dev/null 2>&1
     pnpm install -D nodemon >/dev/null 2>&1
 fi
 for folder in "${sass_folders[@]}"; do
@@ -215,14 +214,14 @@ progress_bar
 # PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 if [ "$is_typescript" = true ]; then
-    pnpm install -D typescript@latest eslint-config-standard-with-typescript@latest >/dev/null 2>&1
+    pnpm install -D typescript@latest eslint-config-love@latest >/dev/null 2>&1
     progress_bar
 else
     pnpm install -D eslint-config-standard@latest >/dev/null 2>&1
     progress_bar
 fi
 
-pnpm install -D eslint-plugin-react@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D eslint@latest eslint-plugin-react@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 pnpm install -D eslint-config-prettier >/dev/null 2>&1

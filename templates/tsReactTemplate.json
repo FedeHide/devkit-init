@@ -21,7 +21,7 @@
             "es2021": true,
             "node": true
         },
-        "extends": ["standard-with-typescript", "prettier", "plugin:prettier/recommended", "next/core-web-vitals"],
+        "extends": ["love", "prettier", "plugin:prettier/recommended", "next/core-web-vitals"],
         "plugins": ["prettier"],
         "parserOptions": {
             "ecmaVersion": "latest",
