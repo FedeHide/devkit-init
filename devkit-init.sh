@@ -9,44 +9,20 @@ DARK_BLUE='\x1b[38;5;63m'
 BLUE='\x1b[38;5;105m'
 DARK_YELLOW='\x1b[38;5;178m'
 PINK='\033[0;35m'
+LIGHT_PURPLE='\033[1;35m'
+LIGHT_GRAY='\033[0;37m'
 RESET_COLOR="\033[0m"
 
 CLEAR_LINE="\033[1A\033[2K"
 
-# PROGRESS BAR VARIABLES
-GREEN='\e[0;32m'
-RESET_BLOCK='\e[0m'
-duration=10
-step=1
-progress=0
-line=""
-
-## PROGRESS BAR FUNCTION
-progress_bar() {
-    
-    # terminal width
-    local terminal_width=$(($(tput cols) / 2))
-
-    # initiar bar width
-    local full_bar
-    full_bar=$(printf '=%.0s' $(seq 1 $((terminal_width * 8 / 10))))
-
-    # calculate bar length
-    local progress_length=$(( (progress * terminal_width * 8 / 10) / duration ))
-
-    # print progress bar
-    line=$(printf "%-${progress_length}s" " ")
-    line=${line// /█}
-    echo -ne "\r[${GREEN}${line}${RESET_BLOCK}${full_bar:${progress_length}}] $(( (progress * 100) / duration ))%"
-    ((progress += step))
-}
 
 ## MAIN LOGIC
-# get temporal package npx directory
+## GET temporary package npx directory
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-PACKAGE_DIR="$(dirname "$DIR")/devkit-init"
+export DIR
 
-# handle user cancel with SIGINT (Ctrl + C)
+
+## HANDLE CANCEL from the user with SIGINT (Ctrl + C)
 sigint_handler() {
     echo -e "$CLEAR_LINE /n"
     echo -e "${CLEAR_LINE}❌ Operation cancelled" >&2
@@ -56,7 +32,7 @@ sigint_handler() {
 trap 'sigint_handler' SIGINT
 
 
-# function to print the prompt and handle user input
+## function to print the prompt and handle user input
 get_project_dir() {
     echo -ne "${RED}?${RESET_COLOR} Project name: "
     read -r input
@@ -70,238 +46,123 @@ get_project_dir() {
 get_project_dir
 
 outputDirectory=$project_dir 
+
 echo -e "${CLEAR_LINE}✔️ Creating project: $outputDirectory"
 echo "🦁 Select Technologies 🦁"
 
-# select techs
+
+## FUNCTION for tech selection
 is_tech() {
-    local tech="$1"
-    echo -ne "${RED}?${RESET_COLOR} ${tech}? ${GREY}yes / no${RESET_COLOR} "
-    read -rp "" choice
+    local option1="$1"
+    local option2="$2"
+    if [ "${option1}" = "${BLUE}Tailwind${RESET_COLOR}" ]; then
+        echo -ne "${RED}?${RESET_COLOR} ${option1} ${GREY}(yes) / (no)${RESET_COLOR} > "
+        read -rp "" choice
+    else
+        echo -ne "${RED}?${RESET_COLOR} ${GREY}(yes) ${RESET_COLOR}${option1} / ${GREY}(no)${RESET_COLOR} ${option2} > "
+        read -rp "" choice
+    fi
     choice_lowercase=$(echo "$choice" | tr '[:upper:]' '[:lower:]')
 
     # check the user's choice
     case $choice_lowercase in
         y|yes|"") 
             tech_choice=true
-            echo -e "${CLEAR_LINE}✔️ ${tech}"
+            echo -e "${CLEAR_LINE}✔️  ${option1}"
             ;;
         n|no)
-            if [ "${tech}" = "${LIGHT_BLUE}React${RESET_COLOR}" ]; then
-                echo -e "${CLEAR_LINE}✔️ ${DARK_YELLOW}Javascript${RESET_COLOR}"
+            if [ "${option1}" = "${BLUE}Tailwind${RESET_COLOR}" ]; then
                 tech_choice=false
+                echo -e "${CLEAR_LINE}❌ ${option1}"
             else
-                echo -e "${CLEAR_LINE}❌ ${tech}"
                 tech_choice=false
+                echo -e "${CLEAR_LINE}✔️  ${option2}"
             fi
             ;;
         *) 
-            echo -e "${CLEAR_LINE}❌ ${tech}"
+            echo -e "${CLEAR_LINE}❌ ${option1}"
             echo -e "❌ Operation cancelled -> Invalid option"
             exit 0
             ;;
     esac
 }
 
+## TECH CHOICES
 # React choice
-is_tech "${LIGHT_BLUE}React${RESET_COLOR}"
+is_tech "${LIGHT_BLUE}React${RESET_COLOR}" "${DARK_YELLOW}Vanilla${RESET_COLOR}"
 is_react=$tech_choice
 
+# Nextjs or Vite choice
+if [ "$is_react" = true ]; then
+    is_tech "${LIGHT_GRAY}NextJS${RESET_COLOR}" "${LIGHT_PURPLE}Vite${RESET_COLOR}"
+    is_next=$tech_choice
+fi
+
 # TypeScript choice
-is_tech "${DARK_BLUE}TypeScript${RESET_COLOR}"
+is_tech "${DARK_BLUE}TypeScript${RESET_COLOR}" "${DARK_YELLOW}Javascript${RESET_COLOR}"
 is_typescript=$tech_choice
 
 # Sass choice
-is_tech "${PINK}Sass${RESET_COLOR}"
+is_tech "${PINK}Sass${RESET_COLOR}" "${LIGHT_BLUE}Css${RESET_COLOR}"
 is_sass=$tech_choice
 
 # Tailwind choice
+is_tech "${BLUE}Tailwind${RESET_COLOR}"
+is_tailwind=$tech_choice
+
+
+
+## BUILDING template path pushing sufix to directory
+# React || Vanilla
 if [ "$is_react" = true ]; then
-    # Tailwind choice
-    is_tech "${BLUE}Tailwind${RESET_COLOR}"
-    is_tailwind=$tech_choice
-fi
-
-progress_bar
-mkdir "$outputDirectory" && cd "$outputDirectory" || exit 1
-
-
-# FOLDERS
-dist_folders=(
-    "dist/js"
-    "dist/css"
-)
-
-sass_folders=(
-    "src/scss/base"
-    "src/scss/components"
-    "src/scss/layout"
-    "src/scss/utils"
-)
-
-ts_folders=(
-    "src/ts"
-)
-
-js_folders=(
-    "src/js"
-)
-
-root_folders=(
-    "public/favicon"
-    "public/images"
-)
-
-progress_bar
-# REACT
-if [ "$is_react" = true ]; then
-    if [ "$is_typescript" = true ]; then
-        next_ts_flag="--ts"
-    else
-        next_ts_flag="--js"
-    fi
-
-    if [ "$is_tailwind" = true ]; then
-        next_tw_flag="--tailwind"
-    else
-        next_tw_flag="--no-tailwind"
-    fi
-    cd ..
-    pnpm create next-app@latest "$outputDirectory" ${next_ts_flag} ${next_tw_flag} --no-eslint --app --src-dir --import-alias default >/dev/null 2>&1
-    progress_bar
-    rm "$outputDirectory/next.config.js"
-    rm -rf "$outputDirectory/.git"
-    cd "$outputDirectory" || exit 1
+    is_react="re"
 else
-    for folder in "${dist_folders[@]}" "${root_folders[@]}"; do
-        mkdir -p "$folder"
-    done
-    pnpm init > /dev/null 2>&1
-    pnpm install -D rollup >/dev/null 2>&1
-    progress_bar
-    touch rollup.config.js
+    is_react="vn"
 fi
 
-# TYPESCRIPT
-if [[ "$is_typescript" = true && "$is_react" = false ]]; then
-    for folder in "${ts_folders[@]}"; do
-        mkdir -p "$folder"
-        touch src/ts/main.ts
-    done
+# NextJs || Vite
+if [ "$is_next" = true ]; then
+    is_next="nx"
+elif [ "$is_next" = false ]; then
+    is_next="vi"
 fi
 
-if [[ "$is_typescript" = false && "$is_react" = false ]]; then
-    for folder in "${js_folders[@]}"; do
-        mkdir -p "$folder"
-        touch src/js/main.js
-    done
-fi
-progress_bar
-
-# SASS
-if [ "$is_sass" = true ]; then
-    pnpm install -D sass >/dev/null 2>&1
-    pnpm install -D nodemon >/dev/null 2>&1
-fi
-for folder in "${sass_folders[@]}"; do
-    mkdir -p "$folder"
-done
-
-progress_bar
-
-# PRETTIER & ESLINT RULES
-pnpm install -D prettier >/dev/null 2>&1
+# Typescript || Javascript
 if [ "$is_typescript" = true ]; then
-    pnpm install -D typescript@latest eslint-config-love@latest >/dev/null 2>&1
-    progress_bar
+    is_typescript="ts"
 else
-    pnpm install -D eslint-config-standard@latest >/dev/null 2>&1
-    progress_bar
+    is_typescript="js"
 fi
 
-pnpm install -D eslint@latest eslint-plugin-react@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
-progress_bar
-pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
-pnpm install -D eslint-config-prettier >/dev/null 2>&1
-progress_bar
-touch .eslintrc.json
-
-if [ "$is_react" = true ]; then
-    pnpm install -D eslint-config-next@latest >/dev/null 2>&1
+# Sass || Css
+if [ "$is_sass" = true ]; then
+    is_sass="sass"
+else
+    is_sass="css"
 fi
 
-# TEMPLATES
-cd ..
-progress_bar
-# VANILLA template || REACT template
-if [ "$is_react" = false ]; then
-    node "$PACKAGE_DIR/scripts/vanillaInit.js" "$outputDirectory"
-elif [[ "$is_react" = true && "$is_typescript" = true ]]; then
-    node "$PACKAGE_DIR/scripts/tsReactInit.js" "$outputDirectory"
-elif [[ "$is_react" = true && "$is_typescript" = false ]]; then
-    node "$PACKAGE_DIR/scripts/reactInit.js" "$outputDirectory"
-    rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
+# Tailwind
+if [ "$is_tailwind" = true ]; then
+    is_tailwind="-tw"
+else
+    is_tailwind=""
 fi
 
-# TYPESCRIPT template
-if [[ "$is_typescript" = true && "$is_react" = false ]]; then
-    node "$PACKAGE_DIR/scripts/typescriptInit.js" "$outputDirectory"
-fi
-progress_bar
 
-# CLEANING
-if [ "$is_react" = true ]; then
-    rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico "$outputDirectory"/src/app/globals.css
-fi
+## RUN template
+TEMPLATE_DIR="$DIR/templates/$is_react$is_next-$is_typescript-$is_sass$is_tailwind/$is_react$is_next-$is_typescript-$is_sass$is_tailwind.sh"
+export outputDirectory
+bash "$TEMPLATE_DIR"
 
-if [[ "$is_sass" = false && "$is_react" = true ]]; then
-    mkdir -p "$outputDirectory"/src/css
-    mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
-    rm -rf "$outputDirectory"/src/scss
-    mv "$outputDirectory"/src/app/globals.scss "$outputDirectory"/src/app/globals.css
-    sed -i '4,5d' "$outputDirectory"/src/app/globals.css
-    sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.jsx
-    sed -i 's/globals\.scss/globals\.css/' "$outputDirectory"/src/app/layout.tsx
-    sed -i '3d' "$outputDirectory"/src/app/layout.jsx
-    sed -i '4d' "$outputDirectory"/src/app/layout.tsx
-fi
 
-if [[ "$is_sass" = false && "$is_tailwind" = false ]]; then
-    rm "$outputDirectory"/src/app/globals.css
-fi
-
-if [[ "$is_react" = true && "$is_tailwind" = false ]]; then
-    rm "$outputDirectory"/src/app/page.module.css
-fi
-
-if [[ "$is_sass" = true && "$is_tailwind" = false ]]; then
-    rm "$outputDirectory"/src/app/globals.scss
-    if [[ "$is_react" = true && "$is_typescript" = false ]]; then
-        sed -i '2d' "$outputDirectory"/src/app/layout.jsx
-    else
-        sed -i '3d' "$outputDirectory"/src/app/layout.tsx
-    fi
-fi
-
-if [[ "$is_sass" = false && "$is_react" = false ]]; then
-    mkdir -p "$outputDirectory"/src/css
-    mv "$outputDirectory"/src/scss/base/_reset.scss "$outputDirectory"/src/css/reset.css
-    rm -rf "$outputDirectory"/src/scss
-fi
-
-if [[ "$is_sass" = true && "$is_react" = true ]]; then
-    rm -rf "$outputDirectory/src/scss/components"
-fi
-
-progress_bar
-
-# Initial commit
+## Initial commit
 cd "$outputDirectory" || exit 1
 git init >/dev/null 2>&1
 git add . >/dev/null 2>&1
 git commit -m 'initial commit' >/dev/null 2>&1
 
-# open Visual Studio Code
+
+## open Visual Studio Code
 cd ..
 code "$outputDirectory"
-echo -en "\r🦁 Process completed successfully 🦁"
+echo -en "\r🦁 Process completed successfully 🦁 "
