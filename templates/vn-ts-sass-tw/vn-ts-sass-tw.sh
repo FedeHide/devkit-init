@@ -84,8 +84,8 @@ progress_bar
 touch .eslintrc.json
 
 # TAILWIND
-pnpm install -D tailwindcss
-pnpx tailwindcss init
+pnpm install -D tailwindcss >/dev/null 2>&1
+pnpx tailwindcss init >/dev/null 2>&1
 
 cd ..
 progress_bar

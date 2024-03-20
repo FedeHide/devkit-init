@@ -37,7 +37,7 @@ next_tw_flag="--tailwind"
 next_tw_flag="--no-tailwind"
 
 # VITE
-pnpm create vite "$outputDirectory" --template react-swc
+pnpm create vite "$outputDirectory" --template react-swc >/dev/null 2>&1
 
 # FLAGS
 vite_js_flag="react-swc"
@@ -81,5 +81,5 @@ pnpm install -D eslint-config-prettier >/dev/null 2>&1
 
 
 # TAILWIND
-pnpm install -D tailwindcss
-pnpx tailwindcss init
+pnpm install -D tailwindcss >/dev/null 2>&1
+pnpx tailwindcss init >/dev/null 2>&1
