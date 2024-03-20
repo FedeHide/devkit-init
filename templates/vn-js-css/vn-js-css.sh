@@ -32,11 +32,18 @@ progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
 pnpm init > /dev/null 2>&1
+pnpm install -D rollup >/dev/null 2>&1
+touch rollup.config.js
 
 progress_bar
 cd "$outputDirectory" || exit 1
 
 ## MAKING folders
+dist_folders=(
+    "dist/js"
+    "dist/css"
+)
+
 src_folders=(
     "src/js"
     "src/css"
@@ -48,7 +55,7 @@ root_folders=(
 )
 
 progress_bar
-for folder in "${src_folders[@]}" "${root_folders[@]}"; do
+for folder in "${src_folders[@]}" "${root_folders[@]}" "${dist_folders[@]}"; do
     mkdir -p "$folder"
 done
 touch src/js/main.js

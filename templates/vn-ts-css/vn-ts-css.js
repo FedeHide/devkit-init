@@ -30,6 +30,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
             { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
+            { fileName: 'tsconfig.json', content: templateData['tsconfig.json'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },

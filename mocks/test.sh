@@ -23,7 +23,6 @@ js_folders=(
 )
 
 root_folders=(
-    "public/favicon"
     "public/images"
 )
 

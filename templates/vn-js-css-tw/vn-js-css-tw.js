@@ -27,9 +27,10 @@ async function createFiles(outputDirectory) {
         const files = [
             // template files
             { fileName: '/src/css/input.css', content: templateData['input.css'] },
-            { fileName: '/src/index.html', content: templateData['index.html'] },
+            { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },

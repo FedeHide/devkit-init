@@ -45,9 +45,11 @@ dist_folders=(
 )
 
 src_folders=(
+    "src/ts"
     "src/js"
     "src/css"
 )
+progress_bar
 
 root_folders=(
     "public/images"
@@ -57,24 +59,19 @@ progress_bar
 for folder in "${src_folders[@]}" "${root_folders[@]}" "${dist_folders[@]}"; do
     mkdir -p "$folder"
 done
-touch src/js/main.js
+touch src/ts/main.ts
 progress_bar
 
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D typescript@latest eslint@latest @typescript-eslint/eslint-plugin@^6.4.0 eslint-config-love@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
-
-# TAILWIND
-pnpm install -D tailwindcss
-progress_bar
-pnpx tailwindcss init
 
 cd ..
 progress_bar
