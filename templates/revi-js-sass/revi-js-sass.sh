@@ -71,8 +71,7 @@ pnpm install -D sass >/dev/null 2>&1
 progress_bar
 
 cd ..
-# # CLEANING
-progress_bar
+## CLEANING
 rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
 rm "$outputDirectory"/public/vite.svg
 rm -rf "$outputDirectory"/src/assets

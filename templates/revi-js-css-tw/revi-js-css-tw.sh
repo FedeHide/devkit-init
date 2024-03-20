@@ -60,12 +60,12 @@ progress_bar
 touch .eslintrc.json
 
 # TAILWIND
-pnpm install -D tailwindcss >/dev/null 2>&1
+pnpm install -D tailwindcss postcss autoprefixer >/dev/null 2>&1
 progress_bar
-pnpx tailwindcss init >/dev/null 2>&1
+pnpx tailwindcss init -p >/dev/null 2>&1
 
 cd ..
-# # CLEANING
+## CLEANING
 progress_bar
 rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
 rm "$outputDirectory"/public/vite.svg

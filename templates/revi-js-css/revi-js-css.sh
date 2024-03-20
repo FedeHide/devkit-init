@@ -60,7 +60,7 @@ progress_bar
 touch .eslintrc.json
 
 cd ..
-# # CLEANING
+## CLEANING
 progress_bar
 rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
 rm "$outputDirectory"/public/vite.svg

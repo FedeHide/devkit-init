@@ -66,7 +66,7 @@ progress_bar
 ## TEMPLATE init
 node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar
-# # CLEANING
+## CLEANING
 rm "$outputDirectory"/src/app/page.tsx "$outputDirectory"/src/app/layout.tsx
 rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
 progress_bar

@@ -31,11 +31,11 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-pnpm create next-app@latest "$outputDirectory" --js --no-tailwind --no-eslint --app --src-dir --import-alias default --use-pnpm >/dev/null 2>&1
+pnpm create vite "$outputDirectory" --template react-swc >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
-rm -rf ".git"
+pnpm install >/dev/null 2>&1
 
 ## MAKING folders
 src_folders=(
@@ -49,6 +49,7 @@ sass_folders=(
     "src/scss/utils"
 )
 
+progress_bar
 for folder in "${src_folders[@]}" "${sass_folders[@]}"; do
     mkdir -p "$folder"
 done
@@ -57,26 +58,28 @@ progress_bar
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D eslint-config-standard@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 touch .eslintrc.json
 
 # SASS
 pnpm install -D sass >/dev/null 2>&1
 progress_bar
 
-cd ..
+# TAILWIND
+pnpm install -D tailwindcss postcss autoprefixer >/dev/null 2>&1
 progress_bar
+pnpx tailwindcss init -p >/dev/null 2>&1
+
+cd ..
+## CLEANING
+rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
+rm "$outputDirectory"/public/vite.svg
+rm -rf "$outputDirectory"/src/assets
 ## TEMPLATE init
 node "$TEMPLATE_JS_DIR" "$outputDirectory"
-progress_bar
-## CLEANING
-rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
-rm "$outputDirectory"/src/app/globals.css "$outputDirectory"/src/app/page.module.css
-rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
 progress_bar
