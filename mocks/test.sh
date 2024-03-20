@@ -26,11 +26,22 @@ root_folders=(
     "public/images"
 )
 
+# NEXTJS
+# shellcheck disable=SC2154
+pnpm create next-app@latest "$outputDirectory" --js --no-tailwind --no-eslint --app --src-dir --import-alias default --use-pnpm >/dev/null 2>&1
+
 # FLAGS
 next_ts_flag="--ts"
-next_ts_flag="--js"
+next_js_flag="--js"
 next_tw_flag="--tailwind"
 next_tw_flag="--no-tailwind"
+
+# VITE
+pnpm create vite "$outputDirectory" --template react-swc
+
+# FLAGS
+vite_js_flag="react-swc"
+vite_ts_flag="react-swc-ts"
 
 # VANILLA
 pnpm init > /dev/null 2>&1
