@@ -29,8 +29,8 @@ async function createFiles(outputDirectory) {
             { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
             { fileName: '/src/app/globals.css', content: templateData['globals.css'] },
             { fileName: '/src/app/page.module.css', content: templateData['page.module.css'] },
-            { fileName: '/src/app/layout.jsx', content: templateData['layout.jsx'] },
-            { fileName: '/src/app/page.jsx', content: templateData['page.jsx'] },
+            { fileName: '/src/app/layout.tsx', content: templateData['layout.tsx'] },
+            { fileName: '/src/app/page.tsx', content: templateData['page.tsx'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },

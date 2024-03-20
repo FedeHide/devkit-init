@@ -31,7 +31,7 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-pnpm create next-app@latest "$outputDirectory" --js --no-tailwind --no-eslint --app --src-dir --import-alias default --use-pnpm >/dev/null 2>&1
+pnpm create next-app@latest "$outputDirectory" --js --tailwind --no-eslint --app --src-dir --import-alias default --use-pnpm >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -60,15 +60,10 @@ progress_bar
 pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 touch .eslintrc.json
 
-
-## TAILWIND
-pnpm install -D tailwindcss postcss autoprefixer >/dev/null 2>&1
-pnpx tailwindcss init -p >/dev/null 2>&1
-
 cd ..
 progress_bar
 ## TEMPLATE init
-node "$DIR/templates/renx-js-css-tw/renx-js-css-tw.js" "$outputDirectory"
+node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar
 # # CLEANING
 rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js

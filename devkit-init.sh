@@ -150,9 +150,11 @@ fi
 
 
 ## RUN template
-TEMPLATE_DIR="$DIR/templates/$is_react$is_next-$is_typescript-$is_sass$is_tailwind/$is_react$is_next-$is_typescript-$is_sass$is_tailwind.sh"
+TEMPLATE_SH_DIR="$DIR/templates/$is_react$is_next-$is_typescript-$is_sass$is_tailwind/$is_react$is_next-$is_typescript-$is_sass$is_tailwind.sh"
+TEMPLATE_JS_DIR="$DIR/templates/$is_react$is_next-$is_typescript-$is_sass$is_tailwind/$is_react$is_next-$is_typescript-$is_sass$is_tailwind.js"
+export TEMPLATE_JS_DIR
 export outputDirectory
-bash "$TEMPLATE_DIR"
+bash "$TEMPLATE_SH_DIR"
 
 
 ## Initial commit

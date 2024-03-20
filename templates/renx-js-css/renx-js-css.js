@@ -6,7 +6,9 @@ const outputDirectory = process.argv[2];
 
 // search templates directory
 const currentDirectory = __dirname;
-const packageDirectory = path.join(currentDirectory);
+const suffixIndex = currentDirectory.lastIndexOf('/')
+const suffixPath = currentDirectory.substring(suffixIndex)
+const templatePath = currentDirectory + suffixPath + ".json"
 
 if (!outputDirectory) {
     console.error('Error: It is required to specify an output directory.');
@@ -19,7 +21,7 @@ async function createFiles(outputDirectory) {
         await fs.mkdir(outputDirectory, { recursive: true });
 
         // Read the content of the file template.json and parse it.
-        const data = await fs.readFile(`${packageDirectory}/renx-js-css.json`, 'utf8');
+        const data = await fs.readFile(`${templatePath}`, 'utf8');
         const templateData = JSON.parse(data);
 
         const files = [
