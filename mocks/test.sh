@@ -68,3 +68,8 @@ pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 pnpm install -D eslint-config-prettier >/dev/null 2>&1
+
+
+# TAILWIND
+pnpm install -D tailwindcss
+pnpx tailwindcss init

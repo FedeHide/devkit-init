@@ -41,7 +41,6 @@ src_folders=(
     "src/js"
     "src/css"
 )
-progress_bar
 
 root_folders=(
     "public/images"
@@ -64,6 +63,11 @@ progress_bar
 pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
+
+# TAILWIND
+pnpm install -D tailwindcss
+progress_bar
+pnpx tailwindcss init
 
 cd ..
 progress_bar
