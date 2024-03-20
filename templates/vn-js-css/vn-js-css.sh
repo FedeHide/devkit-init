@@ -31,12 +31,11 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
+cd "$outputDirectory" || exit 1
 pnpm init > /dev/null 2>&1
 pnpm install -D rollup >/dev/null 2>&1
 touch rollup.config.js
-
 progress_bar
-cd "$outputDirectory" || exit 1
 
 ## MAKING folders
 dist_folders=(

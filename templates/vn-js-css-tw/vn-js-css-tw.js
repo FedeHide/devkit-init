@@ -26,7 +26,7 @@ async function createFiles(outputDirectory) {
 
         const files = [
             // template files
-            { fileName: '/src/css/input.css', content: templateData['input.css'] },
+            { fileName: '/src/css/main.css', content: templateData['main.css'] },
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
