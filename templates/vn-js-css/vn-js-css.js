@@ -6,7 +6,9 @@ const outputDirectory = process.argv[2];
 
 // search templates directory
 const currentDirectory = __dirname;
-const packageDirectory = path.join(currentDirectory, '..', 'templates');
+const suffixIndex = currentDirectory.lastIndexOf('/')
+const suffixPath = currentDirectory.substring(suffixIndex)
+const templatePath = currentDirectory + suffixPath + ".json"
 
 if (!outputDirectory) {
     console.error('Error: It is required to specify an output directory.');
@@ -19,10 +21,15 @@ async function createFiles(outputDirectory) {
         await fs.mkdir(outputDirectory, { recursive: true });
 
         // Read the content of the file template.json and parse it.
-        const data = await fs.readFile(`${packageDirectory}/tsReactTemplate.json`, 'utf8');
+        const data = await fs.readFile(`${templatePath}`, 'utf8');
         const templateData = JSON.parse(data);
 
         const files = [
+            // template files
+            { fileName: '/src/css/main.css', content: templateData['main.css'] },
+            { fileName: 'index.html', content: templateData['index.html'] },
+            { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            // common files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
@@ -34,21 +41,6 @@ async function createFiles(outputDirectory) {
             { fileName: '.gitignore', content: templateData['.gitignore'] },
             { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
             { fileName: 'README.md', content: templateData['README.md'] },
-            { fileName: 'next.config.js', content: templateData['next.config.js'] },
-            { fileName: 'tsconfig.json', content: templateData['tsconfig.json'] },
-            { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
-            { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },
-            { fileName: '/src/scss/base/_colors.scss', content: templateData['colors.scss'] },
-            { fileName: '/src/scss/base/_functions.scss', content: templateData['functions.scss'] },
-            { fileName: '/src/scss/base/_index.scss', content: templateData['base_index.scss'] },
-            { fileName: '/src/scss/base/_mixins.scss', content: templateData['mixins.scss'] },
-            { fileName: '/src/scss/base/_reset.scss', content: templateData['reset.scss'] },
-            { fileName: '/src/scss/base/_typography.scss', content: templateData['typography.scss'] },
-            { fileName: '/src/scss/layout/_index.scss', content: templateData['layout_index.scss'] },
-            { fileName: '/src/scss/utils/_index.scss', content: templateData['utils_index.scss'] },
-            { fileName: '/src/app/globals.scss', content: templateData['globals.scss'] },
-            { fileName: '/src/app/layout.tsx', content: templateData['RootLayout.tsx'] },
-            { fileName: '/src/app/page.tsx', content: templateData['Home.tsx'] }
         ];
 
         // Process each file in parallel
@@ -56,7 +48,7 @@ async function createFiles(outputDirectory) {
             try {
                 const filePath = path.join(outputDirectory, fileName);
                 // If it's package.json, merge the content with existing content if it exists
-                if (fileName === 'package.json' || fileName === 'tsconfig.json') {
+                if (fileName === 'package.json') {
                     let existingContent = {};
                     try {
                         existingContent = JSON.parse(await fs.readFile(filePath, 'utf8'));
