@@ -17,14 +17,25 @@ Some thoughts to help you contribute to this project
 To develop locally, fork the repository and clone it in your local machine. 
 
 ```bash
-cd dev-init && ./dev-init.sh <output>
+npm i devkit-init
 ```
 
 If you encounter issues running this script, try granting it execution permissions:
 
 ```bash
-chmod +x dev-init.sh
+chmod +x devkit-init.sh
 ```
+
+## Templates
+
+To add a template, you need to create a directory in /templates by assembling a folder with the suffixes of the names of the technologies you want to use.
+
+The script "devkit-init" is responsible for assembling the path based on those suffixes, taking the user's choices and running the script to which such construction points.
+
+ - Then, we need to create a shell script with the installation of dependencies. 
+ - Add another script, .js (which will be run by the previous shell script), will create the custom files we need and update other necessary configurations. 
+ - The last file is a .json where we list the files that the .js script is creating. 
+ - Take other templates as an example; the names of these three files must be the same as the folder's name.
 
 ## Pull Requests
 
