@@ -59,13 +59,18 @@ pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 
+# TAILWIND
+pnpm install -D tailwindcss >/dev/null 2>&1
+progress_bar
+pnpx tailwindcss init >/dev/null 2>&1
+
 cd ..
 # # CLEANING
 progress_bar
 rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
 rm "$outputDirectory"/public/vite.svg
 rm -rf "$outputDirectory"/src/assets
-progress_bar
+
 ## TEMPLATE init
 node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar
