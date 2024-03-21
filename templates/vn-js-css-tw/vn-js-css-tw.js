@@ -30,6 +30,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },

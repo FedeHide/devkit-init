@@ -31,6 +31,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/App.tsx', content: templateData['App.tsx'] },
             { fileName: 'index.html', content: templateData['index.html'] },
             { fileName: '/favicon/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: '.eslintrc.cjs', content: templateData['.eslintrc.cjs'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
             // common files

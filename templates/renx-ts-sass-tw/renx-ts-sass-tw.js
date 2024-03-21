@@ -30,6 +30,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/app/layout.tsx', content: templateData['layout.tsx'] },
             { fileName: '/src/app/page.tsx', content: templateData['page.tsx'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             // SASS files
             { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
             { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },

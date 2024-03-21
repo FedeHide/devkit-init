@@ -29,6 +29,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/css/main.css', content: templateData['main.css'] },
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },

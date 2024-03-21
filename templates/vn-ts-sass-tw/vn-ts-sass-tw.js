@@ -37,6 +37,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/scss/utils/_index.scss', content: templateData['utils_index.scss'] },
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             { fileName: 'tsconfig.json', content: templateData['tsconfig.json'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
