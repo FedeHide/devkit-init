@@ -31,25 +31,19 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-pnpm create next-app@latest "$outputDirectory" --js --tailwind --no-eslint --app --src-dir --import-alias default --use-pnpm >/dev/null 2>&1
+pnpm create vite "$outputDirectory" --template react-swc-ts >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
-rm -rf ".git"
+pnpm install >/dev/null 2>&1
 
 ## MAKING folders
 src_folders=(
     "src/components"
     "src/hooks"
 )
-
-sass_folders=(
-    "src/scss/base"
-    "src/scss/layout"
-    "src/scss/utils"
-)
-
-for folder in "${src_folders[@]}" "${sass_folders[@]}"; do
+progress_bar
+for folder in "${src_folders[@]}"; do
     mkdir -p "$folder"
 done
 progress_bar
@@ -57,26 +51,20 @@ progress_bar
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
-progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 touch .eslintrc.json
-
-# SASS
-pnpm install -D sass >/dev/null 2>&1
 progress_bar
 
 cd ..
+## CLEANING
+progress_bar
+rm "$outputDirectory"/src/main.tsx "$outputDirectory"/src/App.tsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
+rm "$outputDirectory"/public/vite.svg
+rm -rf "$outputDirectory"/src/assets
 progress_bar
 ## TEMPLATE init
 node "$TEMPLATE_JS_DIR" "$outputDirectory"
-progress_bar
-## CLEANING
-rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
-rm "$outputDirectory"/src/app/main.css "$outputDirectory"/src/app/page.module.css
-rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
 progress_bar

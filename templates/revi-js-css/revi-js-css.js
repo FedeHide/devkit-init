@@ -26,7 +26,7 @@ async function createFiles(outputDirectory) {
 
         const files = [
             // template files
-            { fileName: '/src/globals.css', content: templateData['globals.css'] },
+            { fileName: '/src/main.css', content: templateData['main.css'] },
             { fileName: '/src/main.jsx', content: templateData['main.jsx'] },
             { fileName: '/src/App.jsx', content: templateData['App.jsx'] },
             { fileName: 'index.html', content: templateData['index.html'] },
