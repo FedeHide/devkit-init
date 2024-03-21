@@ -1,5 +1,82 @@
 # Changelog
 
+## [v2.0.3](https://github.com/FedeHide/devkit-init/releases/tag/v2.0.3) (2024-03-21)
+
+### Features
+
+* **add:** add revi-ts-sass-tw template ([e7aa3f4](https://github.com/FedeHide/devkit-init/commit/e7aa3f4031e8c576bb3836f70de5736eaee63770))
+
+* **add:** add revi-ts-sass template ([203f1e9](https://github.com/FedeHide/devkit-init/commit/203f1e99715f3c81ad3b25c0eb24510adcc7f6dc))
+
+* **add:** add revi-ts-css-tw template ([92cf540](https://github.com/FedeHide/devkit-init/commit/92cf540cc7d34d5a81a8cb46a0f852de4338d53c))
+
+* **add:** add revi-ts-css template and some typos ([7e78a07](https://github.com/FedeHide/devkit-init/commit/7e78a0709da0cadc4779c034a8eede155eec395b))
+
+* **add:** add revi-js-sass-tw template and some typos ([ec71a01](https://github.com/FedeHide/devkit-init/commit/ec71a01d4f2d439c476335d0b52e71943365c930))
+
+* **add:** add revi-js-sass template ([ad53cab](https://github.com/FedeHide/devkit-init/commit/ad53cab27c37329fb506fbbf8e54db4cf1761e3f))
+
+* **add:** add add revi-js-css-tw template ([2cc7da8](https://github.com/FedeHide/devkit-init/commit/2cc7da84d7139e6944ce86720214c959545596c5))
+
+* **add:** add revi-js-css template ([115d9f6](https://github.com/FedeHide/devkit-init/commit/115d9f68cd66bd4e29694ad662563b881db63d5a))
+
+* **add:** add vn-ts-sass-tw template ([bd3885b](https://github.com/FedeHide/devkit-init/commit/bd3885b309b99354210c28974ad85442a280959d))
+
+* **add:** add vn-js-sass-tw template ([4dc1a9d](https://github.com/FedeHide/devkit-init/commit/4dc1a9d5ca7b7adfbe15a272bf65beab895b0060))
+
+* **add:** add vn-ts-sass template ([a958b3a](https://github.com/FedeHide/devkit-init/commit/a958b3a105db2bd04115164911fe3a1e40c39e0f))
+
+* **add:** add vn-js-sass template ([ed99a50](https://github.com/FedeHide/devkit-init/commit/ed99a509c24628eb3826e692c8c36734b00cad93))
+
+* **add:** add vn-ts-css-tw template ([416e484](https://github.com/FedeHide/devkit-init/commit/416e4849ec735f6eb041ee63fd77aeccaae1650f))
+
+* **add:** add vn-ts-css template and fix typos ([e11a9a9](https://github.com/FedeHide/devkit-init/commit/e11a9a9be05a7f8da27c4c5aa85413321e8ea0a8))
+
+* **add:** add vn-js-css-tw template ([c0aeced](https://github.com/FedeHide/devkit-init/commit/c0aeced298f567263d2d510d4adb6da5ccdf8a91))
+
+* **add:** add vn-js-css template ([14e1f2f](https://github.com/FedeHide/devkit-init/commit/14e1f2f871aafd25df2df20af3dd8dac04de4a97))
+
+* **add:** add renx-ts-sass-tw template ([0a785e4](https://github.com/FedeHide/devkit-init/commit/0a785e48e22b620a9f2fb0acacc244a6769a8407))
+
+* **add:** add renx-ts-sass template and fix typos ([2293603](https://github.com/FedeHide/devkit-init/commit/22936035ec5bee1b453c115d62a0f3cbda5d72e3))
+
+* **add:** add renx-js-sass-tw template ([505b957](https://github.com/FedeHide/devkit-init/commit/505b95710f4a4f446af70a3f1bf7a859b2df8f03))
+
+* **add:** add renx-js-sass template ([3875fe6](https://github.com/FedeHide/devkit-init/commit/3875fe67f5829c58d8a2b36434660d0fb8b927cc))
+
+* **add:** add renx-ts-css-tw template ([e2199e3](https://github.com/FedeHide/devkit-init/commit/e2199e3a4bb3fc8099d1ea8ce7833b535b4d96bf))
+
+* **add:** add variables to path construction ([442231d](https://github.com/FedeHide/devkit-init/commit/442231dd8d1ba6a891255802d41277b143c57566))
+
+* **add:** add renx-js-css-tw template ([a50e15d](https://github.com/FedeHide/devkit-init/commit/a50e15df8f2108bd810126382b1d0d35be33f641))
+
+* **refactor:** splitting logic into small templates to improve scalability ([0146b1f](https://github.com/FedeHide/devkit-init/commit/0146b1f8936f45468cea05c34d274df01d13d18a))
+
+* **add:** suffix to create templates dynamically 
+    - re = react
+    - nx = nextjs
+    - vi = vite
+    - vn = vanilla
+    - js = javascript
+    - ts = typescript
+    - css
+    - sass
+    - tw = tailwind
+
+### Fix
+
+* **hotfix:** favicon error on revi ([cc2f9e3](https://github.com/FedeHide/devkit-init/commit/cc2f9e309ff4e20d2e6b4efcc7c34dbd596fa1c6))
+
+* **hotfix:** sass compiler in revi and add dist folder to prettier ignore ([abf02e2](https://github.com/FedeHide/devkit-init/commit/abf02e23a841e714ab93a7eaac3d76dc15219616))
+
+* **hotfix:** remove eslintrc duplicated on revi ts and add eslint ignore ([e268e7e](https://github.com/FedeHide/devkit-init/commit/e268e7eff83ceed65433b5999ddf4ed076a0a6e3))
+
+* **hotfix:** output of from dependencies instalation on tailwind ([7025445](https://github.com/FedeHide/devkit-init/commit/7025445df53c1e02a0c8c7ad3665dcde30538400))
+
+* **hotfix:** change dir before add dependencies and sass compile error ([db535e6](https://github.com/FedeHide/devkit-init/commit/db535e64039587f89ab747c5b3366973f38b890a))
+
+* **hotfix:** remove deprecated dependencies ([b5dbe41](https://github.com/FedeHide/devkit-init/commit/b5dbe41d5758dc448b67c549eaabd067c5d99f39))
+
 ## [v1.4.5](https://github.com/FedeHide/devkit-init/releases/tag/v1.4.5) (2024-03-15)
 
 ### Fix
