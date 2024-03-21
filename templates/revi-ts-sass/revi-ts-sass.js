@@ -29,7 +29,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/main.tsx', content: templateData['main.tsx'] },
             { fileName: '/src/App.tsx', content: templateData['App.tsx'] },
             { fileName: 'index.html', content: templateData['index.html'] },
-            { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/favicon/manifest.json', content: templateData['manifest.json'] },
             { fileName: '.eslintrc.cjs', content: templateData['.eslintrc.cjs'] },
             // SASS files
             { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },

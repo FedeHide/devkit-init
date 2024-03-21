@@ -38,7 +38,7 @@
             ]
         }
     },
-    ".prettierignore": "*.md\n*LICENSE\n/node_modules\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
+    ".prettierignore": "*.md\n*LICENSE\n/node_modules\n/dist\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
     ".prettierrc.json": {
         "printWidth": 100,
         "trailingComma": "all",

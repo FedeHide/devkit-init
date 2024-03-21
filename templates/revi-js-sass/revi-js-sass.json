@@ -12,7 +12,8 @@
             "dev": "vite",
             "build": "vite build",
             "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-            "preview": "vite preview"
+            "preview": "vite preview",
+            "watch-sass": "nodemon -e scss -x \"sass src/scss/main.scss css/main.css\""
         }     
     },
     ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
@@ -37,7 +38,7 @@
             ]
         }
     },
-    ".prettierignore": "*.md\n*LICENSE\n/node_modules\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
+    ".prettierignore": "*.md\n*LICENSE\n/node_modules\n/dist\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
     ".prettierrc.json": {
         "printWidth": 100,
         "trailingComma": "all",

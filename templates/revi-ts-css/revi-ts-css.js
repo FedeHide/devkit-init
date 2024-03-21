@@ -30,7 +30,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/main.tsx', content: templateData['main.tsx'] },
             { fileName: '/src/App.tsx', content: templateData['App.tsx'] },
             { fileName: 'index.html', content: templateData['index.html'] },
-            { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/favicon/manifest.json', content: templateData['manifest.json'] },
             { fileName: '.eslintrc.cjs', content: templateData['.eslintrc.cjs'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },

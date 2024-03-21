@@ -49,8 +49,13 @@ sass_folders=(
     "src/scss/utils"
 )
 
+root_folders=(
+    "favicon"
+    "css"
+)
+
 progress_bar
-for folder in "${src_folders[@]}" "${sass_folders[@]}"; do
+for folder in "${src_folders[@]}" "${sass_folders[@]}" "${root_folders[@]}"; do
     mkdir -p "$folder"
 done
 progress_bar
@@ -69,6 +74,7 @@ touch .eslintrc.json
 # SASS
 pnpm install -D sass >/dev/null 2>&1
 progress_bar
+pnpm install -D nodemon >/dev/null 2>&1
 
 # TAILWIND
 pnpm install -D tailwindcss postcss autoprefixer >/dev/null 2>&1
