@@ -15,6 +15,7 @@
             "preview": "vite preview"
         }   
     },
+    ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
     ".prettierignore": "*.md\n*LICENSE\n/node_modules\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
     ".prettierrc.json": {
         "printWidth": 100,
