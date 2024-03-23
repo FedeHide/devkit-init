@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.1.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.1.0) (2024-03-23)
+
+### Features
+
+* **add:** add assets dir ([86c4396](https://github.com/FedeHide/devkit-init/commit/86c43968fcc7f2b334d22c4ecbcca8ec88dd89a5))
+
+* **add:** add empty robots.txt (just user-agent) to templates ([9ea202d](https://github.com/FedeHide/devkit-init/commit/9ea202dc2b57c8b358237f695b58e28fa9b888d4))
+
 ## [v2.0.3](https://github.com/FedeHide/devkit-init/releases/tag/v2.0.3) (2024-03-21)
 
 ### Features
