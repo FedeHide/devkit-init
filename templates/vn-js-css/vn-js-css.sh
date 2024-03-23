@@ -50,7 +50,7 @@ src_folders=(
 progress_bar
 
 root_folders=(
-    "public/images"
+    "public/assets"
 )
 
 progress_bar

@@ -52,6 +52,7 @@ sass_folders=(
 root_folders=(
     "favicon"
     "css"
+    "assets"
 )
 
 progress_bar

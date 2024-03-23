@@ -23,7 +23,7 @@ js_folders=(
 )
 
 root_folders=(
-    "public/images"
+    "public/assets"
 )
 
 # NEXTJS

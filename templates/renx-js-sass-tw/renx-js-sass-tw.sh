@@ -49,7 +49,11 @@ sass_folders=(
     "src/scss/utils"
 )
 
-for folder in "${src_folders[@]}" "${sass_folders[@]}"; do
+root_folders=(
+    "public/assets"
+)
+
+for folder in "${src_folders[@]}" "${sass_folders[@]}" "${root_folders[@]}"; do
     mkdir -p "$folder"
 done
 progress_bar

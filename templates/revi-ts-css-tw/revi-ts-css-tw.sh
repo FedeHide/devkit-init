@@ -45,6 +45,7 @@ src_folders=(
 
 root_folders=(
     "favicon"
+    "assets"
 )
 
 progress_bar

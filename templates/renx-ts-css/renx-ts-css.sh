@@ -43,8 +43,13 @@ src_folders=(
     "src/hooks"
     "src/interfaces"
 )
+
+root_folders=(
+    "public/assets"
+)
+
 progress_bar
-for folder in "${src_folders[@]}"; do
+for folder in "${src_folders[@]}" "${root_folders[@]}"; do
     mkdir -p "$folder"
 done
 progress_bar

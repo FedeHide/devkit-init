@@ -50,7 +50,7 @@ src_folders=(
 )
 
 root_folders=(
-    "public/images"
+    "public/assets"
 )
 
 sass_folders=(
