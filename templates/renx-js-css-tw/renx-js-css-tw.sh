@@ -63,6 +63,7 @@ pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 touch .eslintrc.json
+pnpm install -D @types/react @types/react-dom >/dev/null 2>&1
 
 cd ..
 progress_bar
