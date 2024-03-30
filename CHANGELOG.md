@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.2.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.2.0) (2024-03-30)
+
+### Features
+
+* **add:** packages for type definitions in renx/js ([44f0f05](https://github.com/FedeHide/devkit-init/commit/44f0f05d59fcf90d5ebff0d62ef441c20cb50893))
+
 ## [v2.1.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.1.0) (2024-03-23)
 
 ### Features
