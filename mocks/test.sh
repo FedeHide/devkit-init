@@ -28,7 +28,7 @@ root_folders=(
 
 # NEXTJS
 # shellcheck disable=SC2154
-pnpm create next-app@latest "$outputDirectory" --js --no-tailwind --no-eslint --app --src-dir --import-alias default --use-pnpm >/dev/null 2>&1
+pnpm create next-app@latest "$outputDirectory" --js --no-tailwind --no-eslint --app --src-dir --import-alias "@/*" --use-pnpm >/dev/null 2>&1
 
 # FLAGS
 next_ts_flag="--ts"

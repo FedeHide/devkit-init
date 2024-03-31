@@ -26,6 +26,7 @@ async function createFiles(outputDirectory) {
 
         const files = [
             // template files
+            { fileName: 'jsconfig.json', content: templateData['jsconfig.json'] },
             { fileName: '/src/main.jsx', content: templateData['main.jsx'] },
             { fileName: '/src/App.jsx', content: templateData['App.jsx'] },
             { fileName: 'index.html', content: templateData['index.html'] },
