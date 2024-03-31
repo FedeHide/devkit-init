@@ -77,11 +77,12 @@ progress_bar
 
 cd ..
 progress_bar
-## TEMPLATE init
-node "$TEMPLATE_JS_DIR" "$outputDirectory"
-progress_bar
 ## CLEANING
 rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
 rm "$outputDirectory"/src/app/main.css "$outputDirectory"/src/app/page.module.css
 rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
+
+progress_bar
+## TEMPLATE init
+node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar

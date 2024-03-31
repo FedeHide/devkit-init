@@ -87,6 +87,7 @@ cd ..
 rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
 rm "$outputDirectory"/public/vite.svg
 rm -rf "$outputDirectory"/src/assets
+
 ## TEMPLATE init
 node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar

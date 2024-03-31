@@ -67,10 +67,11 @@ pnpm install -D @types/react @types/react-dom >/dev/null 2>&1
 
 cd ..
 progress_bar
-## TEMPLATE init
-node "$TEMPLATE_JS_DIR" "$outputDirectory"
-progress_bar
 ## CLEANING
 rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
 rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
+
+progress_bar
+## TEMPLATE init
+node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar

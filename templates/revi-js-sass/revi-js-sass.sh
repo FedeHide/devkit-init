@@ -83,6 +83,7 @@ rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirect
 rm "$outputDirectory"/public/vite.svg
 rm -rf "$outputDirectory"/src/assets
 progress_bar
+
 ## TEMPLATE init
 node "$TEMPLATE_JS_DIR" "$outputDirectory"
 progress_bar
