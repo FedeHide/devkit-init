@@ -31,7 +31,6 @@ async function createFiles(outputDirectory) {
             { fileName: 'index.html', content: templateData['index.html'] },
             { fileName: '/favicon/manifest.json', content: templateData['manifest.json'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
-            { fileName: '.eslintrc.cjs', content: templateData['.eslintrc.cjs'] },
             // SASS files
             { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
             { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },
@@ -44,6 +43,7 @@ async function createFiles(outputDirectory) {
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },
+            { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
             { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },

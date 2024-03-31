@@ -85,7 +85,7 @@ pnpx tailwindcss init -p >/dev/null 2>&1
 cd ..
 ## CLEANING
 rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
-rm "$outputDirectory"/public/vite.svg
+rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs
 rm -rf "$outputDirectory"/src/assets
 
 ## TEMPLATE init

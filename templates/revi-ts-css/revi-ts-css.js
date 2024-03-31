@@ -32,7 +32,6 @@ async function createFiles(outputDirectory) {
             { fileName: 'index.html', content: templateData['index.html'] },
             { fileName: '/favicon/manifest.json', content: templateData['manifest.json'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
-            { fileName: '.eslintrc.cjs', content: templateData['.eslintrc.cjs'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },
