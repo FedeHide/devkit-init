@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.2.1](https://github.com/FedeHide/devkit-init/releases/tag/v2.2.1) (2024-03-31)
+
+### Fix
+
+* **hotfix:** preventing remove files after cleaning ([4961498](https://github.com/FedeHide/devkit-init/commit/4961498be0c1a98d38730f1abc043ea5510a66aa))
+
 ## [v2.2.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.2.0) (2024-03-30)
 
 ### Features
