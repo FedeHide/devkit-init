@@ -79,7 +79,7 @@ cd ..
 progress_bar
 ## CLEANING
 rm "$outputDirectory"/src/app/page.tsx "$outputDirectory"/src/app/layout.tsx
-rm "$outputDirectory"/src/app/main.css "$outputDirectory"/src/app/page.module.css
+rm "$outputDirectory"/src/app/globals.css "$outputDirectory"/src/app/page.module.css
 rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
 
 progress_bar
