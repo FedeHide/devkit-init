@@ -1,5 +1,15 @@
 # Changelog
 
+## [v2.2.4](https://github.com/FedeHide/devkit-init/releases/tag/v2.2.4) (2024-04-01)
+
+### Fix
+
+* **hotfix:** remove unnecessary css file ([3426f5a](https://github.com/FedeHide/devkit-init/commit/3426f5a8bd4b14c09bdbff7ea4e5460a101e2154))
+
+* **hotfix:** imports from @/* ([e3e1943](https://github.com/FedeHide/devkit-init/commit/e3e1943bef69ee417ae0a29800a5d7463c2edc7e))
+
+* **hotfix:** change .eslintrc cjs to json ([7cde1ba](https://github.com/FedeHide/devkit-init/commit/7cde1ba6873e4a7e499dfbb70afe8454c504bb94))
+
 ## [v2.2.1](https://github.com/FedeHide/devkit-init/releases/tag/v2.2.1) (2024-03-31)
 
 ### Fix
