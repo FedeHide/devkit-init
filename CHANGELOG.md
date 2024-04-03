@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.3.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.3.0) (2024-04-03)
+
+### Features
+
+* **add:** components folders; typography and colors files in sass ([5c3564a](https://github.com/FedeHide/devkit-init/commit/5c3564afbfe3d868dad585b3496ce7f665908fb5))
+
 ## [v2.2.4](https://github.com/FedeHide/devkit-init/releases/tag/v2.2.4) (2024-04-01)
 
 ### Fix
