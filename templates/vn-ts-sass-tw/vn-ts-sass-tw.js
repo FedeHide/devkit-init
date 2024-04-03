@@ -26,21 +26,23 @@ async function createFiles(outputDirectory) {
 
         const files = [
             // template files
-            { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
-            { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },
-            { fileName: '/src/scss/base/_functions.scss', content: templateData['functions.scss'] },
-            { fileName: '/src/scss/base/_index.scss', content: templateData['base_index.scss'] },
-            { fileName: '/src/scss/base/_mixins.scss', content: templateData['mixins.scss'] },
-            { fileName: '/src/scss/base/_reset.scss', content: templateData['reset.scss'] },
-            { fileName: '/src/scss/components/_index.scss', content: templateData['components_index.scss'] },
-            { fileName: '/src/scss/layout/_index.scss', content: templateData['layout_index.scss'] },
-            { fileName: '/src/scss/utils/_index.scss', content: templateData['utils_index.scss'] },
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             { fileName: 'tsconfig.json', content: templateData['tsconfig.json'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
+            // SASS files
+            { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
+            { fileName: '/src/scss/base/_breakpoints.scss', content: templateData['breakpoints.scss'] },
+            { fileName: '/src/scss/base/_functions.scss', content: templateData['functions.scss'] },
+            { fileName: '/src/scss/base/_index.scss', content: templateData['base_index.scss'] },
+            { fileName: '/src/scss/base/_mixins.scss', content: templateData['mixins.scss'] },
+            { fileName: '/src/scss/base/_colors.scss', content: templateData['colors.scss'] },
+            { fileName: '/src/scss/base/_typography.scss', content: templateData['typography.scss'] },
+            { fileName: '/src/scss/base/_reset.scss', content: templateData['reset.scss'] },
+            { fileName: '/src/scss/layout/_index.scss', content: templateData['layout_index.scss'] },
+            { fileName: '/src/scss/components/_index.scss', content: templateData['components_index.scss'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintignore', content: templateData['.eslintignore'] },

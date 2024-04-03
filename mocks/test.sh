@@ -11,7 +11,7 @@ sass_folders=(
     "src/scss/base"
     "src/scss/components"
     "src/scss/layout"
-    "src/scss/utils"
+    "src/scss/components"
 )
 
 ts_folders=(

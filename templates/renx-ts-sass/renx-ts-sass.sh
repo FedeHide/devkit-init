@@ -47,7 +47,7 @@ src_folders=(
 sass_folders=(
     "src/scss/base"
     "src/scss/layout"
-    "src/scss/utils"
+    "src/scss/components"
 )
 
 root_folders=(

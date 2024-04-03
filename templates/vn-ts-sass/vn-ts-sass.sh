@@ -55,9 +55,8 @@ root_folders=(
 
 sass_folders=(
     "src/scss/base"
-    "src/scss/components"
     "src/scss/layout"
-    "src/scss/utils"
+    "src/scss/components"
 )
 
 progress_bar
