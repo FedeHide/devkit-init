@@ -114,7 +114,8 @@
             "forceConsistentCasingInFileNames": true,
             "strict": true,
             "noImplicitAny": true,
-            "skipLibCheck": true
+            "skipLibCheck": true,
+            "moduleResolution": "node"
         }
     },
     "robots.txt": "# https://www.robotstxt.org/robotstxt.html\nUser-agent: *\nDisallow:",
