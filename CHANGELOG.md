@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.4.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.4.0) (2024-04-09)
+
+### Features
+
+* **add:** vn tsconfig for node modules ([25171f1](https://github.com/FedeHide/devkit-init/commit/25171f136771200af25eb321bf6e274012411298))
+
 ## [v2.3.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.3.0) (2024-04-03)
 
 ### Features
