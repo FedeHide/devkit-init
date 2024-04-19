@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
-const path = require('path');
+const fs = require('node:fs').promises;
+const path = require('node:path');
 
 // Reads the output directory from the command line arguments.
 const outputDirectory = process.argv[2];
