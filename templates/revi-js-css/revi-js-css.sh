@@ -67,9 +67,9 @@ touch .eslintrc.json
 cd ..
 ## CLEANING
 progress_bar
-rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
-rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs
-rm -rf "$outputDirectory"/src/assets
+rm "$outputDirectory"/src/main.jsx "$outputDirectory"/src/App.jsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css 2>/dev/null
+rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs 2>/dev/null
+rm -rf "$outputDirectory"/src/assets 2>/dev/null
 
 progress_bar
 ## TEMPLATE init

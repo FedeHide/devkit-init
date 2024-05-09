@@ -78,9 +78,9 @@ pnpm install -D nodemon >/dev/null 2>&1
 cd ..
 ## CLEANING
 progress_bar
-rm "$outputDirectory"/src/main.tsx "$outputDirectory"/src/App.tsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css
-rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs
-rm -rf "$outputDirectory"/src/assets
+rm "$outputDirectory"/src/main.tsx "$outputDirectory"/src/App.tsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css 2>/dev/null
+rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs 2>/dev/null
+rm -rf "$outputDirectory"/src/assets 2>/dev/null
 
 progress_bar
 ## TEMPLATE init

@@ -35,7 +35,7 @@ pnpm create next-app@latest "$outputDirectory" --ts --no-tailwind --no-eslint --
 
 progress_bar
 cd "$outputDirectory" || exit 1
-rm -rf ".git"
+rm -rf ".git" 2>/dev/null
 
 ## MAKING folders
 src_folders=(
@@ -78,9 +78,9 @@ progress_bar
 cd ..
 progress_bar
 ## CLEANING
-rm "$outputDirectory"/src/app/page.tsx "$outputDirectory"/src/app/layout.tsx
-rm "$outputDirectory"/src/app/globals.css "$outputDirectory"/src/app/page.module.css
-rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
+rm "$outputDirectory"/src/app/page.tsx "$outputDirectory"/src/app/layout.tsx 2>/dev/null
+rm "$outputDirectory"/src/app/globals.css "$outputDirectory"/src/app/page.module.css 2>/dev/null
+rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico 2>/dev/null
 
 progress_bar
 ## TEMPLATE init

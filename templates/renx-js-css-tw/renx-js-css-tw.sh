@@ -35,7 +35,7 @@ pnpm create next-app@latest "$outputDirectory" --js --tailwind --no-eslint --app
 
 progress_bar
 cd "$outputDirectory" || exit 1
-rm -rf ".git"
+rm -rf ".git" 2>/dev/null 
 
 ## MAKING folders
 src_folders=(
@@ -68,8 +68,8 @@ pnpm install -D @types/react @types/react-dom >/dev/null 2>&1
 cd ..
 progress_bar
 ## CLEANING
-rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js
-rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico
+rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js 2>/dev/null
+rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico 2>/dev/null
 
 progress_bar
 ## TEMPLATE init
