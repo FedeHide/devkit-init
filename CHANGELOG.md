@@ -1,5 +1,19 @@
 # Changelog
 
+## [v2.5.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.5.0) (2024-05-09)
+
+### Features
+
+* **chores:** change require import to documentation recco ([4b7df2c](https://github.com/FedeHide/devkit-init/commit/4b7df2cde1862fc04868b6dd286d29bd66424799))
+
+### Fix
+
+* **hotfix:** issues with peer dependencies with eslint ([b9b15b0](https://github.com/FedeHide/devkit-init/commit/b9b15b0d507d0817c289af4b97aaacf2b9937353))
+
+* **hotfix:** redirect stderr to null from files deletion ([523243f](https://github.com/FedeHide/devkit-init/commit/523243f22572df80e009289a1e215c624ad29327))
+
+* **hotfix:** remove utils sass dir ([dea7a29](https://github.com/FedeHide/devkit-init/commit/dea7a2969c971814a10cb0391324dd40da9c1c7f))
+
 ## [v2.4.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.4.0) (2024-04-09)
 
 ### Features
