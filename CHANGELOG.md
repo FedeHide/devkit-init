@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.5.1](https://github.com/FedeHide/devkit-init/releases/tag/v2.5.1) (2024-08-15)
+
+### Fix
+
+* **hotfix:** new issues with peer dependencies with eslint 9 ([9566cd9](https://github.com/FedeHide/devkit-init/commit/9566cd9c1359e97a0b117c9e534da5180ce5f875))
+
 ## [v2.5.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.5.0) (2024-05-09)
 
 ### Features
