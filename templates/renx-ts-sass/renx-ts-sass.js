@@ -27,6 +27,7 @@ async function createFiles(outputDirectory) {
         const files = [
             // template files
             { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
+            { fileName: 'next-sitemap.config.mjs', content: templateData['next-sitemap.config.mjs'] },
             { fileName: '/src/app/layout.tsx', content: templateData['layout.tsx'] },
             { fileName: '/src/app/page.tsx', content: templateData['page.tsx'] },
             { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },

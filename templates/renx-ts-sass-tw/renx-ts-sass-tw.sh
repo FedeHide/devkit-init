@@ -75,6 +75,9 @@ touch .eslintrc.json
 pnpm install -D sass >/dev/null 2>&1
 progress_bar
 
+## ADD SITEMAP PLUGIN
+pnpm add next-sitemap -D >/dev/null 2>&1
+
 cd ..
 progress_bar
 ## CLEANING

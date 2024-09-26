@@ -10,6 +10,7 @@
         "scripts": {
             "dev": "next dev",
             "build": "next build",
+            "postbuild": "next-sitemap",
             "start": "next start",
             "lint": "next lint"
         }        
@@ -115,5 +116,6 @@
     "layout_index.scss": "",
     "components_index.scss": "",
     "layout.tsx": "import type { Metadata, Viewport } from 'next'\nimport '../scss/main.scss'\n\nexport const viewport: Viewport = {\n    themeColor: '#ffffff',\n}\n\nexport const metadata: Metadata = {\n    title: 'Palindrome Checker | freeCodeCamp' /* cambiar */,\n    description: 'This is a Palindrome checker, a freecodecamp assignment' /* cambiar */,\n    manifest: '/site.webmanifest',\n    robots: 'index, follow',\n    authors: [{ name: 'FedeHide' }],\n    keywords: ['Palindrome', 'Checker', 'freeCodeCamp'] /* cambiar */,\n    icons: {\n        apple: '/apple-touch-icon.png',\n        icon: '/favicon.ico',\n    },\n    openGraph: {\n        url: 'https://palindrome-checker.vercel.app/' /* cambiar */,\n        type: 'website',\n        title: 'Palindrome Checker | freeCodeCamp' /* cambiar */,\n        description: 'This is a Palindrome checker, a freecodecamp assignment' /* cambiar */,\n        images: [\n            'https://raw.githubusercontent.com/FedeHide/pokemon-search/main/public/assets/pokemon-search-screenshot.webp' /* cambiar */,\n        ],\n    },\n    twitter: {\n        card: 'summary_large_image',\n        site: 'https://palindrome-checker.vercel.app/' /* cambiar */,\n    },\n}\n\nexport default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>): JSX.Element {\n    return (\n        <html lang=\"en\">\n            <head>\n                <meta name=\"mobile-web-app-capable\" content=\"yes\" />\n                <meta name=\"apple-mobile-web-app-title\" content=\"Pokemon Search App\" /* cambiar */ />\n                <meta name=\"apple-mobile-web-app-status-bar-style\" content=\"default\" />\n            </head>\n            <body>{children}</body>\n        </html>\n    )\n}",
-    "page.tsx": "export default function Home(): JSX.Element {\n    return (\n        <>\n            <h1>Home</h1>\n            <p className='text-3xl'>Project</p>\n        </>\n    )\n}"
+    "page.tsx": "export default function Home(): JSX.Element {\n    return (\n        <>\n            <h1>Home</h1>\n            <p className='text-3xl'>Project</p>\n        </>\n    )\n}",
+    "next-sitemap.config.mjs": "/** @type {import('next-sitemap').IConfig} */\nmodule.exports = {\n\tsiteUrl: 'https://portfolio-fedehide.vercel.app',\n\texclude: ['/icon.svg', '/apple-icon.png', '/manifest.webmanifest', '/tags/*'],\n\tsitemapSize: 5000,\n\tgenerateIndexSitemap: false,\n\tgenerateRobotsTxt: true,\n\trobotsTxtOptions: {\n\t\tpolicies: [\n\t\t\t{\n\t\t\t\tuserAgent: '*',\n\t\t\t\tallow: '/'\n\t\t\t},\n\t\t],\n\t},\n};\n"
 }

@@ -66,6 +66,9 @@ progress_bar
 pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 touch .eslintrc.json
 
+## ADD SITEMAP PLUGIN
+pnpm add next-sitemap -D >/dev/null 2>&1
+
 cd ..
 progress_bar
 ## CLEANING
