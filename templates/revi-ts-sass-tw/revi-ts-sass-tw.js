@@ -29,7 +29,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/main.tsx', content: templateData['main.tsx'] },
             { fileName: '/src/App.tsx', content: templateData['App.tsx'] },
             { fileName: 'index.html', content: templateData['index.html'] },
-            { fileName: '/favicon/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/favicon/site.webmanifest', content: templateData['site.webmanifest'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
             // SASS files

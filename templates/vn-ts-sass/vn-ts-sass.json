@@ -49,7 +49,7 @@
         "arrowParens": "always",
         "endOfLine": "auto"
     },
-    "manifest.json": {
+    "site.webmanifest": {
         "name": "titulo",
         "short_name": "titulo",
         "description": "description",

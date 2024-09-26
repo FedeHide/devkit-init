@@ -29,7 +29,7 @@ async function createFiles(outputDirectory) {
             { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
             { fileName: '/src/app/layout.jsx', content: templateData['layout.jsx'] },
             { fileName: '/src/app/page.jsx', content: templateData['page.jsx'] },
-            { fileName: '/public/manifest.json', content: templateData['manifest.json'] },
+            { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             // SASS files
             { fileName: '/src/scss/main.scss', content: templateData['main.scss'] },
