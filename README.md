@@ -43,4 +43,4 @@ See [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 
-MIT License © 2024-Present [Fede Hide](https://github.com/FedeHide)
+© 2024-Present by [Fede Hide](https://github.com/FedeHide). Licensed under the MIT License.
