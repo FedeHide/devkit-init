@@ -1,5 +1,32 @@
 # Changelog
 
+## [v2.6.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.6.0) (2024-09-27)
+
+### Features
+
+* **add:** next-sitemap configuration to next templates ([6bbce57](https://github.com/FedeHide/devkit-init/commit/6bbce5749c618e995cabf5ec384d4a8bcaa910cc))
+
+### Fix
+
+* **hotfix:** meta tag for web app capable ([8bf5ffa](https://github.com/FedeHide/devkit-init/commit/8bf5ffa2c551c133ca2b0def4602783fc7567875))
+
+* **hotfix:** remove dark theme schema from CSS reset template ([760d7da](https://github.com/FedeHide/devkit-init/commit/760d7da005584ab34871068b0fe3f9631583ceeb))
+
+### Other Changes
+
+* **chores:** update eslint config and layout page on next templates ([aaa2f6e](https://github.com/FedeHide/devkit-init/commit/aaa2f6e1001230a7e0775f8b1d5072fc239b6168))
+
+* **chores:** update basic skeleton for robots.txt in templates ([f8397a3](https://github.com/FedeHide/devkit-init/commit/f8397a306f48a74eae81b89175f0461e47020407))
+
+* **chores:** update css reset for change auto style on input autocompletes in templates ([89bea22](https://github.com/FedeHide/devkit-init/commit/89bea22a0d1c9dece74ac5f0d4100a390f7ff8b9))
+
+* **chores:** update manifest.json to site.webmanifest for improved compatibility in templates ([5ffa0fe](https://github.com/FedeHide/devkit-init/commit/5ffa0fe6d74596025e7c20a23529fb1308ce428b))
+
+* **chores:** update README text in templates ([a718859](https://github.com/FedeHide/devkit-init/commit/a718859752c97729f523b63e4eefbd1a87d7cfc8))
+
+* **docs:** update readme ([4787f0e](https://github.com/FedeHide/devkit-init/commit/4787f0e54fcf17459d93ccbe1a882a5b64060355))
+
+
 ## [v2.5.1](https://github.com/FedeHide/devkit-init/releases/tag/v2.5.1) (2024-08-15)
 
 ### Fix
