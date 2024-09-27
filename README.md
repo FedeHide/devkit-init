@@ -3,6 +3,8 @@
 ## Introduction
 This package automates the setup process for my development projects for react and vanilla JS
 
+⚠️ **Important:** This package only works on Linux, WSL (Windows Subsystem for Linux), and macOS. It may not function properly on native Windows environments.
+
 ## Building
 
 ### npm

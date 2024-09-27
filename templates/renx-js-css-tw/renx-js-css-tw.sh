@@ -55,7 +55,7 @@ progress_bar
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint@8.56 eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@16.0.0 eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D eslint@^8.57.0 eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@16.0.0 eslint-plugin-promise@^6.0.0 >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
@@ -71,7 +71,7 @@ pnpm add next-sitemap -D >/dev/null 2>&1
 cd ..
 progress_bar
 ## CLEANING
-rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js 2>/dev/null
+rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js "$outputDirectory"/src/app/globals.css 2>/dev/null
 rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico 2>/dev/null
 
 progress_bar

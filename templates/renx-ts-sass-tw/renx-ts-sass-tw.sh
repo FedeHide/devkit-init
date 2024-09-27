@@ -62,7 +62,7 @@ progress_bar
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D typescript@latest eslint@8.56 @typescript-eslint/eslint-plugin@7.8.0 eslint-config-love@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@16.0.0 eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D typescript@latest eslint@^8.57.0 @typescript-eslint/eslint-plugin@7.8.0 eslint-config-love@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@16.0.0 eslint-plugin-promise@^6.0.0 >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
