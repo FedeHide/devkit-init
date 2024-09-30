@@ -1,5 +1,15 @@
 # Changelog
 
+## [v2.6.3](https://github.com/FedeHide/devkit-init/releases/tag/v2.6.3) (2024-09-30)
+
+### Fix
+
+* **hotfix:** eslint dependencies, types for TS and tw config in vanilla ([e7d8a7a](https://github.com/FedeHide/devkit-init/commit/e7d8a7a2c99e1f7e44ee25fd0e3c8c484e4136e6))
+
+* **hotfix:** geist font config ([7c3dd05](https://github.com/FedeHide/devkit-init/commit/7c3dd05d2a90f1c3b12ddb23c82abb53096e5351))
+
+* **hotfix:** geist font from reset; remove unnecessary comment ([912c673](https://github.com/FedeHide/devkit-init/commit/912c673df7c40a19c8fc7d3641018470230580bb))
+
 ## [v2.6.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.6.0) (2024-09-27)
 
 ### Features
