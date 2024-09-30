@@ -13,7 +13,7 @@
             "rollup": "rollup --config --watch",
             "watch-ts": "tsc -w",
             "watch-sass": "nodemon -e scss -x \"sass src/scss/main.scss dist/css/main.css\"",
-            "tailwind": "pnpx tailwindcss -i ./src/css/main.css -o ./dist/css/main.css --watch"
+            "tailwind": "pnpx tailwindcss -i ./src/cscss/main.scss -o ./dist/css/main.css --watch"
         }        
     },
     ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
