@@ -31,7 +31,7 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-pnpm create next-app@latest "$outputDirectory" --js --tailwind --no-eslint --app --src-dir --import-alias "@/*" --use-pnpm >/dev/null 2>&1
+pnpm create next-app@latest "$outputDirectory" --no-turbopack --js --tailwind --no-eslint --app --src-dir --import-alias "@/*" --use-pnpm >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -61,7 +61,7 @@ progress_bar
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint@^8.57.0 eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@16.0.0 eslint-plugin-promise@^6.0.0 >/dev/null 2>&1
+pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
@@ -69,7 +69,6 @@ pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-config-next@latest >/dev/null 2>&1
 touch .eslintrc.json
-pnpm install -D @types/react @types/react-dom >/dev/null 2>&1
 
 # SASS
 pnpm install -D sass >/dev/null 2>&1

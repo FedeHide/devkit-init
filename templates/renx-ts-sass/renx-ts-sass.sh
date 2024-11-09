@@ -31,7 +31,7 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-pnpm create next-app@latest "$outputDirectory" --ts --no-tailwind --no-eslint --app --src-dir --import-alias "@/*" --use-pnpm >/dev/null 2>&1
+pnpm create next-app@latest "$outputDirectory" --no-turbopack --ts --no-tailwind --no-eslint --app --src-dir --import-alias "@/*" --use-pnpm >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -62,8 +62,8 @@ progress_bar
 ## PRETTIER & ESLINT RULES
 pnpm install -D prettier >/dev/null 2>&1
 progress_bar
-pnpm install -D typescript@5.4.5 eslint@^8.57.0 eslint-config-love@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@16.0.0 eslint-plugin-promise@^6.0.0 >/dev/null 2>&1
-pnpm install -D @types/react @types/react-dom @typescript-eslint/eslint-plugin@7.8.0 >/dev/null @typescript-eslint/parser 2>&1
+pnpm install -D typescript@latest eslint@latest eslint-config-love@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D @types/react @types/react-dom @typescript-eslint/eslint-plugin@latest @typescript-eslint/parser >/dev/null 2>&1
 progress_bar
 pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
 progress_bar
