@@ -7,14 +7,8 @@ This package automates the setup process for my development projects for react a
 
 ## Building
 
-### npm
 ```bash
 npx devkit-init@latest
-```
-
-### pnpm
-```bash
-pnpx devkit-init@latest
 ```
 
 If you encounter issues running this script, try granting it execution permissions:

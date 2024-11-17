@@ -22,11 +22,37 @@
             "es2021": true,
             "node": true
         },
-        "extends": ["standard", "prettier", "plugin:prettier/recommended", "next/core-web-vitals"],
-        "plugins": ["prettier"],
+        "extends": [
+            "next/core-web-vitals",
+            "standard",
+            "prettier",
+            "plugin:prettier/recommended",
+            "plugin:react/recommended",
+            "plugin:react-hooks/recommended",
+            "plugin:promise/recommended",
+            "plugin:jsx-a11y/recommended"
+        ],
+        "plugins": [
+            "eslint-plugin-import-helpers",
+            "prettier",
+            "jsx-a11y",
+            "unused-imports",
+            "react",
+            "react-hooks",
+            "import",
+            "promise"
+        ],
         "parserOptions": {
             "ecmaVersion": "latest",
             "sourceType": "module"
+        },
+        "settings": {
+            "import/resolver": {
+                "node": {
+                    "extensions": [".js", ".jsx", ".ts", ".tsx"]
+                },
+                "typescript": {}
+            }
         },
         "rules": {
             "prettier/prettier": [
@@ -34,17 +60,60 @@
                 {
                     "semi": false
                 }
-            ]
-        }
+            ],
+            "unused-imports/no-unused-imports": "warn",
+            "unused-imports/no-unused-vars": [
+                "warn",
+                {
+                    "vars": "all",
+                    "varsIgnorePattern": "^_",
+                    "args": "after-used",
+                    "argsIgnorePattern": "^_"
+                }
+            ],
+            "import-helpers/order-imports": [
+                "warn",
+                {
+                    "newlinesBetween": "always",
+                    "groups": ["module", "/^@/", ["parent", "sibling", "index"]],
+                    "alphabetize": { "order": "asc", "ignoreCase": true }
+                }
+            ],
+            "react/jsx-uses-react": "off",
+            "react/react-in-jsx-scope": "off",
+            "react-hooks/rules-of-hooks": "error",
+            "react-hooks/exhaustive-deps": "warn",
+            "promise/always-return": "warn",
+            "promise/catch-or-return": "warn",
+            "n/no-deprecated-api": "warn"
+        },
+        "overrides": [
+            {
+                "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
+                "rules": {
+                    "n/no-missing-import": "off"
+                }
+            }
+        ],
+        "ignorePatterns": [
+            "dist", 
+            "*.mjs", 
+            "next-env.d.ts", 
+            "node_modules", 
+            ".next", 
+            "public", 
+            "yarn.lock", 
+            "package-lock.json"
+        ]
     },
-    ".prettierignore": "*.md\n*LICENSE\n/node_modules\n/dist\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
+    ".prettierignore": "*.md\n*LICENSE\n/node_modules\n.next\nnext-env.d.ts\npublic\nyarn.lock\npackage-lock.json\n/dist\n\n# sass\n.sass-cache/\n*.css.map\n*.sass.map\n*.scss.map\n\n# typescript\n*.js.map",
     ".prettierrc.json": {
-        "printWidth": 100,
-        "trailingComma": "all",
-        "tabWidth": 4,
-        "useTabs": true,
         "semi": false,
         "singleQuote": true,
+        "trailingComma": "all",
+        "useTabs": true,
+        "tabWidth": 4,
+        "printWidth": 100,
         "bracketSpacing": true,
         "arrowParens": "always",
         "endOfLine": "auto"
