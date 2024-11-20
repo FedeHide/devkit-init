@@ -1,5 +1,23 @@
 # Changelog
 
+## [v2.8.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.8.0) (2024-11-19)
+
+### Features
+
+* **feat:** add CORS middleware to RENX templates ([abb090e](https://github.com/FedeHide/devkit-init/commit/abb090e74dea7d6289d03588a5fb1726af888502))
+
+* **feat:** update metadata in nextjs templates ([c2b4167](https://github.com/FedeHide/devkit-init/commit/c2b4167a7be7e9b433635207cd1f2c6211560c7c))
+
+* **feat:** add package.lock.json to .gitignore to all templates ([72ef2f7](https://github.com/FedeHide/devkit-init/commit/72ef2f7011819e062a2aba4bf73bb08a7f399000))
+
+* **feat:** update eslint rules and config on next templates ([39e0268](https://github.com/FedeHide/devkit-init/commit/39e0268e3e90fba29de32e17cff3fa9d5e7ac6d6))
+
+* **feat:** update eslint dependencies and add --no-turbopack flag in next templates (not ready for prod) ([4d0ad38](https://github.com/FedeHide/devkit-init/commit/4d0ad38d43ceabec1a0a4a6ebee59e26966f1956))
+
+### Other Changes
+
+* **refactor:** template indentation for improved readability ([88722b6](https://github.com/FedeHide/devkit-init/commit/88722b63acb61eab8ba70f9c867d3a133f954371))
+
 ## [v2.6.3](https://github.com/FedeHide/devkit-init/releases/tag/v2.6.3) (2024-09-30)
 
 ### Fix
