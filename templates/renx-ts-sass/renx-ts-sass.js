@@ -30,6 +30,8 @@ async function createFiles(outputDirectory) {
             { fileName: 'next-sitemap.config.mjs', content: templateData['next-sitemap.config.mjs'] },
             { fileName: '/src/app/layout.tsx', content: templateData['layout.tsx'] },
             { fileName: '/src/app/page.tsx', content: templateData['page.tsx'] },
+            { fileName: '/src/middleware.ts', content: templateData['middleware.ts'] },
+            { fileName: 'src/lib/corsMiddleware.ts', content: templateData['corsMiddleware.ts'] },
             { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             // SASS files

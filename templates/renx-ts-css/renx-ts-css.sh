@@ -42,8 +42,8 @@ src_folders=(
     "src/components"
     "src/hooks"
     "src/interfaces"
+    "src/lib"
 )
-
 root_folders=(
     "public/assets"
 )

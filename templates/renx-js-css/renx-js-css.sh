@@ -41,6 +41,7 @@ rm -rf ".git" 2>/dev/null
 src_folders=(
     "src/components"
     "src/hooks"
+    "src/lib"
 )
 
 root_folders=(

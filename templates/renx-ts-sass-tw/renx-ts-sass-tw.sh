@@ -42,6 +42,7 @@ src_folders=(
     "src/components"
     "src/hooks"
     "src/interfaces"
+    "src/lib"
 )
 
 sass_folders=(
