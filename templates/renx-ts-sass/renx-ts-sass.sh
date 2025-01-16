@@ -60,11 +60,8 @@ done
 progress_bar
 
 ## ESLINT RULES
-## eslint@8.57.1 -> because peer dependency issues with eslint-config-standard
-## eslint-plugin-import-helpers@1.3.1 -> because peer dependency issues with eslint 8
-## eslint-plugin-n@^16 eslint-plugin-promise@^6 -> because peer dependency issues with eslint-config-standard
 progress_bar
-pnpm install -D eslint@8.57.1 eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@^16 eslint-plugin-promise@^6 eslint-plugin-import-helpers@1.3.1 eslint-plugin-unused-imports@latest eslint-plugin-react-hooks@latest eslint-plugin-jsx-a11y@latest >/dev/null 2>&1
+pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest eslint-plugin-unused-imports@latest eslint-plugin-react-hooks@latest eslint-plugin-jsx-a11y@latest >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 
