@@ -1,5 +1,17 @@
 # Changelog
 
+## [v2.9.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.9.0) (2025-01-15)
+
+### Fix
+
+* **hotfix:** import error with geist font in next templates ([68fc41d](https://github.com/FedeHide/devkit-init/commit/68fc41d326d8342fd6571c6758ca74495ca94ad4))
+
+### Other Changes
+
+* **chores:** add import type for JSX in TS next templates ([3d5f252](https://github.com/FedeHide/devkit-init/commit/3d5f252c6cb7c0293cd33feb79b2a6b57b0e95d8))
+
+* **chores:** remove eslintignore from all templates ([61e1883](https://github.com/FedeHide/devkit-init/commit/61e18832fcdaf2f629ea131ef160001638006444))
+
 ## [v2.8.2](https://github.com/FedeHide/devkit-init/releases/tag/v2.8.2) (2025-01-15)
 
 ### Fix
