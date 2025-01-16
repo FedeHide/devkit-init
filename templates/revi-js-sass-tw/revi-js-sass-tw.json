@@ -16,7 +16,6 @@
             "watch-sass": "nodemon -e scss -x \"sass src/scss/main.scss css/main.css\""
         }     
     },
-    ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
     ".eslintrc.json": {
         "root": true,
         "env": {

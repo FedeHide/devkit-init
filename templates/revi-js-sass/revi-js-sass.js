@@ -45,7 +45,6 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/scss/components/_index.scss', content: templateData['components_index.scss'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
-            { fileName: '.eslintignore', content: templateData['.eslintignore'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },

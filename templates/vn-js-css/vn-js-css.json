@@ -13,7 +13,6 @@
             "rollup": "rollup --config --watch"
         }        
     },
-    ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
     ".eslintrc.json": {
         "env": {
             "browser": true,

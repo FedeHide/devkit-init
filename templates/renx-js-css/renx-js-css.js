@@ -38,7 +38,6 @@ async function createFiles(outputDirectory) {
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
-            { fileName: '.eslintignore', content: templateData['.eslintignore'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },

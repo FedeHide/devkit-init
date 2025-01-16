@@ -15,7 +15,6 @@
             "lint": "next lint"
         }        
     },
-    ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
     ".eslintrc.json": {
         "env": {
             "browser": true,

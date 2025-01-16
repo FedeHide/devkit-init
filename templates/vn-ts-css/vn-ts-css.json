@@ -14,7 +14,6 @@
             "watch-ts": "tsc -w"
         }        
     },
-    ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
     ".eslintrc.json": {
         "env": {
             "browser": true,

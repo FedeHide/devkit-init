@@ -35,7 +35,6 @@ async function createFiles(outputDirectory) {
             { fileName: 'tailwind.config.js', content: templateData['tailwind.config.js'] },
             // common files
             { fileName: 'package.json', content: templateData['package.json'] },
-            { fileName: '.eslintignore', content: templateData['.eslintignore'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },

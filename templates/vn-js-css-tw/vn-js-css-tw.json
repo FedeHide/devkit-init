@@ -14,7 +14,6 @@
             "tailwind": "pnpx tailwindcss -i ./src/css/main.css -o ./dist/css/main.css --watch"
         }        
     },
-    ".eslintignore": "/dist\n*.mjs\nnext-env.d.ts",
     ".eslintrc.json": {
         "env": {
             "browser": true,
