@@ -1,5 +1,15 @@
 # Changelog
 
+## [v2.8.1](https://github.com/FedeHide/devkit-init/releases/tag/v2.8.1) (2025-01-15)
+
+### Fix
+
+* **hotfix:** remove eslint rule where is needed to add a space line beetween imports ([e45abbc](https://github.com/FedeHide/devkit-init/commit/e45abbcdf67b179aa1dfc95f75171c9c4b6343b5))
+
+### Other Changes
+
+* **chores:** change apple-mobile-web-app-capable to mobile-web-app-capable in next templates meta tags ([b513fce](https://github.com/FedeHide/devkit-init/commit/b513fce82274e768044e4510027e2aeedca67ebc))
+
 ## [v2.8.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.8.0) (2024-11-19)
 
 ### Features

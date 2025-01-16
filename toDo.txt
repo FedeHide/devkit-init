@@ -1,2 +1,0 @@
-+ add meta tags updates to revi , vn (renx ready OK) 
-+ add cors middleware to revi , vn (renx ready OK)
