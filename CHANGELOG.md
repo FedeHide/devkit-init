@@ -1,5 +1,11 @@
 # Changelog
 
+## [v2.8.2](https://github.com/FedeHide/devkit-init/releases/tag/v2.8.2) (2025-01-15)
+
+### Fix
+
+* **hotfix:** nextjs eslint and fonts compatibilities ([7d599fc](https://github.com/FedeHide/devkit-init/commit/7d599fc206e3462f864ea4afd0f7cd9a1e3803c8))
+
 ## [v2.8.1](https://github.com/FedeHide/devkit-init/releases/tag/v2.8.1) (2025-01-15)
 
 ### Fix
