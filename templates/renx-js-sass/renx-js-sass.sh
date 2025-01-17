@@ -39,7 +39,7 @@ next_options=(
     "--app"
     "--src-dir"
     "--import-alias"
-    "\"@/*\""
+    "@/*"
     "--use-pnpm"
 )
 npx create-next-app@15.1.4 "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
