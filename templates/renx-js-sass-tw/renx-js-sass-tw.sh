@@ -31,63 +31,88 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-npx create-next-app@latest "$outputDirectory" --no-turbopack --js --tailwind --eslint --app --src-dir --import-alias "@/*" --use-pnpm >/dev/null 2>&1
+next_options=(
+    "--no-turbopack"
+    "--js"
+    "--tailwind"
+    "--eslint"
+    "--app"
+    "--src-dir"
+    "--import-alias"
+    "\"@/*\""
+    "--use-pnpm"
+)
+npx create-next-app@15.1.4 "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
 rm -rf ".git" 2>/dev/null
 
 ## MAKING folders
-src_folders=(
+folders=(
     "src/components"
     "src/hooks"
     "src/lib"
-)
-
-sass_folders=(
+    "public/assets"
     "src/scss/base"
     "src/scss/layout"
     "src/scss/components"
 )
-
-root_folders=(
-    "public/assets"
-)
-
-for folder in "${src_folders[@]}" "${sass_folders[@]}" "${root_folders[@]}"; do
-    mkdir -p "$folder"
-done
+mkdir -p "${folders[@]}" 2>/dev/null
 progress_bar
 
 ## ESLINT RULES
+eslint_rules=(
+    "eslint@9.18.0"
+    "eslint-plugin-react@7.37.4"
+    "eslint-plugin-import@2.31.0"
+    "eslint-plugin-n@17.15.1"
+    "eslint-plugin-promise@7.2.1"
+    "eslint-plugin-unused-imports@4.1.4"
+    "eslint-plugin-react-hooks@5.1.0"
+    "eslint-plugin-jsx-a11y@6.10.2"
+    "eslint-plugin-prettier@5.2.2"
+    "eslint-config-prettier@10.0.1"
+)
 progress_bar
-pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-react@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest eslint-plugin-unused-imports@latest eslint-plugin-react-hooks@latest eslint-plugin-jsx-a11y@latest >/dev/null 2>&1
+pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 
-## PRETTIER + ESLINT plugin
-pnpm install -D prettier@latest >/dev/null 2>&1
+## OTHER DEPENDENCIES
+other_dependencies=(
+    "prettier@3.4.2"
+    "prettier-plugin-tailwindcss@0.6.10"
+    "eslint-plugin-tailwindcss@3.17.5"
+    "next-sitemap@4.2.3"
+    "sass@1.83.4"
+)
 progress_bar
-pnpm install -D eslint-plugin-prettier@latest eslint-config-prettier@latest >/dev/null 2>&1
-pnpm install -D prettier-plugin-tailwindcss@latest >/dev/null 2>&1
-progress_bar
-
-## TAILWIND ESLINT plugin
-pnpm install -D eslint-plugin-tailwindcss@latest >/dev/null 2>&1
-
-# SASS
-pnpm install -D sass >/dev/null 2>&1
+pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
-## ADD SITEMAP PLUGIN
-pnpm add next-sitemap -D >/dev/null 2>&1
 
+
+progress_bar
 cd ..
 progress_bar
 ## CLEANING
-rm "$outputDirectory"/src/app/page.js "$outputDirectory"/src/app/layout.js 2>/dev/null
-rm "$outputDirectory"/src/app/globals.css "$outputDirectory"/src/app/page.module.css 2>/dev/null
-rm "$outputDirectory"/public/next.svg "$outputDirectory"/public/vercel.svg "$outputDirectory"/src/app/favicon.ico 2>/dev/null
+files_to_remove=(
+    "/src/app/page.js"
+    "/src/app/layout.js"
+    "/src/app/globals.css"
+    "/src/app/page.module.css"
+    "/public/next.svg"
+    "/public/vercel.svg"
+    "/src/app/favicon.ico"
+    "/public/file.svg"
+    "/public/globe.svg"
+    "/public/window.svg"
+    "/eslint.config.mjs"
+    "/next.config.ts"
+)
+rm -rf "${files_to_remove[@]/#/$outputDirectory}" 2>/dev/null
+
 
 progress_bar
 ## TEMPLATE init
