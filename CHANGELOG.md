@@ -1,5 +1,11 @@
 # Changelog
 
+## [v3.0.1](https://github.com/FedeHide/devkit-init/releases/tag/v3.0.1) (2025-01-17)
+
+### Fix
+
+* **hotfix:** import alias default config typo error in nextjs templates ([67aef29](https://github.com/FedeHide/devkit-init/commit/67aef296bac737d0f8f8409b90afade0c74b55cb))
+
 ## [v3.0.0](https://github.com/FedeHide/devkit-init/releases/tag/v3.0.0) (2025-01-17)
 
 ### Refactor
