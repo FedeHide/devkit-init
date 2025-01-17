@@ -1,5 +1,11 @@
 # Changelog
 
+## [v3.0.0](https://github.com/FedeHide/devkit-init/releases/tag/v3.0.0) (2025-01-17)
+
+### Refactor
+
+* **refactor:** improve bash script in nextjs templates ([e577414](https://github.com/FedeHide/devkit-init/commit/e57741494bdf54389035197bfb97baebcabce476))
+
 ## [v2.9.0](https://github.com/FedeHide/devkit-init/releases/tag/v2.9.0) (2025-01-15)
 
 ### Fix
