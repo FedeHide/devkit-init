@@ -80,8 +80,8 @@ touch .eslintrc.json
 
 ## OTHER DEPENDENCIES
 other_dependencies=(
-    "prettier@3.4.2"
-    "next-sitemap@4.2.3"
+    "prettier@latest"
+    "next-sitemap@latest"
 )
 pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
 
@@ -90,11 +90,11 @@ progress_bar
 ## TYPESCRIPT
 typescript_dependencies=(
     "typescript@5.7.3"
-    "@types/react@19.0.7"
-    "@typescript-eslint/eslint-plugin@8.20.0"
-    "@typescript-eslint/parser@8.20.0"
-    "@types/node@22.10.7"
-    "@types/react-dom@19.0.3"
+    "@types/react@latest"
+    "@typescript-eslint/eslint-plugin@latest"
+    "@typescript-eslint/parser@latest"
+    "@types/node@latest"
+    "@types/react-dom@latest"
     "eslint-import-resolver-typescript@3.7.0"
 )
 pnpm add "${typescript_dependencies[@]}" -D >/dev/null 2>&1

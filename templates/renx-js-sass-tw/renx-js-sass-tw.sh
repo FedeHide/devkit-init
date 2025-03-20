@@ -81,11 +81,11 @@ touch .eslintrc.json
 
 ## OTHER DEPENDENCIES
 other_dependencies=(
-    "prettier@3.4.2"
-    "prettier-plugin-tailwindcss@0.6.10"
+    "prettier@latest"
+    "prettier-plugin-tailwindcss@latest"
     "eslint-plugin-tailwindcss@3.17.5"
-    "next-sitemap@4.2.3"
-    "sass@1.83.4"
+    "next-sitemap@latest"
+    "sass@latest"
 )
 progress_bar
 pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1

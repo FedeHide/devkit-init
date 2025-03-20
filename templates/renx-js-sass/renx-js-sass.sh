@@ -82,9 +82,9 @@ touch .eslintrc.json
 
 ## OTHER DEPENDENCIES
 other_dependencies=(
-    "prettier@3.4.2"
-    "next-sitemap@4.2.3"
-    "sass@1.83.4"
+    "prettier@latest"
+    "next-sitemap@latest"
+    "sass@latest"
 )
 progress_bar
 pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
