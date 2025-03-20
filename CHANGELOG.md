@@ -1,5 +1,15 @@
 # Changelog
 
+## [v3.1.0](https://github.com/FedeHide/devkit-init/releases/tag/v3.1.0) (2025-03-20)
+
+### Features
+
+* **feat:** update nextjs configuration ([f3d88ea](https://github.com/FedeHide/devkit-init/commit/f3d88eab89faea77f669e6bbf7e7f550695f739b))
+
+### Other Changes
+
+* **chores:** change css properties order list by tailwind recomendation ([9e039d2](https://github.com/FedeHide/devkit-init/commit/9e039d212e4a6b905edf0517f6dc794e5a246601))
+
 ## [v3.0.1](https://github.com/FedeHide/devkit-init/releases/tag/v3.0.1) (2025-01-17)
 
 ### Fix
