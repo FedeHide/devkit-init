@@ -1,5 +1,11 @@
 # Changelog
 
+## [v3.1.1](https://github.com/FedeHide/devkit-init/releases/tag/v3.1.1) (2025-03-20)
+
+### Fix
+
+* **hotfix:** change extension in next.config file due a typo ([83774bf](https://github.com/FedeHide/devkit-init/commit/83774bf4b9343f21c34e28f2a8109a8f1b4c3d1c))
+
 ## [v3.1.0](https://github.com/FedeHide/devkit-init/releases/tag/v3.1.0) (2025-03-20)
 
 ### Features
