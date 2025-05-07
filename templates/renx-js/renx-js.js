@@ -51,7 +51,6 @@ async function createFiles(outputDirectory) {
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
             { fileName: '.gitignore', content: templateData['.gitignore'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
-            { fileName: '/src/app/manifest.json', content: templateData['manifest.json'] },
         ];
 
         // Process each file in parallel
