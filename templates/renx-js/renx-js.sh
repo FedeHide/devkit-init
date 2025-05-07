@@ -52,6 +52,10 @@ rm -rf ".git" 2>/dev/null
 folders=(
     "src/components"
     "src/hooks"
+    "src/styles"
+    "src/styles/base"
+    "src/styles/components"
+    "src/styles/layout"
     "src/lib"
     "public/assets"
 )
@@ -63,16 +67,16 @@ progress_bar
 progress_bar
 ## ESLINT RULES
 eslint_rules=(
-    "eslint@9.18.0"
-    "eslint-plugin-react@7.37.4"
-    "eslint-plugin-import@2.31.0"
-    "eslint-plugin-n@17.15.1"
-    "eslint-plugin-promise@7.2.1"
-    "eslint-plugin-unused-imports@4.1.4"
-    "eslint-plugin-react-hooks@5.1.0"
-    "eslint-plugin-jsx-a11y@6.10.2"
-    "eslint-plugin-prettier@5.2.2"
-    "eslint-config-prettier@10.0.1"
+    "eslint@latest"
+    "eslint-plugin-react@latest"
+    "eslint-plugin-import@latest"
+    "eslint-plugin-n@latest"
+    "eslint-plugin-promise@latest"
+    "eslint-plugin-unused-imports@latest"
+    "eslint-plugin-react-hooks@latest"
+    "eslint-plugin-jsx-a11y@latest"
+    "eslint-plugin-prettier@latest"
+    "eslint-config-prettier@latest"
 )
 pnpm add "${eslint_rules[@]}" -D # >/dev/null 2>&1
 touch .eslintrc.json

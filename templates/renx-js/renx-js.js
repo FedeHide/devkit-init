@@ -25,28 +25,33 @@ async function createFiles(outputDirectory) {
         const templateData = JSON.parse(data);
 
         const files = [
-            // template files
-            { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
-            { fileName: 'next-sitemap.config.js', content: templateData['next-sitemap.config.js'] },
-            { fileName: '/src/app/main.css', content: templateData['main.css'] },
-            { fileName: '/src/app/page.module.css', content: templateData['page.module.css'] },
+            // core files
             { fileName: '/src/app/layout.jsx', content: templateData['layout.jsx'] },
             { fileName: '/src/app/page.jsx', content: templateData['page.jsx'] },
             { fileName: '/src/middleware.js', content: templateData['middleware.js'] },
-            { fileName: 'src/lib/corsMiddleware.js', content: templateData['corsMiddleware.js'] },
-            { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },
-            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
-            // common files
+            { fileName: '/src/lib/corsMiddleware.js', content: templateData['corsMiddleware.js'] },
+            { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
+            { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
+            { fileName: 'LICENSE', content: templateData['LICENSE'] },
+            { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
+            { fileName: 'README.md', content: templateData['README.md'] },
+            // css files
+            { fileName: '/src/styles/globals.css', content: templateData['globals.css'] },
+            { fileName: '/src/styles/base/reset.css', content: templateData['reset.css'] },
+            { fileName: '/src/styles/base/index.css', content: templateData['base.index.css'] },
+            { fileName: '/src/styles/components/index.css', content: templateData['components.index.css'] },
+            { fileName: '/src/styles/layout/index.css', content: templateData['layout.index.css'] },
+            { fileName: '/src/app/page.module.css', content: templateData['page.module.css'] },
+            // config files
+            { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
+            { fileName: 'next-sitemap.config.js', content: templateData['next-sitemap.config.js'] },
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
-            { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
-            { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
-            { fileName: 'LICENSE', content: templateData['LICENSE'] },
             { fileName: '.gitignore', content: templateData['.gitignore'] },
-            { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
-            { fileName: 'README.md', content: templateData['README.md'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
+            { fileName: '/src/app/manifest.json', content: templateData['manifest.json'] },
         ];
 
         // Process each file in parallel

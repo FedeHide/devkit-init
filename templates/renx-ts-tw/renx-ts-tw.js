@@ -25,7 +25,7 @@ async function createFiles(outputDirectory) {
         const templateData = JSON.parse(data);
 
         const files = [
-            // template files
+            // core files
             { fileName: 'next.config.ts', content: templateData['next.config.ts'] },
             { fileName: 'next-sitemap.config.js', content: templateData['next-sitemap.config.js'] },
             { fileName: '/src/app/main.css', content: templateData['main.css'] },
@@ -34,9 +34,9 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/app/page.tsx', content: templateData['page.tsx'] },
             { fileName: '/src/middleware.ts', content: templateData['middleware.ts'] },
             { fileName: 'src/lib/corsMiddleware.ts', content: templateData['corsMiddleware.ts'] },
-            { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },
+            { fileName: '/src/app/manifest.json', content: templateData['manifest.json'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
-            // common files
+            // config files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },

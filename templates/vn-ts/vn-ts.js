@@ -25,14 +25,14 @@ async function createFiles(outputDirectory) {
         const templateData = JSON.parse(data);
 
         const files = [
-            // template files
+            // core files
             { fileName: '/src/css/main.css', content: templateData['main.css'] },
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },
             { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
             { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
             { fileName: 'tsconfig.json', content: templateData['tsconfig.json'] },
-            // common files
+            // config files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
