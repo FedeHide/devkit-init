@@ -33,7 +33,7 @@ progress_bar
 mkdir "$outputDirectory" || exit 1
 next_options=(
     "--no-turbopack"
-    "--js"
+    "--ts"
     "--no-tailwind"
     "--eslint"
     "--app"
@@ -42,7 +42,7 @@ next_options=(
     "@/*"
     "--use-pnpm"
 )
-npx create-next-app@15.1.4 "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
+npx create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -52,6 +52,7 @@ rm -rf ".git" 2>/dev/null
 folders=(
     "src/components"
     "src/hooks"
+    "src/interfaces"
     "src/lib"
     "public/assets"
 )
@@ -59,8 +60,6 @@ progress_bar
 mkdir -p "${folders[@]}" 2>/dev/null
 progress_bar
 
-
-progress_bar
 ## ESLINT RULES
 eslint_rules=(
     "eslint@9.18.0"
@@ -74,9 +73,10 @@ eslint_rules=(
     "eslint-plugin-prettier@5.2.2"
     "eslint-config-prettier@10.0.1"
 )
-pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
-touch .eslintrc.json
 progress_bar
+pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
+progress_bar
+touch .eslintrc.json
 
 ## OTHER DEPENDENCIES
 other_dependencies=(
@@ -84,13 +84,26 @@ other_dependencies=(
     "next-sitemap@latest"
 )
 pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
+
+progress_bar
+
+## TYPESCRIPT
+typescript_dependencies=(
+    "typescript@5.7.3"
+    "@types/react@latest"
+    "@typescript-eslint/eslint-plugin@latest"
+    "@typescript-eslint/parser@latest"
+    "@types/node@latest"
+    "@types/react-dom@latest"
+    "eslint-import-resolver-typescript@3.7.0"
+)
+pnpm add "${typescript_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
 
-progress_bar
+
 cd ..
 progress_bar
-
 ## CLEANING
 files_to_remove=(
     "/src/app/page.js"
@@ -98,11 +111,12 @@ files_to_remove=(
     "/src/app/globals.css"
     "/public/next.svg"
     "/public/vercel.svg"
+    "/src/app/favicon.ico"
     "/public/file.svg"
     "/public/globe.svg"
     "/public/window.svg"
-    "/src/app/favicon.ico"
     "/eslint.config.mjs"
+    "/next.config.ts"
 )
 rm -rf "${files_to_remove[@]/#/$outputDirectory}" 2>/dev/null
 

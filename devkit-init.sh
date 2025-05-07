@@ -8,7 +8,6 @@ LIGHT_BLUE='\x1b[38;5;14m'
 DARK_BLUE='\x1b[38;5;63m'
 BLUE='\x1b[38;5;105m'
 DARK_YELLOW='\x1b[38;5;178m'
-PINK='\033[0;35m'
 LIGHT_PURPLE='\033[1;35m'
 LIGHT_GRAY='\033[0;37m'
 RESET_COLOR="\033[0m"
@@ -66,11 +65,11 @@ is_tech() {
 
     # check the user's choice
     case $choice_lowercase in
-        y|yes|"") 
+        (y|yes|"") 
             tech_choice=true
             echo -e "${CLEAR_LINE}✔️  ${option1}"
             ;;
-        n|no)
+        (n|no)
             if [ "${option1}" = "${BLUE}Tailwind${RESET_COLOR}" ]; then
                 tech_choice=false
                 echo -e "${CLEAR_LINE}❌ ${option1}"
@@ -79,7 +78,7 @@ is_tech() {
                 echo -e "${CLEAR_LINE}✔️  ${option2}"
             fi
             ;;
-        *) 
+        (*) 
             echo -e "${CLEAR_LINE}❌ ${option1}"
             echo -e "❌ Operation cancelled -> Invalid option"
             exit 0
@@ -102,13 +101,11 @@ fi
 is_tech "${DARK_BLUE}TypeScript${RESET_COLOR}" "${DARK_YELLOW}Javascript${RESET_COLOR}"
 is_typescript=$tech_choice
 
-# Sass choice
-is_tech "${PINK}Sass${RESET_COLOR}" "${LIGHT_BLUE}Css${RESET_COLOR}"
-is_sass=$tech_choice
-
 # Tailwind choice
-is_tech "${BLUE}Tailwind${RESET_COLOR}"
-is_tailwind=$tech_choice
+if [ "$is_react" = true ]; then
+    is_tech "${BLUE}Tailwind${RESET_COLOR}"
+    is_tailwind=$tech_choice
+fi
 
 
 
@@ -134,13 +131,6 @@ else
     is_typescript="js"
 fi
 
-# Sass || Css
-if [ "$is_sass" = true ]; then
-    is_sass="sass"
-else
-    is_sass="css"
-fi
-
 # Tailwind
 if [ "$is_tailwind" = true ]; then
     is_tailwind="-tw"
@@ -150,8 +140,8 @@ fi
 
 
 ## RUN template
-TEMPLATE_SH_DIR="$DIR/../devkit-init/templates/$is_react$is_next-$is_typescript-$is_sass$is_tailwind/$is_react$is_next-$is_typescript-$is_sass$is_tailwind.sh"
-TEMPLATE_JS_DIR="$DIR/../devkit-init/templates/$is_react$is_next-$is_typescript-$is_sass$is_tailwind/$is_react$is_next-$is_typescript-$is_sass$is_tailwind.js"
+TEMPLATE_SH_DIR="$DIR/../devkit-init/templates/$is_react$is_next-$is_typescript$is_tailwind/$is_react$is_next-$is_typescript$is_tailwind.sh"
+TEMPLATE_JS_DIR="$DIR/../devkit-init/templates/$is_react$is_next-$is_typescript$is_tailwind/$is_react$is_next-$is_typescript$is_tailwind.js"
 export TEMPLATE_JS_DIR
 export outputDirectory
 bash "$TEMPLATE_SH_DIR"

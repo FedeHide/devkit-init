@@ -34,7 +34,7 @@ mkdir "$outputDirectory" || exit 1
 next_options=(
     "--no-turbopack"
     "--ts"
-    "--no-tailwind"
+    "--tailwind"
     "--eslint"
     "--app"
     "--src-dir"
@@ -42,7 +42,7 @@ next_options=(
     "@/*"
     "--use-pnpm"
 )
-npx create-next-app@15.1.4 "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
+npx create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -78,28 +78,28 @@ pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 
-## OTHER DEPENDENCIES
-other_dependencies=(
-    "prettier@latest"
-    "next-sitemap@latest"
-)
-pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
-
-progress_bar
-
 ## TYPESCRIPT
 typescript_dependencies=(
     "typescript@5.7.3"
     "@types/react@latest"
+    "@types/react-dom@latest"
+    "@types/node@latest"
+    "eslint-import-resolver-typescript@3.7.0"
     "@typescript-eslint/eslint-plugin@latest"
     "@typescript-eslint/parser@latest"
-    "@types/node@latest"
-    "@types/react-dom@latest"
-    "eslint-import-resolver-typescript@3.7.0"
 )
 pnpm add "${typescript_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
+## OTHER DEPENDENCIES
+other_dependencies=(
+    "prettier@latest"
+    "prettier-plugin-tailwindcss@latest"
+    "eslint-plugin-tailwindcss@3.17.5"
+    "next-sitemap@latest"
+)
+pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
+progress_bar
 
 
 cd ..

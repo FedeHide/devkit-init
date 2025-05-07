@@ -21,8 +21,7 @@ chmod +x devkit-init.sh
 
 - ✅ automates the setup process for my personal development projects
 - ⚛️ setup for react with vite or next js || vanilla JS or TS
-- ✏️ sass integration, with reset, mixins and functions
-- 🍃 tailwind option
+- 🍃 tailwind integration 
 - ⚙️ rollup building for vanilla
 - ✨ eslint & prettier configuration
 
