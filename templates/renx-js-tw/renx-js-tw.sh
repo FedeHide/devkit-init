@@ -46,18 +46,21 @@ npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" # >/dev
 
 progress_bar
 cd "$outputDirectory" || exit 1
-rm -rf ".git" 2>/dev/null 
+rm -rf ".git" # >/dev/null 2>&1 
 
 ## MAKING folders
 folders=(
     "src/components"
     "src/hooks"
     "src/styles"
+    "src/styles/base"
+    "src/styles/components"
+    "src/styles/layout"
     "src/lib"
     "public/assets"
 )
 progress_bar
-mkdir -p "${folders[@]}" 2>/dev/null
+mkdir -p "${folders[@]}" # >/dev/null 2>&1
 progress_bar
 
 
@@ -83,7 +86,6 @@ touch .eslintrc.json
 other_dependencies=(
     "prettier@latest"
     "prettier-plugin-tailwindcss@latest"
-    "eslint-plugin-tailwindcss@3.17.5"
     "next-sitemap@latest"
 )
 progress_bar
@@ -105,7 +107,7 @@ files_to_remove=(
     "/public/window.svg"
     "/eslint.config.mjs"
 )
-rm -rf "${files_to_remove[@]/#/$outputDirectory}" 2>/dev/null
+rm -rf "${files_to_remove[@]/#/$outputDirectory}" # >/dev/null 2>&1
 
 progress_bar
 ## TEMPLATE init

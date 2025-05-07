@@ -67,9 +67,9 @@ progress_bar
 cd ..
 ## CLEANING
 progress_bar
-rm "$outputDirectory"/src/main.tsx "$outputDirectory"/src/App.tsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css 2>/dev/null
-rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs 2>/dev/null
-rm -rf "$outputDirectory"/src/assets 2>/dev/null
+rm "$outputDirectory"/src/main.tsx "$outputDirectory"/src/App.tsx "$outputDirectory"/src/App.css "$outputDirectory"/src/index.css # >/dev/null 2>&1
+rm "$outputDirectory"/public/vite.svg "$outputDirectory"/.eslintrc.cjs # >/dev/null 2>&1
+rm -rf "$outputDirectory"/src/assets # >/dev/null 2>&1
 
 progress_bar
 ## TEMPLATE init
