@@ -31,11 +31,11 @@ progress_bar() {
 progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
-pnpm create vite "$outputDirectory" --template react-swc >/dev/null 2>&1
+pnpm create vite "$outputDirectory" --template react-swc # >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
-pnpm install >/dev/null 2>&1
+pnpm install # >/dev/null 2>&1
 
 ## MAKING folders
 src_folders=(
@@ -54,13 +54,13 @@ done
 progress_bar
 
 ## PRETTIER & ESLINT RULES
-pnpm install -D prettier >/dev/null 2>&1
+pnpm install -D prettier # >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-config-standard@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D eslint-config-standard@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest # >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
+pnpm install -D eslint-plugin-prettier@latest # >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
+pnpm install -D eslint-config-prettier@latest # >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 

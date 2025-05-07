@@ -33,7 +33,7 @@ progress_bar
 mkdir "$outputDirectory" || exit 1
 cd "$outputDirectory" || exit 1
 pnpm init > /dev/null 2>&1
-pnpm install -D rollup >/dev/null 2>&1
+pnpm install -D rollup # >/dev/null 2>&1
 touch rollup.config.js
 progress_bar
 
@@ -62,13 +62,13 @@ touch src/ts/main.ts
 progress_bar
 
 ## PRETTIER & ESLINT RULES
-pnpm install -D prettier >/dev/null 2>&1
+pnpm install -D prettier # >/dev/null 2>&1
 progress_bar
-pnpm install -D typescript@latest eslint@latest @typescript-eslint/eslint-plugin@7.8.0 eslint-config-love@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest >/dev/null 2>&1
+pnpm install -D typescript@latest eslint@latest @typescript-eslint/eslint-plugin@7.8.0 eslint-config-love@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest # >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-plugin-prettier@latest >/dev/null 2>&1
+pnpm install -D eslint-plugin-prettier@latest # >/dev/null 2>&1
 progress_bar
-pnpm install -D eslint-config-prettier@latest >/dev/null 2>&1
+pnpm install -D eslint-config-prettier@latest # >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 

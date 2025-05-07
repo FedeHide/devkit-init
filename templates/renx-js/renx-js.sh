@@ -42,7 +42,7 @@ next_options=(
     "@/*"
     "--use-pnpm"
 )
-npx create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
+npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" # >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -74,7 +74,7 @@ eslint_rules=(
     "eslint-plugin-prettier@5.2.2"
     "eslint-config-prettier@10.0.1"
 )
-pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
+pnpm add "${eslint_rules[@]}" -D # >/dev/null 2>&1
 touch .eslintrc.json
 progress_bar
 
@@ -83,7 +83,7 @@ other_dependencies=(
     "prettier@latest"
     "next-sitemap@latest"
 )
-pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
+pnpm add "${other_dependencies[@]}" -D # >/dev/null 2>&1
 progress_bar
 
 

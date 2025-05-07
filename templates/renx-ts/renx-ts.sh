@@ -42,7 +42,7 @@ next_options=(
     "@/*"
     "--use-pnpm"
 )
-npx create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
+npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" # >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -74,7 +74,7 @@ eslint_rules=(
     "eslint-config-prettier@10.0.1"
 )
 progress_bar
-pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
+pnpm add "${eslint_rules[@]}" -D # >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 
@@ -83,7 +83,7 @@ other_dependencies=(
     "prettier@latest"
     "next-sitemap@latest"
 )
-pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
+pnpm add "${other_dependencies[@]}" -D # >/dev/null 2>&1
 
 progress_bar
 
@@ -97,7 +97,7 @@ typescript_dependencies=(
     "@types/react-dom@latest"
     "eslint-import-resolver-typescript@3.7.0"
 )
-pnpm add "${typescript_dependencies[@]}" -D >/dev/null 2>&1
+pnpm add "${typescript_dependencies[@]}" -D # >/dev/null 2>&1
 progress_bar
 
 

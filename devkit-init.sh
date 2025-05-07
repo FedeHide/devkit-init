@@ -72,7 +72,7 @@ is_tech() {
         (n|no)
             if [ "${option1}" = "${BLUE}Tailwind${RESET_COLOR}" ]; then
                 tech_choice=false
-                echo -e "${CLEAR_LINE}❌ ${option1}"
+                echo -e "${CLEAR_LINE}❌  ${option1}"
             else
                 tech_choice=false
                 echo -e "${CLEAR_LINE}✔️  ${option2}"
@@ -149,9 +149,9 @@ bash "$TEMPLATE_SH_DIR"
 
 ## Initial commit
 cd "$outputDirectory" || exit 1
-git init >/dev/null 2>&1
-git add . >/dev/null 2>&1
-git commit -m 'initial commit' >/dev/null 2>&1
+git init # >/dev/null 2>&1
+git add . # >/dev/null 2>&1
+git commit -m 'initial commit' # >/dev/null 2>&1
 
 
 ## open Visual Studio Code
