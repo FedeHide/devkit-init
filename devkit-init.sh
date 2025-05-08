@@ -8,8 +8,6 @@ LIGHT_BLUE='\x1b[38;5;14m'
 DARK_BLUE='\x1b[38;5;63m'
 BLUE='\x1b[38;5;105m'
 DARK_YELLOW='\x1b[38;5;178m'
-LIGHT_PURPLE='\033[1;35m'
-LIGHT_GRAY='\033[0;37m'
 RESET_COLOR="\033[0m"
 
 CLEAR_LINE="\033[1A\033[2K"
@@ -23,7 +21,7 @@ export DIR
 
 ## HANDLE CANCEL from the user with SIGINT (Ctrl + C)
 sigint_handler() {
-    echo -e "$CLEAR_LINE /n"
+    echo -e "$CLEAR_LINE"
     echo -e "${CLEAR_LINE}❌ Operation cancelled" >&2
     echo -e "\033[K"
     exit 1
@@ -91,12 +89,6 @@ is_tech() {
 is_tech "${LIGHT_BLUE}React${RESET_COLOR}" "${DARK_YELLOW}Vanilla${RESET_COLOR}"
 is_react=$tech_choice
 
-# Nextjs or Vite choice
-if [ "$is_react" = true ]; then
-    is_tech "${LIGHT_GRAY}NextJS${RESET_COLOR}" "${LIGHT_PURPLE}Vite${RESET_COLOR}"
-    is_next=$tech_choice
-fi
-
 # TypeScript choice
 is_tech "${DARK_BLUE}TypeScript${RESET_COLOR}" "${DARK_YELLOW}Javascript${RESET_COLOR}"
 is_typescript=$tech_choice
@@ -117,13 +109,6 @@ else
     is_react="vn"
 fi
 
-# NextJs || Vite
-if [ "$is_next" = true ]; then
-    is_next="nx"
-elif [ "$is_next" = false ]; then
-    is_next="vi"
-fi
-
 # Typescript || Javascript
 if [ "$is_typescript" = true ]; then
     is_typescript="ts"
@@ -140,8 +125,12 @@ fi
 
 
 ## RUN template
-TEMPLATE_SH_DIR="$DIR/../devkit-init/templates/$is_react$is_next-$is_typescript$is_tailwind/$is_react$is_next-$is_typescript$is_tailwind.sh"
-TEMPLATE_JS_DIR="$DIR/../devkit-init/templates/$is_react$is_next-$is_typescript$is_tailwind/$is_react$is_next-$is_typescript$is_tailwind.js"
+TEMPLATE_SH_DIR="$DIR/../devkit-init/templates/$is_react-$is_typescript$is_tailwind/$is_react-$is_typescript$is_tailwind.sh"
+TEMPLATE_JS_DIR="$DIR/../devkit-init/templates/$is_react-$is_typescript$is_tailwind/$is_react-$is_typescript$is_tailwind.js"
+if [ ! -f "$TEMPLATE_SH_DIR" ]; then
+    echo -e "${CLEAR_LINE}❌ ${GREY}Operation cancelled -> Template not found${RESET_COLOR}"
+    exit 1
+fi
 export TEMPLATE_JS_DIR
 export outputDirectory
 bash "$TEMPLATE_SH_DIR"
