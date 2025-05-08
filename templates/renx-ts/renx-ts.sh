@@ -54,6 +54,10 @@ folders=(
     "src/hooks"
     "src/interfaces"
     "src/lib"
+    "src/styles"
+    "src/styles/base"
+    "src/styles/components"
+    "src/styles/layout"
     "public/assets"
 )
 progress_bar
@@ -89,17 +93,16 @@ progress_bar
 
 ## TYPESCRIPT
 typescript_dependencies=(
-    "typescript@5.7.3"
+    "typescript@latest"
     "@types/react@latest"
     "@typescript-eslint/eslint-plugin@latest"
     "@typescript-eslint/parser@latest"
     "@types/node@latest"
     "@types/react-dom@latest"
-    "eslint-import-resolver-typescript@3.7.0"
+    "eslint-import-resolver-typescript@latest"
 )
 pnpm add "${typescript_dependencies[@]}" -D # >/dev/null 2>&1
 progress_bar
-
 
 
 cd ..

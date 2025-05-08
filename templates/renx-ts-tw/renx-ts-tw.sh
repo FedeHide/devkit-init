@@ -54,6 +54,10 @@ folders=(
     "src/hooks"
     "src/interfaces"
     "src/lib"
+    "src/styles"
+    "src/styles/base"
+    "src/styles/components"
+    "src/styles/layout"
     "public/assets"
 )
 progress_bar
@@ -80,11 +84,11 @@ touch .eslintrc.json
 
 ## TYPESCRIPT
 typescript_dependencies=(
-    "typescript@5.7.3"
+    "typescript@latest"
     "@types/react@latest"
     "@types/react-dom@latest"
     "@types/node@latest"
-    "eslint-import-resolver-typescript@3.7.0"
+    "eslint-import-resolver-typescript@latest"
     "@typescript-eslint/eslint-plugin@latest"
     "@typescript-eslint/parser@latest"
 )
