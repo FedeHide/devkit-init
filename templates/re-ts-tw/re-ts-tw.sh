@@ -42,11 +42,11 @@ next_options=(
     "@/*"
     "--use-pnpm"
 )
-npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" # >/dev/null 2>&1
+npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
-rm -rf ".git" # >/dev/null 2>&1
+rm -rf ".git" >/dev/null 2>&1
 
 ## MAKING folders
 folders=(
@@ -61,7 +61,7 @@ folders=(
     "public/assets"
 )
 progress_bar
-mkdir -p "${folders[@]}" # >/dev/null 2>&1
+mkdir -p "${folders[@]}" >/dev/null 2>&1
 progress_bar
 
 ## ESLINT RULES
@@ -78,7 +78,7 @@ eslint_rules=(
     "eslint-config-prettier@latest"
 )
 progress_bar
-pnpm add "${eslint_rules[@]}" -D # >/dev/null 2>&1
+pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 
@@ -92,7 +92,7 @@ typescript_dependencies=(
     "@typescript-eslint/eslint-plugin@latest"
     "@typescript-eslint/parser@latest"
 )
-pnpm add "${typescript_dependencies[@]}" -D # >/dev/null 2>&1
+pnpm add "${typescript_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
 ## OTHER DEPENDENCIES
@@ -101,7 +101,7 @@ other_dependencies=(
     "prettier-plugin-tailwindcss@latest"
     "next-sitemap@latest"
 )
-pnpm add "${other_dependencies[@]}" -D # >/dev/null 2>&1
+pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
 
@@ -121,7 +121,7 @@ files_to_remove=(
     "/eslint.config.mjs"
     "/next.config.ts"
 )
-rm -rf "${files_to_remove[@]/#/$outputDirectory}" # >/dev/null 2>&1
+rm -rf "${files_to_remove[@]/#/$outputDirectory}" >/dev/null 2>&1
 
 progress_bar
 ## TEMPLATE init

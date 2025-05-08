@@ -1,5 +1,27 @@
 # Changelog
 
+## [v4.5.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.5.0) (2025-05-08)
+
+### Features
+
+* **feat:** update vanilla templates ([249b811](https://github.com/FedeHide/devkit-init/commit/249b81119f92d6b0649296debe0778b4c19cbe7d))
+
+* **feat:** remove vite from templates ([8bf23cf](https://github.com/FedeHide/devkit-init/commit/8bf23cf7cb5ebb827a2e73bf80a40b14ff8c618c))
+
+* **feat:** update renx-js-tw template ([f578fbe](https://github.com/FedeHide/devkit-init/commit/f578fbe9667c0d65acd25446a911b80c69fc61b9))
+
+* **feat:** update renx-js template ([40b38ef](https://github.com/FedeHide/devkit-init/commit/40b38ef231f2ab6f9b1e6524d49121b892c8c6a2))
+
+* **feat:** remove sass from templates and remove tailwind from vanilla templates ([26b9c44](https://github.com/FedeHide/devkit-init/commit/26b9c44c3d0bff452c0ec36943a0ed8a3f5fef21))
+
+### Fix
+
+* **hotfix:** renx-ts and renx-ts-tw templates layout.tsx errors; remove robots file from all nextjs templates ([295e400](https://github.com/FedeHide/devkit-init/commit/295e4004e3a712aef6a869a0af2cd1edcd26a16d))
+
+* **hotfix:** layout globals.css import and remove manifest.json in renx-js template ([16c87bb](https://github.com/FedeHide/devkit-init/commit/16c87bb2f6f2a03b52e3c66ef8c26bfc4b086a75))
+
+* **hotfix:** add --yes flag to npx to auto-confirm package installation ([58cc3c8](https://github.com/FedeHide/devkit-init/commit/58cc3c8d3e381776afdff27c2814820c69b86cd5))
+
 ## [v3.1.1](https://github.com/FedeHide/devkit-init/releases/tag/v3.1.1) (2025-03-20)
 
 ### Fix

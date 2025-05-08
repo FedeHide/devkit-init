@@ -32,7 +32,7 @@ progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
 cd "$outputDirectory" || exit 1
-pnpm init # >/dev/null 2>&1
+pnpm init >/dev/null 2>&1
 progress_bar
 
 ## MAKING folders
@@ -42,7 +42,7 @@ folders=(
     "public/assets"
 )
 progress_bar
-mkdir -p "${folders[@]}" # >/dev/null 2>&1
+mkdir -p "${folders[@]}" >/dev/null 2>&1
 touch src/js/main.js
 progress_bar
 
@@ -58,7 +58,7 @@ eslint_rules=(
     "eslint-config-prettier@latest"
 )
 progress_bar
-pnpm add "${eslint_rules[@]}" -D # >/dev/null 2>&1
+pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
 progress_bar
@@ -72,7 +72,7 @@ other_dependencies=(
     "postcss-import"
 )
 progress_bar
-pnpm add "${other_dependencies[@]}" -D # >/dev/null 2>&1
+pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 touch rollup.config.js
 
