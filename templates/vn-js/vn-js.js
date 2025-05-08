@@ -26,22 +26,27 @@ async function createFiles(outputDirectory) {
 
         const files = [
             // core files
-            { fileName: '/src/css/main.css', content: templateData['main.css'] },
             { fileName: '/dist/index.html', content: templateData['index.html'] },
-            { fileName: '/public/site.webmanifest', content: templateData['site.webmanifest'] },
-            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
-            { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
+            { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
+            { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
+            { fileName: 'LICENSE', content: templateData['LICENSE'] },
+            { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
+            { fileName: 'README.md', content: templateData['README.md'] },
             // config files
             { fileName: 'package.json', content: templateData['package.json'] },
             { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
-            { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
-            { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
-            { fileName: 'LICENSE', content: templateData['LICENSE'] },
             { fileName: '.gitignore', content: templateData['.gitignore'] },
-            { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
-            { fileName: 'README.md', content: templateData['README.md'] },
+            { fileName: '/public/robots.txt', content: templateData['robots.txt'] },
+            { fileName: 'rollup.config.js', content: templateData['rollup.config.js'] },
+            { fileName: 'postcss.config.js', content: templateData['postcss.config.js'] },
+            // css files
+            { fileName: '/src/styles/globals.css', content: templateData['globals.css'] },
+            { fileName: '/src/styles/base/reset.css', content: templateData['reset.css'] },
+            { fileName: '/src/styles/base/index.css', content: templateData['base.index.css'] },
+            { fileName: '/src/styles/components/index.css', content: templateData['components.index.css'] },
+            { fileName: '/src/styles/layout/index.css', content: templateData['layout.index.css'] },
         ];
 
         // Process each file in parallel

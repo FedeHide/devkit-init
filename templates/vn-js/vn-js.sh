@@ -32,44 +32,49 @@ progress_bar
 # shellcheck disable=SC2154
 mkdir "$outputDirectory" || exit 1
 cd "$outputDirectory" || exit 1
-pnpm init > /dev/null 2>&1
-pnpm install -D rollup # >/dev/null 2>&1
-touch rollup.config.js
+pnpm init # >/dev/null 2>&1
 progress_bar
 
 ## MAKING folders
-dist_folders=(
-    "dist/js"
-    "dist/css"
-)
-
-src_folders=(
+folders=(
     "src/js"
     "src/css"
-)
-progress_bar
-
-root_folders=(
     "public/assets"
 )
-
 progress_bar
-for folder in "${src_folders[@]}" "${root_folders[@]}" "${dist_folders[@]}"; do
-    mkdir -p "$folder"
-done
+mkdir -p "${folders[@]}" # >/dev/null 2>&1
 touch src/js/main.js
 progress_bar
 
-## PRETTIER & ESLINT RULES
-pnpm install -D prettier # >/dev/null 2>&1
+## ESLINT RULES
+eslint_rules=(
+    "eslint@latest"
+    "eslint-config-love@latest"
+    "eslint-plugin-import@latest"
+    "eslint-plugin-n@latest"
+    "eslint-plugin-promise@latest"
+    "eslint-plugin-unused-imports@latest"    
+    "eslint-plugin-prettier@latest"
+    "eslint-config-prettier@latest"
+)
 progress_bar
-pnpm install -D eslint@latest eslint-config-standard@latest eslint-plugin-import@latest eslint-plugin-n@latest eslint-plugin-promise@latest # >/dev/null 2>&1
-progress_bar
-pnpm install -D eslint-plugin-prettier@latest # >/dev/null 2>&1
-progress_bar
-pnpm install -D eslint-config-prettier@latest # >/dev/null 2>&1
+pnpm add "${eslint_rules[@]}" -D # >/dev/null 2>&1
 progress_bar
 touch .eslintrc.json
+progress_bar
+
+## OTHER DEPENDENCIES
+other_dependencies=(
+    "prettier@latest"
+    "rollup"
+    "postcss"
+    "rollup-plugin-postcss"
+    "postcss-import"
+)
+progress_bar
+pnpm add "${other_dependencies[@]}" -D # >/dev/null 2>&1
+progress_bar
+touch rollup.config.js
 
 cd ..
 progress_bar
