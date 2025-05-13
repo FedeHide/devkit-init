@@ -1,6 +1,6 @@
 {
   "name": "devkit-init",
-  "version": "4.5.0",
+  "version": "4.5.1",
   "description": "The script dev-init.sh automates the setup process for my development projects.",
   "bin": {
     "devkit-init": "devkit-init.sh"

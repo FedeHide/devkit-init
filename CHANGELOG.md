@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.5.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.5.0) (2025-05-13)
+
+### Features
+
+* **feat:** add folder to nextjs structure ([531e446](https://github.com/FedeHide/devkit-init/commit/531e446f7940b2a19496c16331dbbf1916178d9b))
+
 ## [v4.5.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.5.0) (2025-05-08)
 
 ### Features
