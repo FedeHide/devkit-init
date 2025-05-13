@@ -1,6 +1,6 @@
 # Changelog
 
-## [v4.5.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.5.0) (2025-05-13)
+## [v4.5.1](https://github.com/FedeHide/devkit-init/releases/tag/v4.5.1) (2025-05-13)
 
 ### Features
 
