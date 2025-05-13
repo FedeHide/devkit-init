@@ -51,6 +51,9 @@ rm -rf ".git" >/dev/null 2>&1
 ## MAKING folders
 folders=(
     "src/components"
+    "src/components/ui"
+    "src/components/layout"
+    "src/components/utils"
     "src/hooks"
     "src/interfaces"
     "src/lib"
