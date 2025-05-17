@@ -57,8 +57,6 @@ folders=(
     "src/hooks"
     "src/styles"
     "src/styles/base"
-    "src/styles/components"
-    "src/styles/layout"
     "src/lib"
     "public/assets"
 )

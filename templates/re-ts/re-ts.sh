@@ -59,8 +59,6 @@ folders=(
     "src/lib"
     "src/styles"
     "src/styles/base"
-    "src/styles/components"
-    "src/styles/layout"
     "public/assets"
 )
 progress_bar

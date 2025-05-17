@@ -39,8 +39,6 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/styles/globals.css', content: templateData['globals.css'] },
             { fileName: '/src/styles/base/reset.css', content: templateData['reset.css'] },
             { fileName: '/src/styles/base/index.css', content: templateData['base.index.css'] },
-            { fileName: '/src/styles/components/index.css', content: templateData['components.index.css'] },
-            { fileName: '/src/styles/layout/index.css', content: templateData['layout.index.css'] },
             { fileName: '/src/app/page.module.css', content: templateData['page.module.css'] },
             // config files
             { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
