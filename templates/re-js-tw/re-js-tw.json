@@ -79,7 +79,8 @@
             {
                 "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
                 "rules": {
-                    "n/no-missing-import": "off"
+                    "n/no-missing-import": "off",
+                    "react/prop-types": "off"
                 }
             }
         ],
