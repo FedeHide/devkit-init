@@ -1,5 +1,23 @@
 # Changelog
 
+## [v4.6.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.6.0) (2025-05-26)
+
+### Features
+
+* **feat:** update next-sitemap config ([bb9e453](https://github.com/FedeHide/devkit-init/commit/bb9e4539781920dd87ca21caa5d7c9b1d331b7e5))
+
+* **feat:** update css reset in all templates ([867187b](https://github.com/FedeHide/devkit-init/commit/867187b78178ea1bafae59dfa7e9a44903e811ec))
+
+* **feat:** add eslint react rule to prop types ([3d9c49b](https://github.com/FedeHide/devkit-init/commit/3d9c49b62cc1b100583ba381fac2a54f31d08531))
+
+### Fix
+
+* **hotfix:** typo in changelog ([dcd5bbc](https://github.com/FedeHide/devkit-init/commit/dcd5bbc5ccc7939129842f2d20acb1a5b10f25f2))
+
+### Other Changes
+
+* **refactor:** remove CSS component folders in favor of CSS modules in react templates ([13f118e](https://github.com/FedeHide/devkit-init/commit/13f118e72f4fc7253ae01f4a08a77b66d8ecc9f9))
+
 ## [v4.5.1](https://github.com/FedeHide/devkit-init/releases/tag/v4.5.1) (2025-05-13)
 
 ### Features
