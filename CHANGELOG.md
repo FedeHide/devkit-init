@@ -1,5 +1,11 @@
 # Changelog
 
+## [v4.6.1](https://github.com/FedeHide/devkit-init/releases/tag/v4.6.1) (2025-08-08)
+
+### Fix
+
+* **hotfix:** remove unused imports in css global files ([d20a4ba](https://github.com/FedeHide/devkit-init/commit/d20a4ba7e32e08d970c042431645eff172809d0c))
+
 ## [v4.6.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.6.0) (2025-05-26)
 
 ### Features
