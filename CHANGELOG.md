@@ -1,5 +1,23 @@
 # Changelog
 
+## [v4.7.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.7.0) (2025-08-23)
+
+### Other Changes
+
+* **chores:** add scroll behavios to html tags in next templates ([7675b76](https://github.com/FedeHide/devkit-init/commit/7675b76ff57cfccd25e6949b5cac0e075875bf61))
+
+* **chores:** remove types for JSX element return ([41f19ff](https://github.com/FedeHide/devkit-init/commit/41f19ff346c2b5dc11a6e54956527bca3d2062e3))
+
+* **chores:** add urls final slash in templates ([82570b4](https://github.com/FedeHide/devkit-init/commit/82570b4476dae32e0cbc2bb4ec679a19ebd62f69))
+
+* **chores:** update layout file ([eb1abb6](https://github.com/FedeHide/devkit-init/commit/eb1abb637ec88fff5b7a17a63914e361a6e39776))
+
+* **chores:** update next sitemap config ([e215ab2](https://github.com/FedeHide/devkit-init/commit/e215ab2a3ad8bcbe27eded32bd4c2ba904ce3e5d))
+
+* **chores:** update layout and readme ([aae35b9](https://github.com/FedeHide/devkit-init/commit/aae35b9bca6a8571d84fe4fd34d7f5e762fcea91))
+
+* **chores:** update readme ([b2e6728](https://github.com/FedeHide/devkit-init/commit/b2e6728518aa29ca0dcd7cc8c741beabc1a68275))
+
 ## [v4.6.1](https://github.com/FedeHide/devkit-init/releases/tag/v4.6.1) (2025-08-08)
 
 ### Fix
