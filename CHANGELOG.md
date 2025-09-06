@@ -1,5 +1,18 @@
 # Changelog
 
+## [v4.8.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.8.0) (2025-09-05)
+
+### Features
+
+* **feat:** add metadata generator lib to next templates ([c7558a2](https://github.com/FedeHide/devkit-init/commit/c7558a287093e4ff04fe6030604e83ecff97a808))
+
+* **feat:** add react hook to auto scroll to a ref ([6635309](https://github.com/FedeHide/devkit-init/commit/6635309f9e0a97aa43ea26116c769cb1c745051a))
+
+* **feat:** add lib function to check if a component is a server or client component in react ([16650de](https://github.com/FedeHide/devkit-init/commit/16650de84d34d82bd72cd90e27193c8af9042862))
+### Other Changes
+
+* **chores:** remove li width limits in reset css and add JSX types ([efa02c0](https://github.com/FedeHide/devkit-init/commit/efa02c0d2ae96a2a2ec7a4f69f6435197d5c2303))
+
 ## [v4.7.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.7.0) (2025-08-23)
 
 ### Other Changes
