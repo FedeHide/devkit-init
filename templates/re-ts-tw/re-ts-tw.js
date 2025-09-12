@@ -31,7 +31,7 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/middleware.ts', content: templateData['middleware.ts'] },
             { fileName: 'src/lib/corsMiddleware.ts', content: templateData['corsMiddleware.ts'] },
             { fileName: '/src/lib/LogExecEnv.ts', content: templateData['LogExecEnv.ts'] },
-            { fileName: '/src/lib/metadata.ts', content: templateData['metadata.ts'] },
+            { fileName: '/src/lib/generateStaticMetadata.ts', content: templateData['generateStaticMetadata.ts'] },
             { fileName: '/src/hooks/useScrollToRef.ts', content: templateData['useScrollToRef.ts'] },
             { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
             { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },

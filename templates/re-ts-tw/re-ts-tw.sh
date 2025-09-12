@@ -53,13 +53,16 @@ folders=(
     "src/components"
     "src/components/ui"
     "src/components/layout"
-    "src/components/utils"
-    "src/hooks"
-    "src/interfaces"
-    "src/lib"
+    "src/components/sections"
     "src/styles"
     "src/styles/base"
+    "src/hooks"
+    "src/lib"
+    "src/utils"
+    "src/services"
+    "src/config"
     "public/assets"
+    "src/types"
 )
 progress_bar
 mkdir -p "${folders[@]}" >/dev/null 2>&1

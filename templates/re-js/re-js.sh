@@ -53,11 +53,14 @@ folders=(
     "src/components"
     "src/components/ui"
     "src/components/layout"
-    "src/components/utils"
-    "src/hooks"
+    "src/components/sections"
     "src/styles"
     "src/styles/base"
+    "src/hooks"
     "src/lib"
+    "src/utils"
+    "src/services"
+    "src/config"
     "public/assets"
 )
 progress_bar
