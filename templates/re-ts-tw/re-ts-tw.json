@@ -12,92 +12,10 @@
             "build": "next build",
             "postbuild": "next-sitemap",
             "start": "next start",
-            "lint": "next lint"
+            "lint": "eslint"
         }        
     },
-    ".eslintrc.json": {
-        "env": {
-            "browser": true,
-            "es2021": true,
-            "node": true
-        },
-        "extends": [
-            "next/core-web-vitals",
-            "prettier",
-            "plugin:@typescript-eslint/recommended",
-            "plugin:prettier/recommended",
-            "plugin:react/recommended",
-            "plugin:react-hooks/recommended",
-            "plugin:promise/recommended",
-            "plugin:jsx-a11y/recommended"
-        ],
-        "plugins": [
-            "@typescript-eslint",
-            "prettier",
-            "jsx-a11y",
-            "unused-imports",
-            "react",
-            "react-hooks",
-            "import",
-            "promise"
-        ],
-        "parser": "@typescript-eslint/parser",
-        "parserOptions": {
-            "ecmaVersion": "latest",
-            "sourceType": "module"
-        },
-        "settings": {
-            "import/resolver": {
-                "node": {
-                    "extensions": [".js", ".jsx", ".ts", ".tsx"]
-                },
-                "typescript": {}
-            }
-        },
-        "rules": {
-            "prettier/prettier": [
-                "error",
-                {
-                    "semi": false
-                }
-            ],
-            "unused-imports/no-unused-imports": "warn",
-            "unused-imports/no-unused-vars": [
-                "warn",
-                {
-                    "vars": "all",
-                    "varsIgnorePattern": "^_",
-                    "args": "after-used",
-                    "argsIgnorePattern": "^_"
-                }
-            ],
-            "react/jsx-uses-react": "off",
-            "react/react-in-jsx-scope": "off",
-            "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
-            "promise/always-return": "warn",
-            "promise/catch-or-return": "warn"
-        },
-        "overrides": [
-            {
-                "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-                "rules": {
-                    "n/no-missing-import": "off",
-                    "react/prop-types": "off"
-                }
-            }
-        ],
-        "ignorePatterns": [
-            "dist", 
-            "*.mjs", 
-            "next-env.d.ts", 
-            "node_modules", 
-            ".next", 
-            "public", 
-            "yarn.lock", 
-            "package-lock.json"
-        ]
-    },
+    "eslint.config.mjs": "import { dirname } from 'path'\nimport { fileURLToPath } from 'url'\nimport { FlatCompat } from '@eslint/eslintrc'\nimport tsParser from '@typescript-eslint/parser'\nimport unusedImports from 'eslint-plugin-unused-imports'\n\nconst __filename = fileURLToPath(import.meta.url)\nconst __dirname = dirname(__filename)\n\nconst compat = new FlatCompat({\n\tbaseDirectory: __dirname,\n})\n\nexport default [\n\t...compat.extends(\n\t\t'next/core-web-vitals',\n\t\t'next/typescript',\n\t\t'prettier',\n\t\t'plugin:@typescript-eslint/recommended',\n\t\t'plugin:prettier/recommended',\n\t\t'plugin:react/recommended',\n\t\t'plugin:react-hooks/recommended',\n\t\t'plugin:promise/recommended',\n\t\t'plugin:jsx-a11y/recommended',\n\t),\n\n\t{\n\t\tignores: [\n\t\t\t'node_modules/**',\n\t\t\t'.next/**',\n\t\t\t'out/**',\n\t\t\t'build/**',\n\t\t\t'next-env.d.ts',\n\t\t\t'dist/**',\n\t\t\t'public/**',\n\t\t\t'yarn.lock',\n\t\t\t'package-lock.json',\n\t\t],\n\t\t\tlanguageOptions: {\n\t\t\t\tparser: tsParser,\n\t\t\t\tparserOptions: {\n\t\t\t\t\tecmaVersion: 'latest',\n\t\t\t\t\tsourceType: 'module',\n\t\t\t\t},\n\t\t\t},\n\t\t\tplugins: {\n\t\t\t\t'unused-imports': unusedImports,\n\t\t\t},\n\t\tsettings: {\n\t\t\t\"import/resolver\": {\n\t\t\t\ttypescript: true,\n\t\t\t\tnode: true,\n\t\t\t},\n\t\t},\n\t\trules: {\n\t\t\t// ---- Prettier ----\n\t\t\t'prettier/prettier': [\n\t\t\t\t'error',\n\t\t\t\t{\n\t\t\t\t\tsemi: false,\n\t\t\t\t},\n\t\t\t],\n\t\t\t// ---- Imports ----\n\t\t\t'unused-imports/no-unused-imports': 'warn',\n\t\t\t'unused-imports/no-unused-vars': [\n\t\t\t\t'warn',\n\t\t\t\t{\n\t\t\t\t\tvars: 'all',\n\t\t\t\t\tvarsIgnorePattern: '^_',\n\t\t\t\t\targs: 'after-used',\n\t\t\t\t\targsIgnorePattern: '^_',\n\t\t\t\t},\n\t\t\t],\n\t\t\t// ---- React ----\n\t\t\t'react/prop-types': 'off',\n\t\t\t// ---- React Hooks ----\n\t\t\t'react-hooks/rules-of-hooks': 'error',\n\t\t\t'react-hooks/exhaustive-deps': 'warn',\n\t\t\t// ---- Promises ----\n\t\t\t'promise/always-return': 'warn',\n\t\t\t'promise/catch-or-return': 'warn',\n\t\t},\n\t},\n]",
     ".prettierignore": "*.md\n*LICENSE\n/node_modules\n.next\nnext-env.d.ts\npublic\nyarn.lock\npackage-lock.json\n/dist\n\n# css\n*.css.map\n\n# typescript\n*.js.map",
     ".prettierrc.json": {
         "printWidth": 100,
@@ -123,7 +41,7 @@
     "base.index.css": "@import './reset.css';",
     "reset.css": "/* Global box-sizing and inherited typography */\n*,\n*::before,\n*::after {\n\tbox-sizing: border-box;\n\tfont: inherit;\n}\n\n/* Smooth scroll only if reduced motion is not preferred */\nhtml {\n\tfont-size: 100%;\n\thanging-punctuation: first last;\n\toverflow-x: hidden;\n}\n\nhtml:focus-within {\n\tscroll-behavior: smooth;\n}\n\n/* Reduce motion: disables animations for accessibility */\n@media (prefers-reduced-motion: reduce) {\n\thtml:focus-within {\n\t\tscroll-behavior: auto;\n\t}\n\n\t*,\n\t*::before,\n\t*::after {\n\t\tanimation-duration: 0.01ms !important;\n\t\tanimation-iteration-count: 1 !important;\n\t\ttransition-duration: 0.01ms !important;\n\t\tscroll-behavior: auto !important;\n\t}\n}\n\n/* Apply smooth scroll if there are :has(:target) elements (limited support) */\n@media (prefers-reduced-motion: no-preference) {\n\t:has(:target) {\n\t\tscroll-padding-top: 3rem;\n\t\tscroll-behavior: smooth;\n\t}\n}\n\n/* Base body styling */\nbody {\n\tline-height: 1.5;\n\ttext-rendering: optimizeSpeed;\n\tfont-family:\n\t\tsystem-ui,\n\t\t-apple-system,\n\t\tBlinkMacSystemFont,\n\t\t'Segoe UI',\n\t\tRoboto,\n\t\t'Helvetica Neue',\n\t\tsans-serif;\n}\n\n/* Basic links */\na {\n\ttext-decoration: none;\n\tcursor: pointer;\n}\n\n/* Improve accessibility for focus */\n:focus-visible {\n\toutline: 2px solid currentColor;\n\toutline-offset: 2px;\n}\n\n/* Responsive media */\nimg,\npicture,\nvideo,\nsvg {\n\tdisplay: block;\n\tmax-width: 100%;\n\theight: auto;\n}\n\n/* Base image styling */\nimg {\n\tvertical-align: middle;\n\tfont-style: italic;\n\tbackground-repeat: no-repeat;\n\tbackground-size: cover;\n\tshape-margin: 0.75rem;\n}\n\n/* Remove number input spinners */\ninput[type='number']::-webkit-inner-spin-button,\ninput[type='number']::-webkit-outer-spin-button {\n\t-webkit-appearance: none;\n\tmargin: 0;\n}\n\ninput[type='number'] {\n\tappearance: textfield;\n}\n\n/* Buttons and button-like elements */\nbutton,\n[role='button'] {\n\tcursor: pointer;\n}\n\n/* Textarea settings */\ntextarea {\n\tresize: vertical;\n}\n\n/* Basic fieldset structure without margin/padding */\nfieldset {\n\tborder: none;\n\tpadding: 0;\n\tmargin: 0;\n}\n\n/* Balanced headings */\nh1,\nh2,\nh3,\nh4,\nh5,\nh6 {\n\ttext-wrap: balance;\n}\n\n/* Readable paragraphs and list items */\np,\nli {\n\ttext-wrap: pretty;\n}\n\n/* Lists without default decoration */\nul,\nol {\n\tlist-style: none;\n\tpadding-left: 0;\n}",
     "page.module.css": ".h1 {\n    font-size: 36px;\n}",
-    "layout.tsx": "layout.tsx": "import type { Metadata, Viewport } from 'next'\nimport type { JSX } from 'react'\nimport { generateStaticMetadata } from '@/lib/generateStaticMetadata'\nimport { Geist, Geist_Mono } from 'next/font/google'\nimport '../styles/globals.css'\n\nconst geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin']})\nconst geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']})\nexport const viewport: Viewport = {\n\twidth: 'device-width',\n\tinitialScale: 1,\n\tthemeColor: [\n\t\t{ media: '(prefers-color-scheme: dark)', color: '#000000' },\n\t\t{ media: '(prefers-color-scheme: light)', color: '#ffffff' },\n\t]\n}\nexport const metadata: Metadata = generateStaticMetadata()\nexport default function RootLayout({\n\tchildren,\n}: Readonly<{ children: React.ReactNode }>): JSX.Element {\n\treturn (\n\t\t<html lang=\"en\" data-scroll-behavior=\"smooth\">\n\t\t\t<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>\n\t\t\t\t{children}\n\t\t\t</body>\n\t\t</html>\n\t)\n}\n",,
+    "layout.tsx": "import type { Metadata, Viewport } from 'next'\nimport type { JSX } from 'react'\nimport { generateStaticMetadata } from '@/lib/generateStaticMetadata'\nimport { Geist, Geist_Mono } from 'next/font/google'\nimport '../styles/globals.css'\n\nconst geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin']})\nconst geistMono = Geist_Mono({ variable: '--font-geist-mono', subsets: ['latin']})\nexport const viewport: Viewport = {\n\twidth: 'device-width',\n\tinitialScale: 1,\n\tthemeColor: [\n\t\t{ media: '(prefers-color-scheme: dark)', color: '#000000' },\n\t\t{ media: '(prefers-color-scheme: light)', color: '#ffffff' },\n\t]\n}\nexport const metadata: Metadata = generateStaticMetadata()\nexport default function RootLayout({\n\tchildren,\n}: Readonly<{ children: React.ReactNode }>): JSX.Element {\n\treturn (\n\t\t<html lang=\"en\" data-scroll-behavior=\"smooth\">\n\t\t\t<body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>\n\t\t\t\t{children}\n\t\t\t</body>\n\t\t</html>\n\t)\n}\n",
     "page.tsx": "import type { JSX } from 'react'\nimport styles from './page.module.css'\n\nexport default function Home(): JSX.Element {\n\treturn (\n\t\t<>\n\t\t\t<h1 className={styles.h1}>Home</h1>\n\t\t\t<p className='text-3xl'>Project</p>\n\t\t</>\n\t)\n}\n",
     "middleware.ts": "import { corsMiddleware } from './lib/corsMiddleware'\nimport type { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Middleware function that processes incoming requests through multiple middleware layers\n * @param request - The incoming NextRequest object representing the HTTP request.\n * @returns - NextResponse or undefined depending on the middleware logic.\n * If any middleware fails, it returns a response with an appropriate status code.\n * If all middlewares succeed, the request proceeds to the next handler.\n */\nexport function middleware(request: NextRequest): NextResponse | undefined {\n\tconst corsResponse = corsMiddleware(request)\n\tif (corsResponse !== undefined) return corsResponse\n}\n\nexport const config = {\n\tmatcher: ['/api/:path*'], // Match any path starting with /api/\n}\n",
     "LogExecEnv.ts": "/**\n * This function shows in console if the current component is rendered in client or server\n * @param componentName - The name of the component to log\n * @returns null\n */\n\nexport function LogExecEnv({ componentName }: { componentName: string }) {\n\tconst message =\n\t\ttypeof window === 'undefined'\n\t\t\t? `[${componentName}] executes in SERVER (SSR)`\n\t\t\t: `[${componentName}] executes in CLIENT (Browser)`\n\n\tconsole.log(message)\n\treturn null\n}\n",

@@ -43,6 +43,22 @@ next_options=(
     "--use-pnpm"
 )
 npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
+progress_bar
+
+## CLEANING
+files_to_remove=(
+    "/src/app/page.js"
+    "/src/app/layout.js"
+    "/src/app/globals.css"
+    "/public/next.svg"
+    "/public/vercel.svg"
+    "/public/file.svg"
+    "/public/globe.svg"
+    "/public/window.svg"
+    "/src/app/favicon.ico"
+    "/eslint.config.mjs"
+)
+rm -rf "${files_to_remove[@]/#/$outputDirectory}" >/dev/null 2>&1
 
 progress_bar
 cd "$outputDirectory" || exit 1
@@ -74,7 +90,6 @@ eslint_rules=(
     "eslint@latest"
     "eslint-plugin-react@latest"
     "eslint-plugin-import@latest"
-    "eslint-plugin-n@latest"
     "eslint-plugin-promise@latest"
     "eslint-plugin-unused-imports@latest"
     "eslint-plugin-react-hooks@latest"
@@ -83,7 +98,7 @@ eslint_rules=(
     "eslint-config-prettier@latest"
 )
 pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
-touch .eslintrc.json
+touch eslint.config.mjs
 progress_bar
 
 ## OTHER DEPENDENCIES
@@ -94,25 +109,8 @@ other_dependencies=(
 pnpm add "${other_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
-
 progress_bar
 cd ..
-progress_bar
-
-## CLEANING
-files_to_remove=(
-    "/src/app/page.js"
-    "/src/app/layout.js"
-    "/src/app/globals.css"
-    "/public/next.svg"
-    "/public/vercel.svg"
-    "/public/file.svg"
-    "/public/globe.svg"
-    "/public/window.svg"
-    "/src/app/favicon.ico"
-    "/eslint.config.mjs"
-)
-rm -rf "${files_to_remove[@]/#/$outputDirectory}" >/dev/null 2>&1
 
 progress_bar
 ## TEMPLATE init

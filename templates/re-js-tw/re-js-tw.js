@@ -47,7 +47,7 @@ async function createFiles(outputDirectory) {
             { fileName: 'next.config.mjs', content: templateData['next.config.mjs'] },
             { fileName: 'next-sitemap.config.js', content: templateData['next-sitemap.config.js'] },
             { fileName: 'package.json', content: templateData['package.json'] },
-            { fileName: '.eslintrc.json', content: templateData['.eslintrc.json'] },
+            { fileName: 'eslint.config.mjs', content: templateData['eslint.config.mjs'] },
             { fileName: '.prettierignore', content: templateData['.prettierignore'] },
             { fileName: '.prettierrc.json', content: templateData['.prettierrc.json'] },
             { fileName: '.gitignore', content: templateData['.gitignore'] },

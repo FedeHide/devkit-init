@@ -12,89 +12,10 @@
             "build": "next build",
             "postbuild": "next-sitemap",
             "start": "next start",
-            "lint": "next lint"
+            "lint": "eslint"
         }        
     },
-    ".eslintrc.json": {
-        "env": {
-            "browser": true,
-            "es2021": true,
-            "node": true
-        },
-        "extends": [
-            "next/core-web-vitals",
-            "prettier",
-            "plugin:prettier/recommended",
-            "plugin:react/recommended",
-            "plugin:react-hooks/recommended",
-            "plugin:promise/recommended",
-            "plugin:jsx-a11y/recommended"
-        ],
-        "plugins": [
-            "prettier",
-            "jsx-a11y",
-            "unused-imports",
-            "react",
-            "react-hooks",
-            "import",
-            "promise"
-        ],
-        "parserOptions": {
-            "ecmaVersion": "latest",
-            "sourceType": "module"
-        },
-        "settings": {
-            "import/resolver": {
-                "node": {
-                    "extensions": [".js", ".jsx", ".ts", ".tsx"]
-                },
-                "typescript": {}
-            }
-        },
-        "rules": {
-            "prettier/prettier": [
-                "error",
-                {
-                    "semi": false
-                }
-            ],
-            "unused-imports/no-unused-imports": "warn",
-            "unused-imports/no-unused-vars": [
-                "warn",
-                {
-                    "vars": "all",
-                    "varsIgnorePattern": "^_",
-                    "args": "after-used",
-                    "argsIgnorePattern": "^_"
-                }
-            ],
-            "react/jsx-uses-react": "off",
-            "react/react-in-jsx-scope": "off",
-            "react-hooks/rules-of-hooks": "error",
-            "react-hooks/exhaustive-deps": "warn",
-            "promise/always-return": "warn",
-            "promise/catch-or-return": "warn"
-        },
-        "overrides": [
-            {
-                "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
-                "rules": {
-                    "n/no-missing-import": "off",
-                    "react/prop-types": "off"
-                }
-            }
-        ],
-        "ignorePatterns": [
-            "dist", 
-            "*.mjs", 
-            "next-env.d.ts", 
-            "node_modules", 
-            ".next", 
-            "public", 
-            "yarn.lock", 
-            "package-lock.json"
-        ]
-    },
+    "eslint.config.mjs": "import { dirname } from 'path'\nimport { fileURLToPath } from 'url'\nimport { FlatCompat } from '@eslint/eslintrc'\nimport unusedImports from 'eslint-plugin-unused-imports'\n\nconst __filename = fileURLToPath(import.meta.url)\nconst __dirname = dirname(__filename)\n\nconst compat = new FlatCompat({\n\tbaseDirectory: __dirname,\n})\n\nexport default [\n\t...compat.extends(\n\t\t'next/core-web-vitals',\n\t\t'prettier',\n\t\t'plugin:prettier/recommended',\n\t\t'plugin:react/recommended',\n\t\t'plugin:react-hooks/recommended',\n\t\t'plugin:promise/recommended',\n\t\t'plugin:jsx-a11y/recommended',\n\t),\n\n\t{\n\t\tignores: [\n\t\t\t'node_modules/**',\n\t\t\t'.next/**',\n\t\t\t'out/**',\n\t\t\t'build/**',\n\t\t\t'dist/**',\n\t\t\t'public/**',\n\t\t\t'yarn.lock',\n\t\t\t'package-lock.json',\n\t\t],\n\t\tlanguageOptions: {\n\t\t\tparserOptions: {\n\t\t\t\tecmaVersion: 'latest',\n\t\t\t\tsourceType: 'module',\n\t\t\t},\n\t\t},\n\t\tplugins: {\n\t\t\t'unused-imports': unusedImports,\n\t\t},\n\t\tsettings: {\n\t\t\t\"import/resolver\": {\n\t\t\t\tnode: true,\n\t\t\t},\n\t\t},\n\t\trules: {\n\t\t\t// ---- Prettier ----\n\t\t\t'prettier/prettier': [\n\t\t\t\t'error',\n\t\t\t\t{\n\t\t\t\t\tsemi: false,\n\t\t\t\t},\n\t\t\t],\n\t\t\t// ---- Imports ----\n\t\t\t'unused-imports/no-unused-imports': 'warn',\n\t\t\t'unused-imports/no-unused-vars': [\n\t\t\t\t'warn',\n\t\t\t\t{\n\t\t\t\t\tvars: 'all',\n\t\t\t\t\tvarsIgnorePattern: '^_',\n\t\t\t\t\targs: 'after-used',\n\t\t\t\t\targsIgnorePattern: '^_',\n\t\t\t\t},\n\t\t\t],\n\t\t\t// ---- React ----\n\t\t\t'react/prop-types': 'off',\n\t\t\t// ---- React Hooks ----\n\t\t\t'react-hooks/rules-of-hooks': 'error',\n\t\t\t'react-hooks/exhaustive-deps': 'warn',\n\t\t\t// ---- Promises ----\n\t\t\t'promise/always-return': 'warn',\n\t\t\t'promise/catch-or-return': 'warn',\n\t\t},\n\t},\n]",
     ".prettierignore": "*.md\n*LICENSE\n/node_modules\n.next\nnext-env.d.ts\npublic\nyarn.lock\npackage-lock.json\n/dist\n\n# css\n*.css.map\n\n# typescript\n*.js.map",
     ".prettierrc.json": {
         "printWidth": 100,

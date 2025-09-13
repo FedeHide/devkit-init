@@ -45,6 +45,24 @@ next_options=(
 npx --yes create-next-app@latest "$outputDirectory" "${next_options[@]}" >/dev/null 2>&1
 
 progress_bar
+
+## CLEANING
+files_to_remove=(
+    "/src/app/page.js"
+    "/src/app/layout.js"
+    "/src/app/globals.css"
+    "/public/next.svg"
+    "/public/vercel.svg"
+    "/src/app/favicon.ico"
+    "/public/file.svg"
+    "/public/globe.svg"
+    "/public/window.svg"
+    "/eslint.config.mjs"
+    "/next.config.ts"
+)
+rm -rf "${files_to_remove[@]/#/$outputDirectory}" >/dev/null 2>&1
+progress_bar
+
 cd "$outputDirectory" || exit 1
 rm -rf ".git" >/dev/null 2>&1
 
@@ -73,7 +91,6 @@ eslint_rules=(
     "eslint@latest"
     "eslint-plugin-react@latest"
     "eslint-plugin-import@latest"
-    "eslint-plugin-n@latest"
     "eslint-plugin-promise@latest"
     "eslint-plugin-unused-imports@latest"
     "eslint-plugin-react-hooks@latest"
@@ -84,7 +101,7 @@ eslint_rules=(
 progress_bar
 pnpm add "${eslint_rules[@]}" -D >/dev/null 2>&1
 progress_bar
-touch .eslintrc.json
+touch eslint.config.mjs
 
 ## OTHER DEPENDENCIES
 other_dependencies=(
@@ -108,24 +125,7 @@ typescript_dependencies=(
 pnpm add "${typescript_dependencies[@]}" -D >/dev/null 2>&1
 progress_bar
 
-
 cd ..
-progress_bar
-## CLEANING
-files_to_remove=(
-    "/src/app/page.js"
-    "/src/app/layout.js"
-    "/src/app/globals.css"
-    "/public/next.svg"
-    "/public/vercel.svg"
-    "/src/app/favicon.ico"
-    "/public/file.svg"
-    "/public/globe.svg"
-    "/public/window.svg"
-    "/eslint.config.mjs"
-    "/next.config.ts"
-)
-rm -rf "${files_to_remove[@]/#/$outputDirectory}" >/dev/null 2>&1
 
 progress_bar
 ## TEMPLATE init
