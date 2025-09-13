@@ -1,5 +1,17 @@
 # Changelog
 
+## [v4.10.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.10.0) (2025-09-12)
+
+### Features
+
+* **feat:** update eslint configuration in nextjs templates ([8d4e9ee](https://github.com/FedeHide/devkit-init/commit/8d4e9eea00e870c42fee4d6ec007ab63610b22b1))
+
+### Other Changes
+
+* **chores:** fix typos and add eslint rule ([366a99b](https://github.com/FedeHide/devkit-init/commit/366a99be1bc79a183ed588b556237777e23d7f3e))
+
+* **chores:** adjust tabs and spaces, add new folders ([7a44c19](https://github.com/FedeHide/devkit-init/commit/7a44c19f421fcc3f40a1d39bf9c1cd42c24fa1d0))
+
 ## [v4.8.0](https://github.com/FedeHide/devkit-init/releases/tag/v4.8.0) (2025-09-05)
 
 ### Features
@@ -9,6 +21,7 @@
 * **feat:** add react hook to auto scroll to a ref ([6635309](https://github.com/FedeHide/devkit-init/commit/6635309f9e0a97aa43ea26116c769cb1c745051a))
 
 * **feat:** add lib function to check if a component is a server or client component in react ([16650de](https://github.com/FedeHide/devkit-init/commit/16650de84d34d82bd72cd90e27193c8af9042862))
+
 ### Other Changes
 
 * **chores:** remove li width limits in reset css and add JSX types ([efa02c0](https://github.com/FedeHide/devkit-init/commit/efa02c0d2ae96a2a2ec7a4f69f6435197d5c2303))
