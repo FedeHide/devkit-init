@@ -28,7 +28,6 @@ async function createFiles(outputDirectory) {
             // core files
             { fileName: '/dist/index.html', content: templateData['index.html'] },
             { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
-            { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
             { fileName: 'LICENSE', content: templateData['LICENSE'] },
             { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
             { fileName: 'README.md', content: templateData['README.md'] },

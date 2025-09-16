@@ -1,9 +1,6 @@
 # CONTRIBUTING
 
-Contributions are always welcome. Before contributing,
-please read the [code of conduct](CODE_OF_CONDUCT.md).
-
-Some thoughts to help you contribute to this project
+To keep the codebase organized and maintain a clean history, we follow a strict Pull Request workflow.
 
 ## Recommended Communication Style
 
@@ -12,45 +9,74 @@ Some thoughts to help you contribute to this project
 * Always review your code first. Do this by leaving comments in your coding noting questions, or interesting things for the reviewer.
 * Always communicate. Whether it is in the issue or the pull request, keeping the lines of communication helps everyone around you.
 
-## Building
 
-To develop locally, fork the repository and clone it in your local machine. 
+## Workflow
 
-```bash
-npm i devkit-init
-```
+1. **Fork the repository**.
 
-If you encounter issues running this script, try granting it execution permissions:
+2. **Clone your fork locally**:
 
-```bash
-chmod +x devkit-init.sh
-```
+    ```bash
+    git clone TODO: CHANGE -> git@github.com:your-username/project-name.git
+    ```
 
-## Templates
+3. **Add upstream remote**:
 
-To add a template, you need to create a directory in /templates by assembling a folder with the suffixes of the names of the technologies you want to use.
+    ```bash
+    git remote add upstream TODO: CHANGE -> git@github.com:client-username/project-name.git
+    git fetch upstream
+    ```
 
-The script "devkit-init" is responsible for assembling the path based on those suffixes, taking the user's choices and running the script to which such construction points.
+4. **Create a new branch** for your work:
 
- - Then, we need to create a shell script with the installation of dependencies. 
- - Add another script, .js (which will be run by the previous shell script), will create the custom files we need and update other necessary configurations. 
- - The last file is a .json where we list the files that the .js script is creating. 
- - Take other templates as an example; the names of these three files must be the same as the folder's name.
+    ```bash
+    git switch -c feature/your-feature-name
+    ```
 
-## Pull Requests
+5. Make your changes **committing small**. Follow the same convention as in the CHANGELOG:
 
-* Fork the repo and create your branch from `main` branch.
-* Name your branch something that is descriptive to the work you are doing. i.e. adds-new-thing or fixes-mobile
+   - `feat:` A new feature
+   - `fix:` A bug fix
+   - `chores:` Other changes, updates, refactors, or non-feature tasks
+
+6. **Sync your branch with upstream** before creating a PR:
+
+    ```bash
+    git fetch upstream
+    git switch main
+    git merge upstream/main # or `git pull client main`
+    git switch feature/your-feature-name
+    git rebase main
+    ```
+
+    **Note:** Rebase rewrites your branch’s commit history to be on top of the latest main. This keeps the history clean. Do not rebase branches that others are working on.
+
+7. **Install dependencies and check lint** locally before pushing:
+
+    ```bash
+    pnpm install
+    pnpm lint
+    ```
+
+8. **Push your branch** to your fork:
+
+    ```bash
+    git push origin feature/your-feature-name
+    ```
+
+9. **Open a Pull Request** targeting the `main` branch in the upstream repository.
+
+
+### PR Validation
+
 * If you've added code that should be tested, add tests.
 * If you've changed APIs, update the documentation.
 * If you make visual changes, screenshots are required.
-* Ensure the test suite passes.
+* If any, ensure the test suite passes.
 * Ensure that you deal with any lint warnings.
 * If you refactor the existing code, please let us know in your PR description.
 * A PR description and title are required. Make sure to use the commit message convention.
 * [Link to an issue](https://help.github.com/en/github/writing-on-github/autolinked-references-and-urls) in the project. Unsolicited code is welcomed, but an issue is required for announce your intentions. PR's without a linked issue will be marked invalid and closed.
-
-### PR Validation
 
 Examples for valid PR titles:
 
@@ -66,4 +92,11 @@ See [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) for m
 
 If you plan to contribute a change based on an open issue, assign yourself. Issues that are not assigned are assumed open, and to avoid conflicts, please assign yourself before beginning work on any issues.
 
-Also, all questions are welcomed.
+## Notes
+
+- Always pull the latest changes from upstream before starting a new feature.
+- PRs should pass all CI/CD checks before merging.
+- Keep branches focused on a single feature or fix.
+- Avoid pushing directly to main; all changes should go through PRs.
+
+Thank you for helping us keep this project clean and maintainable!

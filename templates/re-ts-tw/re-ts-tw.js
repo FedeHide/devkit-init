@@ -34,7 +34,6 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/lib/generateStaticMetadata.ts', content: templateData['generateStaticMetadata.ts'] },
             { fileName: '/src/hooks/useScrollToRef.ts', content: templateData['useScrollToRef.ts'] },
             { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
-            { fileName: 'CODE_OF_CONDUCT.md', content: templateData['CODE_OF_CONDUCT.md'] },
             { fileName: 'LICENSE', content: templateData['LICENSE'] },
             { fileName: 'CHANGELOG.md', content: templateData['CHANGELOG.md'] },
             { fileName: 'README.md', content: templateData['README.md'] },
