@@ -32,6 +32,8 @@ async function createFiles(outputDirectory) {
             { fileName: '/src/lib/corsMiddleware.js', content: templateData['corsMiddleware.js'] },
             { fileName: '/src/lib/LogExecEnv.js', content: templateData['LogExecEnv.js'] },
             { fileName: '/src/lib/generateStaticMetadata.js', content: templateData['generateStaticMetadata.js'] },
+            { fileName: '/src/lib/rateLimiter/rateLimiter.js', content: templateData['rateLimiter.js'] },
+            { fileName: '/src/lib/rateLimiter/RATE_LIMITER.md', content: templateData['RATE_LIMITER.md'] },
             { fileName: '/src/hooks/useScrollToRef.js', content: templateData['useScrollToRef.js'] },
             { fileName: 'CONTRIBUTING.md', content: templateData['CONTRIBUTING.md'] },
             { fileName: 'LICENSE', content: templateData['LICENSE'] },
